@@ -27,7 +27,7 @@ setup(
         "paramiko == 1.12.1",
         #"tgrum",
         "simplejson == 3.3.2",
-        #"hashlib",
+        #"hashlib", #delete for centos7 conflict
 	"Beaker >= 1.4",
         "SQLAlchemy == 0.5.6",
         "MySQL-python == 1.2.5"
