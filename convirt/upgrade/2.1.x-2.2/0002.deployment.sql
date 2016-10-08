@@ -1,0 +1,4 @@
+ALTER TABLE `deployment` ADD COLUMN `xen_vms` INTEGER DEFAULT 0,
+ ADD COLUMN `kvm_vms` INTEGER DEFAULT 0;
+
+

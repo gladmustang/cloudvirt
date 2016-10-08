@@ -1,0 +1,26 @@
+#!/bin/bash
+
+upgrade_config()
+{
+  upgrade_base=$1
+  dev_ini=$2
+
+  echo "Upgrading $dev_ini from 2.2-2.5"
+  sed  -i "
+/vnc_applet_param_height/{ i\
+resources_url = http://www.convirture.com/resources.php\n\
+def_resources = [ \{ \"isNew\": true, \"name\": \"Documentation\", \"url\": \"http://www.convirture.com/wiki/index.php?title=Main_Page\" \}, \{ \"name\": \"Forums\", \"url\": \"http://www.convirture.com/forums/\" \},\{ \"name\": \"Certified Configurations\", \"url\": \"http://convirture.com/support_configurations.php\" \}, \{ \"name\": \"FAQ\", \"url\": \"http://www.convirture.com/wiki/index.php?title=Convirt2_faq\" \}, \{ \"name\": \"How To\\'s\", \"url\": \"http://www.convirture.com/wiki/index.php?title=Convirt2_Tutorials\" \}, \{ \"name\": \"Registration\", \"url\": \"http://www.convirture.com/register.php?did=\$did\" \} ]
+}
+/common_script/{i\
+use_nmap_for_heartbeat=True\n\
+nmap_script=nmap_nodes
+}
+/vnc_host/{i\
+use_vnc_proxy=False
+}
+" $dev_ini
+  if [ $? != 0 ]; then
+     return 1
+  fi
+  return 0
+}
