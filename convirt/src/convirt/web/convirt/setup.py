@@ -16,21 +16,21 @@ setup(
     install_requires=[
         "TurboGears2 == 2.0.3",
         #"Catwalk >= 2.0.2",
-        "Babel >=0.9.4",
+        "Babel ==1.3",
         #can be removed iif use_toscawidgets = False
         #"toscawidgets >= 0.9.7.1",
-        "zope.sqlalchemy >= 0.4 ",
-        "repoze.tm2 >= 1.0a4",
+        "zope.sqlalchemy == 0.7.4 ",
+        "repoze.tm2 == 1.0a4",
         
-        "repoze.what-quickstart >= 1.0",
+        "repoze.what-quickstart == 1.0",
         # Jd
-        "paramiko >= 1.7.3",
+        "paramiko == 1.12.1",
         #"tgrum",
-        "simplejson >= 2.0.9",
-        "hashlib",
+        "simplejson == 3.3.2",
+        #"hashlib",
 	"Beaker >= 1.4",
         "SQLAlchemy == 0.5.6",
-        "MySQL-python >= 1.2.2"
+        "MySQL-python == 1.2.5"
                 ],
     setup_requires=["PasteScript >= 1.7"],
     paster_plugins=['PasteScript', 'Pylons', 'TurboGears2', 'tg.devtools'],
