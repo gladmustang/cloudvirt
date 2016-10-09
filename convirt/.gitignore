@@ -1,1 +1,7 @@
 .pyc
+convirt.log
+paster.log
+src/convirt/web/convirt/convirt.egg-info/PKG-INFO
+src/convirt/web/convirt/convirt.egg-info/SOURCES.txt
+src/convirt/web/convirt/convirt.egg-info/requires.txt
+
