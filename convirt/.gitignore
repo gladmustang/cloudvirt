@@ -3,12 +3,14 @@
 tg2env/
 convirt.log
 paster.log
-src/convirt/web/convirt/convirt.egg-info/PKG-INFO
-src/convirt/web/convirt/convirt.egg-info/SOURCES.txt
-src/convirt/web/convirt/convirt.egg-info/requires.txt
 src/convirt/web/convirt/convirt/i18n/en/LC_MESSAGES/convirt.mo
 src/convirt/web/convirt/convirt/i18n/tr/LC_MESSAGES/convirt.mo
 src/convirt/web/convirt/convirt/public/javascript/ext2.2.1/resources/locale/convirt-lang-en.js
 src/convirt/web/convirt/convirt/public/javascript/ext2.2.1/resources/locale/convirt-lang-tr.js
 upgrade/VERSION.TXT
+#below files are also changed after cloudvirt setup, but could not be ignored because they are already checked in
+#so just for reference
+#src/convirt/web/convirt/convirt.egg-info/PKG-INFO
+#src/convirt/web/convirt/convirt.egg-info/SOURCES.txt
+#src/convirt/web/convirt/convirt.egg-info/requires.txt
 
