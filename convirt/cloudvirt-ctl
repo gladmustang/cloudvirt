@@ -202,7 +202,7 @@ elif [ "$CMD" == "setup" ]; then
     ./po-to-js.pl
     echo "ConVirt Setup Done..."
 else
-    echo "usage: convirt-ctl <cmd> [<tg2env directory>]"
+    echo "usage: cloudvirt-ctl <cmd> [<tg2env directory>]"
     echo "       where <cmd> is one of [start, stop, status, setup]"
     exit 1
 fi
