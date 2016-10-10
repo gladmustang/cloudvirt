@@ -835,7 +835,6 @@ convirt/public/javascript/util/window.js
 convirt/public/javascript/ux/Ext.ux.PanelTitlePlugin.js
 convirt/public/javascript/ux/Ext.ux.grid.RowActions.js
 convirt/templates/__init__.py
-convirt/templates/__init__.pyc
 convirt/templates/about.html
 convirt/templates/authentication.html
 convirt/templates/dashboard.html
