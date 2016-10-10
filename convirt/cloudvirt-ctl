@@ -78,6 +78,24 @@ convirt_status()
     fi
 }
 
+start-sshagent(){
+  pidfile=sshagent.env
+  echo -n $"Starting ssh-agent: "
+  if [ -f $pidfile ]; then
+        . $pidfile >/dev/null
+        if ! kill -0 $SSH_AGENT_PID >/dev/null 2>&1; then
+                echo "Stale agent file found. Spawning new agent..."
+                eval `ssh-agent |tee $pidfile`
+        fi
+  else
+        echo "Starting ssh-agent..."
+        eval `ssh-agent |tee $pidfile`
+  fi
+  RETVAL=$?
+  return $RETVAL
+}
+
+
 if [ "$CMD" == "start" ]; then
     convirt_status
     if [ $? == 0 ]; then
@@ -117,9 +135,12 @@ if [ "$CMD" == "start" ]; then
     if [ -e $ssh_file ]; then
         echo "Using " $ssh_file
         # checks ssh-agent set or not
-        if [ -z $SSH_AGENT_PID ]; then
-            eval `ssh-agent`
-        fi
+        # if [ -z $SSH_AGENT_PID ]; then
+        #     eval `ssh-agent`
+        # fi
+
+	start-sshagent
+
         ssh_res=$(ssh-add -l | grep ${ssh_file})
         if [ $? == 1 ]; then
             ssh-add $ssh_file

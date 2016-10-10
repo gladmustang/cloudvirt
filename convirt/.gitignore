@@ -20,3 +20,5 @@ hash_dir/
 src/convirt/web/convirt/data/
 src/convirt/web/convirt/user_config
 
+#tmp file for ssh-agent
+sshagent.env
