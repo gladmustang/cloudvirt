@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Example 
+#    cms-ssh-copy-id username@managed_server
+   
+  RETVAL=0
+
+  if [ -z $1 ]; then
+	echo $"Usage: $0 username@servername"
+	RETVAL=1
+  else
+   	ssh-copy-id -i /var/lib/convirt/identity/cms_id_rsa.pub $1
+
+        RETVAL=$?
+  	if [ $RETVAL -eq 0 ]; then
+        	 echo "cms key add successfully"
+  	else
+        	 echo "cms key add failed!!!"
+  	fi
+
+  fi
+
+  exit $RETVAL
+
+
