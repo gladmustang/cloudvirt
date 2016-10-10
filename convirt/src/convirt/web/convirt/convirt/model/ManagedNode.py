@@ -726,16 +726,26 @@ class NodeEnvHelper:
         network_list = []
         if raw_network_list[0].find('not found') == -1:
             for i in range(len(raw_network_list)):
-                split_item = raw_network_list[i].split("UP")
-                if cmp('',split_item[0]) !=0 :
-                    split_item = split_item[0].split('\n')
-                    interface_name = split_item[0].split()[0]
-                    ip_addr = ''
-                    if cmp('',split_item[1]) !=0:
-                        for i in range(1, len(split_item)):
-                            ip_addr += split_item[i] + '\n'
-                    network_list.append(dict([(key_network_interface_name, interface_name), (key_network_ip, ip_addr)]))
-
+                if 'flags' in raw_network_list[i]: #for centos7
+                    split_item = raw_network_list[i].split("ether")
+                    if cmp('',split_item[0]) !=0 :
+                        split_item = split_item[0].split('\n')
+                        interface_name = split_item[0].split(':')[0]
+                        ip_addr = ''
+                        if cmp('',split_item[1]) !=0:
+                            for i in range(1, len(split_item)):
+                                ip_addr += split_item[i] + '\n'
+                        network_list.append(dict([(key_network_interface_name, interface_name), (key_network_ip, ip_addr)]))
+                else: #for centos6 and ubuntu
+                    split_item = raw_network_list[i].split("UP")
+                    if cmp('',split_item[0]) !=0 :
+                        split_item = split_item[0].split('\n')
+                        interface_name = split_item[0].split()[0]
+                        ip_addr = ''
+                        if cmp('',split_item[1]) !=0:
+                            for i in range(1, len(split_item)):
+                                ip_addr += split_item[i] + '\n'
+                        network_list.append(dict([(key_network_interface_name, interface_name), (key_network_ip, ip_addr)]))
 
         disk_values = self.node_proxy.exec_cmd( \
                 'df -kh -P | grep ^/dev | awk \'{print $1, $2, $6}\''\

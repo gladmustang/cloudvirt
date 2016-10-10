@@ -204,47 +204,80 @@ class KVMNode(VNode):
             fbuffer = frame_buffers[2]
 
             #print  retbuf, FRAME_CMD, pids, pid_string
-            m = re.search("Cpu\\(s\\):.*\n", fbuffer)
-            line = m.group()
-            # Sanitize the line
-            line = line.replace(':',',')
-            line = line.replace(' ','')
-            line = line.replace('\t' ,'')
-            tokens = line.split(',')
-    #        total_cpu = reduce(lambda x,y: x + y,
-    #                           [ float(tokens[ndx].split('%')[0]) for ndx in range(1,4)])
+            if '%Cpu(s):' in fbuffer: #for centos7
+                m = re.search("Cpu\\(s\\):.*\n", fbuffer)
+                line = m.group()
+                # Sanitize the line
+                line = line.replace(':',',')
+                #line = line.replace(' ','')  #for cent7
+                line = line.replace('\t' ,'')
+                tokens = line.split(',')
+        #        total_cpu = reduce(lambda x,y: x + y,
+        #                           [ float(tokens[ndx].split('%')[0]) for ndx in range(1,4)])
 
-            #total_cpu =  float(tokens[0].split(',')[1].split('%')[0])
-            total_cpu = 0.0
-            for ndx in range(1,3):
-                value = float(tokens[ndx].split('%')[0])
-                total_cpu = total_cpu + value
+                #total_cpu =  float(tokens[0].split(',')[1].split('%')[0])
+                total_cpu = 0.0
+                for ndx in range(1,3):
+                    value = float(tokens[ndx].split()[0]) #for cent7
+                    total_cpu = total_cpu + value
 
-            #print "TOTAL = ",self.hostname, total_cpu
+                #print "TOTAL = ",self.hostname, total_cpu
 
-            mem =  re.search("Mem:[ \t]+(\d+)k total,[ \t]+(\d+)k used,[ \t]+(\d+)k free,[ \t]+(\d+).*\n", fbuffer)
-            if mem:
-                total_mem = int(mem.group(1))/1024  # in MB
-                used_mem = int(mem.group(2))/1024   # in MB
-                buffer_mem= int(mem.group(4))/1024   # in MB
-            else:
-                mem =  re.search("Mem:[ \t]+(\d+)M total,[ \t]+(\d+)M used,[ \t]+(\d+)M free,[ \t]+(\d+).*\n", fbuffer)
-                total_mem = int(mem.group(1))  # Already in MB
-                used_mem = int(mem.group(2))   # Already in MB
-                buffer_mem= int(mem.group(4))  # Already in MB
+                mem =  re.search("KiB Mem :[ \t]+(\d+) total,[ \t]+(\d+) free,[ \t]+(\d+) used,[ \t]+(\d+).*\n", fbuffer) #for cent7
+                if mem:
+                    total_mem = int(mem.group(1))/1024  # in MB
+                    used_mem = int(mem.group(3))/1024   # in MB  #for cent7
+                else:
+                    mem =  re.search("Mem :[ \t]+(\d+) total,[ \t]+(\d+) free,[ \t]+(\d+) used,[ \t]+(\d+).*\n", fbuffer) #for cent7
+                    total_mem = int(mem.group(1))  # Already in MB
+                    used_mem = int(mem.group(3))   # Already in MB  #for cent7
 
-            swap =  re.search("Swap:[ \t]+(\d+)k total,[ \t]+(\d+)k used,[ \t]+(\d+)k free,[ \t]+(\d+).*\n", fbuffer)
-            if swap:
-               cached_mem= int(swap.group(4))/1024   # in MB
-            else:
-               swap =  re.search("Swap:[ \t]+(\d+)M total,[ \t]+(\d+)M used,[ \t]+(\d+)M free,[ \t]+(\d+).*\n", fbuffer)
-               cached_mem= int(swap.group(4))   # Already in MB
+                ###host_memory for kvm in cent7is calculated as memUsed
+                host_memory=used_mem
+                host_mem=(float(host_memory)/float(total_mem))*100
+                #print "Total CPU %f , mem %f" % (total_cpu, (float(used) * 100 /total))
+            else: #for centos6 and others
+                m = re.search("Cpu\\(s\\):.*\n", fbuffer)
+                line = m.group()
+                # Sanitize the line
+                line = line.replace(':',',')
+                line = line.replace(' ','')
+                line = line.replace('\t' ,'')
+                tokens = line.split(',')
+        #        total_cpu = reduce(lambda x,y: x + y,
+        #                           [ float(tokens[ndx].split('%')[0]) for ndx in range(1,4)])
 
-            ###host_memory for kvm is calculated as
-            ###memUsed-(memBuffer+memCcached)
-            host_memory=used_mem-(buffer_mem+cached_mem)
-            host_mem=(float(host_memory)/float(total_mem))*100
-            #print "Total CPU %f , mem %f" % (total_cpu, (float(used) * 100 /total))
+                #total_cpu =  float(tokens[0].split(',')[1].split('%')[0])
+                total_cpu = 0.0
+                for ndx in range(1,3):
+                    value = float(tokens[ndx].split('%')[0])
+                    total_cpu = total_cpu + value
+
+                #print "TOTAL = ",self.hostname, total_cpu
+
+                mem =  re.search("Mem:[ \t]+(\d+)k total,[ \t]+(\d+)k used,[ \t]+(\d+)k free,[ \t]+(\d+).*\n", fbuffer)
+                if mem:
+                    total_mem = int(mem.group(1))/1024  # in MB
+                    used_mem = int(mem.group(2))/1024   # in MB
+                    buffer_mem= int(mem.group(4))/1024   # in MB
+                else:
+                    mem =  re.search("Mem:[ \t]+(\d+)M total,[ \t]+(\d+)M used,[ \t]+(\d+)M free,[ \t]+(\d+).*\n", fbuffer)
+                    total_mem = int(mem.group(1))  # Already in MB
+                    used_mem = int(mem.group(2))   # Already in MB
+                    buffer_mem= int(mem.group(4))  # Already in MB
+
+                swap =  re.search("Swap:[ \t]+(\d+)k total,[ \t]+(\d+)k used,[ \t]+(\d+)k free,[ \t]+(\d+).*\n", fbuffer)
+                if swap:
+                   cached_mem= int(swap.group(4))/1024   # in MB
+                else:
+                   swap =  re.search("Swap:[ \t]+(\d+)M total,[ \t]+(\d+)M used,[ \t]+(\d+)M free,[ \t]+(\d+).*\n", fbuffer)
+                   cached_mem= int(swap.group(4))   # Already in MB
+
+                ###host_memory for kvm is calculated as
+                ###memUsed-(memBuffer+memCcached)
+                host_memory=used_mem-(buffer_mem+cached_mem)
+                host_mem=(float(host_memory)/float(total_mem))*100
+                #print "Total CPU %f , mem %f" % (total_cpu, (float(used) * 100 /total))
 
 
 
