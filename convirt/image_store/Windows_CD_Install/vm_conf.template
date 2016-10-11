@@ -19,7 +19,7 @@ shadow_memory=10
 #cpus = "0"        # all vcpus run on CPU0
 
 pae=1
-acpi=0
+acpi=1
 apic=0
 
 vif=['mac=$AUTOGEN_MAC, bridge=$DEFAULT_BRIDGE']
