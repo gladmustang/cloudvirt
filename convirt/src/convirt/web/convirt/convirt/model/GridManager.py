@@ -2318,7 +2318,7 @@ class GridManager:
                         disk_size = each_disk_stat.get("size")
                         disk_size_GB = self.storage_manager.convert_to_GB(disk_size)
                         if mode == "EDIT_VM_CONFIG" or mode == "EDIT_VM_INFO":
-                            if disk_size=="null" or disk_size=="" or disk_size==None or disk_size==0:
+                            if disk_size=="null" or disk_size=="" or disk_size==None or disk_size==0 or disk_size_GB!=actual_size_GB:
                                 disk_size = self.storage_manager.convert_to_MB(actual_size_GB)
                                 disk_size_GB = self.storage_manager.convert_to_GB(disk_size)
 #                            else:

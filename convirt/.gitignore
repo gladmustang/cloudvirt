@@ -1,8 +1,8 @@
 *.py[cod]
 .so
 tg2env/
-convirt.log
-paster.log
+convirt.log*
+paster.log*
 src/convirt/web/convirt/convirt/i18n/en/LC_MESSAGES/convirt.mo
 src/convirt/web/convirt/convirt/i18n/tr/LC_MESSAGES/convirt.mo
 src/convirt/web/convirt/convirt/public/javascript/ext2.2.1/resources/locale/convirt-lang-en.js
