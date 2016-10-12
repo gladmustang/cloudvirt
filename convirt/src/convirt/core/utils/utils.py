@@ -1084,7 +1084,7 @@ def copyToRemote(src,dest_node,dest_dir, dest_name = None, hashexcludes=[], time
     import convirt.core.utils.commands as commands
 
     if not timeout:
-        timeout = int(tg.config.get("default_timeout", 300))
+        timeout = int(tg.config.get("default_timeout", 600))
 
     src = os.path.abspath(src)
     srcFileName = os.path.basename(src)

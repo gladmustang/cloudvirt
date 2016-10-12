@@ -23,5 +23,5 @@ src/convirt/web/convirt/user_config
 #tmp file for ssh-agent
 sshagent.env
 
-image_store/Windows7_64*
+image_store/Window7*
 src/convirt/web/convirt/cache/
