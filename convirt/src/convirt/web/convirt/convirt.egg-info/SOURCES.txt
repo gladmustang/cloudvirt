@@ -101,9 +101,7 @@ convirt/core/utils/ssmtplib.py
 convirt/core/utils/utils.py
 convirt/i18n/convirt.pot
 convirt/i18n/po-to-js.pl
-convirt/i18n/en/LC_MESSAGES/convirt.mo
 convirt/i18n/en/LC_MESSAGES/convirt.po
-convirt/i18n/tr/LC_MESSAGES/convirt.mo
 convirt/i18n/tr/LC_MESSAGES/convirt.po
 convirt/lib/__init__.py
 convirt/lib/app_globals.py
@@ -754,8 +752,6 @@ convirt/public/javascript/ext2.2.1/resources/images/vista/tabs/tab-btm-right-bg.
 convirt/public/javascript/ext2.2.1/resources/images/vista/tabs/tab-sprite.gif
 convirt/public/javascript/ext2.2.1/resources/images/vista/toolbar/gray-bg.gif
 convirt/public/javascript/ext2.2.1/resources/images/vista/toolbar/tb-btn-sprite.gif
-convirt/public/javascript/ext2.2.1/resources/locale/convirt-lang-en.js
-convirt/public/javascript/ext2.2.1/resources/locale/convirt-lang-tr.js
 convirt/public/javascript/ext2.2.1/resources/locale/ext-lang-en.js
 convirt/public/javascript/ext2.2.1/resources/locale/ext-lang-tr.js
 convirt/public/javascript/flot/BarFlot.js
