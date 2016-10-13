@@ -318,8 +318,8 @@ def initialise_auth():
     return entity_types
 
 def initialise_lookup_data():
-    app_catalog=model.ApplianceCatalog(u'convirt')
-    app_catalog.url=u'http://www.convirture.com/catalogs/convirt_catalog.conf'
+    app_catalog=model.ApplianceCatalog(u'zlcs')
+    app_catalog.url=u'http://127.0.0.1:8081/catalogs/zlcs_catalog.conf'
     if model.DBSession.query(model.ApplianceCatalog).filter(model.ApplianceCatalog.name==app_catalog.name).first() is None:
         model.DBSession.merge(app_catalog)
 
