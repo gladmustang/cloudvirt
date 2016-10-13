@@ -12,7 +12,7 @@ upgrade/VERSION.TXT
 #below files are also changed after cloudvirt setup, but could not be ignored because they are already checked in
 #so just for reference
 #src/convirt/web/convirt/convirt.egg-info/PKG-INFO
-#src/convirt/web/convirt/convirt.egg-info/SOURCES.txt
+src/convirt/web/convirt/convirt.egg-info/SOURCES.txt
 #src/convirt/web/convirt/convirt.egg-info/requires.txt
 
 #below are temp files generated during convirt web running
