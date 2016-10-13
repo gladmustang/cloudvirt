@@ -305,14 +305,18 @@ class ApplianceService:
         appliance_providers = { "rPath" : "rPathProxyModel",
                                 "JumpBox" : "JBProxyModel"}
         appliance_proxy = {}
-        a_proxy = appliance_providers[provider_id]
-        try:
-            code = "from convirt.viewModel.%s import %s; proxy=%s(); ops = proxy.getProxyIntegration()"  % (a_proxy,a_proxy, a_proxy)
-            exec(code)
-            appliance_proxy[provider_id] = (proxy,ops)
-            return (proxy,ops)
-        except Exception, ex:
-            print "Skipping Application interation for " + provider_id, ex
+        if appliance_providers.has_key(provider_id):
+            a_proxy = appliance_providers[provider_id]
+            try:
+                code = "from convirt.viewModel.%s import %s; proxy=%s(); ops = proxy.getProxyIntegration()"  % (a_proxy,a_proxy, a_proxy)
+                exec(code)
+                appliance_proxy[provider_id] = (proxy,ops)
+                return (proxy,ops)
+            except Exception, ex:
+                print "Skipping Application interation for " + provider_id, ex
+        else:
+            return (None,[])
+
 
         
 """
