@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<feed version="0.9">
+	<title>Convirture Virtual Appliances</title>
+	<link rel="self" href="http://www.convirture.com/convirt_appliances.xml"/>
+	<link href="http://www.convirture.com"/>
+	<id>http://www.convirture.com/convirt_applainces.xml</id>
+	<updated>2009-12-05 00:47:00</updated>
+
+	<entry>
+		<title type="html">ConVirt 2.0</title>
+		<link href="http://www.convirture.com"/>
+
+		<short_description type="html">
+			<![CDATA[ ConVirt is a web based management application that allows you to manage your virtualized environment.]]>
+		</short_description>
+
+		<description type="html">
+			<![CDATA[ ConVirt is a web based management application that allows you to manage your virtualized environment.]]>
+		</description>
+
+		<id>http://www.convirture.com/downloads/appliances/convirt-appliance-2.0.1.tbz2</id>
+		<popularity_score>100</popularity_score>
+
+		<download href="http://www.convirture.com/cgi-bin/download.cgi?provider=Convirture&amp;filename=convirt-appliance-2.0.tbz2" type="FILE_SYSTEM">
+			<platform name="Xen"/>
+			<package filename="c2_beta_appliance.tbz2"
+								version="2.0.1"
+								compressed="bzip2"
+								archive="true"
+								size="437823003" 
+								installed_size="10485760001"/>
+			<kernel PAE="False" arch="x86_32" is_hvm="True"/>
+			
+			<updated>2009-12-05 23:33:33</updated>
+		</download>
+	</entry>
+</feed>
