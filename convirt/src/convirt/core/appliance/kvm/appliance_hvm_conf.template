@@ -40,3 +40,5 @@ acpi=1
 apic=1
 usb=1
 usbdevice='tablet'
+
+provision_timeout=900
