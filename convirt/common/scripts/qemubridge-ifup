@@ -20,7 +20,7 @@
 switch=SWITCH_NAME
 
 if [ -n "$1" ];then
-        tunctl -u `whoami` -t $1
+#        tunctl -u `whoami` -t $1
         ip link set $1 up
         sleep 0.5s
         brctl addif ${switch} $1
