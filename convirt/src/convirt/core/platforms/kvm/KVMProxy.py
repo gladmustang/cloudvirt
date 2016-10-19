@@ -913,10 +913,13 @@ class KVMProxy(VMM):
         if code != 0 and code != -99:
             raise Exception("Error : VM Kill %s %s: %s : %s" % (id, pid, to_str(code), output))
 
-    def waitMigrateStatus(self, id):
+    def waitMigrateStatus(self, id, cfg):
         import time,tg
         cmd="info status"
-        wait_time=int(tg.config.get("migrate_time","120"))
+        wait_time=cfg["migrate_time"]
+        if wait_time is None:
+            wait_time=tg.config.get("migrate_time","120")
+        wait_time=int(wait_time)
         wait_time_over=False
         migrate_completed=False
         i=0
@@ -975,7 +978,7 @@ class KVMProxy(VMM):
             print "Initiating migration ", cmd
             (output,prompt) = self.send_command(id,cmd)
             if prompt and output == cmd:
-                (migrate_completed, wait_time_over)=self.waitMigrateStatus(id)
+                (migrate_completed, wait_time_over)=self.waitMigrateStatus(id,cfg)
                 if migrate_completed:
                     self.quit_vm(id)
                     return True
