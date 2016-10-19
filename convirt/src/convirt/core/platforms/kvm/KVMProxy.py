@@ -783,6 +783,31 @@ class KVMProxy(VMM):
                     
         return cmdline
 
+    def waitMigrateStatus(self, id, cfg):
+        import time,tg
+        cmd="info migrate"
+        wait_time=cfg["migrate_time"]
+        if wait_time is None:
+            wait_time=tg.config.get("migrate_time","120")
+        wait_time=int(wait_time)
+        wait_time_over=False
+        migrate_completed=False
+        i=0
+        while i <= wait_time:
+            time.sleep(1)
+            (output,prompt) = self.send_command(id, cmd)
+            print "check source VM migration status:" + output
+            if prompt and "Migration status" in output:
+                if "completed" in output:
+                    migrate_completed=True
+                    return (migrate_completed,wait_time_over)
+                elif i==wait_time:
+                    wait_time_over=True
+                    return (migrate_completed,wait_time_over)
+                i+=1
+            else:
+                raise Exception("error checking VM status during migration :" + output)
+
     def shutdown(self,id):
         cmd = "system_powerdown"
         (output,prompt) = self.send_command(id, cmd)
@@ -836,6 +861,9 @@ class KVMProxy(VMM):
             (output,prompt) = self.send_command(id, cmd)
             if prompt and output == cmd:
                 print "vm state saved to " + filename
+                (migrate_completed, wait_time_over)=self.waitMigrateStatus(id,cfg)
+                if not migrate_completed:
+                    raise Exception("snapshot timeout, please check the issue and try again")
                 if ver_num > 77:
                     ctx_filename = filename + ".gz.ctx"
                 else:
@@ -913,30 +941,6 @@ class KVMProxy(VMM):
         if code != 0 and code != -99:
             raise Exception("Error : VM Kill %s %s: %s : %s" % (id, pid, to_str(code), output))
 
-    def waitMigrateStatus(self, id, cfg):
-        import time,tg
-        cmd="info status"
-        wait_time=cfg["migrate_time"]
-        if wait_time is None:
-            wait_time=tg.config.get("migrate_time","120")
-        wait_time=int(wait_time)
-        wait_time_over=False
-        migrate_completed=False
-        i=0
-        while i <= wait_time:
-            time.sleep(1)
-            (output,prompt) = self.send_command(id, cmd)
-            print "check source VM migration status:" + output
-            if prompt and "VM status" in output:
-                if "paused" in output:
-                    migrate_completed=True
-                    return (migrate_completed,wait_time_over)
-                elif i==wait_time:
-                    wait_time_over=True
-                    return (migrate_completed,wait_time_over)
-                i+=1
-            else:
-                raise Exception("error checking VM status during migration :" + output)
 
     def migrate(self, id, dst, live, port, cfg):
         # start a VM with same/similar param on the dst node.
