@@ -913,6 +913,27 @@ class KVMProxy(VMM):
         if code != 0 and code != -99:
             raise Exception("Error : VM Kill %s %s: %s : %s" % (id, pid, to_str(code), output))
 
+    def waitMigrateStatus(self, id):
+        import time,tg
+        cmd="info status"
+        wait_time=int(tg.config.get("migrate_time","120"))
+        wait_time_over=False
+        migrate_completed=False
+        i=0
+        while i <= wait_time:
+            time.sleep(1)
+            (output,prompt) = self.send_command(id, cmd)
+            print "check source VM migration status:" + output
+            if prompt and "VM status" in output:
+                if "paused" in output:
+                    migrate_completed=True
+                    return (migrate_completed,wait_time_over)
+                elif i==wait_time:
+                    wait_time_over=True
+                    return (migrate_completed,wait_time_over)
+                i+=1
+            else:
+                raise Exception("error checking VM status during migration :" + output)
 
     def migrate(self, id, dst, live, port, cfg):
         # start a VM with same/similar param on the dst node.
@@ -954,8 +975,12 @@ class KVMProxy(VMM):
             print "Initiating migration ", cmd
             (output,prompt) = self.send_command(id,cmd)
             if prompt and output == cmd:
-                self.quit_vm(id)
-                return True
+                (migrate_completed, wait_time_over)=self.waitMigrateStatus(id)
+                if migrate_completed:
+                    self.quit_vm(id)
+                    return True
+                else:
+                    raise Exception("migrate timeout, please check the dest node and try again")
             else:
                 raise Exception("migrate:" +  output)
 
