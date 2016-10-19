@@ -794,19 +794,19 @@ class KVMProxy(VMM):
         migrate_completed=False
         i=0
         while i <= wait_time:
-            time.sleep(1)
+            time.sleep(5)
             (output,prompt) = self.send_command(id, cmd)
             print "check source VM migration status:" + output
             if prompt and "Migration status" in output:
                 if "completed" in output:
                     migrate_completed=True
                     return (migrate_completed,wait_time_over)
-                elif i==wait_time:
-                    wait_time_over=True
-                    return (migrate_completed,wait_time_over)
-                i+=1
+                i+=5
             else:
                 raise Exception("error checking VM status during migration :" + output)
+        if i>=wait_time:
+            wait_time_over=True
+            return (migrate_completed,wait_time_over)
 
     def shutdown(self,id):
         cmd = "system_powerdown"
