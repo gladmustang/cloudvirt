@@ -1,308 +1,168 @@
 /*
- * Ext JS Library 2.3.0
- * Copyright(c) 2006-2009, Ext JS, LLC.
- * licensing@extjs.com
- * 
- * http://extjs.com/license
+ * Simplified Chinese translation
+ * By DavidHu
+ * 09 April 2007
  */
 
-/**
- * List compiled by mystix on the extjs.com forums.
- * Thank you Mystix!
- *
- * Turkish translation by Alper YAZGAN
- * 2008-01-24, 10:29 AM 
- * 
- * Updated to 2.2 by YargicX
- * 2008-10-05, 06:22 PM
- */
-
-Ext.UpdateManager.defaults.indicatorText = '<div class="loading-indicator">Yükleniyor ...</div>';
+Ext.UpdateManager.defaults.indicatorText = '<div class="loading-indicator">加载中...</div>';
 
 if(Ext.View){
-  Ext.View.prototype.emptyText = "";
+   Ext.View.prototype.emptyText = "";
 }
 
-if(Ext.grid.Grid){
-  Ext.grid.Grid.prototype.ddText = "Seçili satýr sayýsý : {0}";
+if(Ext.grid.GridPanel){
+   Ext.grid.GridPanel.prototype.ddText = "{0} 选择行";
 }
 
 if(Ext.TabPanelItem){
-  Ext.TabPanelItem.prototype.closeText = "Sekmeyi kapat";
+   Ext.TabPanelItem.prototype.closeText = "关闭";
 }
 
 if(Ext.form.Field){
-  Ext.form.Field.prototype.invalidText = "Bu alandaki deðer geçersiz";
-}
-
-if(Ext.LoadMask){
-  Ext.LoadMask.prototype.msg = "Yükleniyor ...";
+   Ext.form.Field.prototype.invalidText = "输入值非法";
 }
 
 Date.monthNames = [
-  "Ocak",
-  "Þžubat",
-  "Mart",
-  "Nisan",
-  "Mayýs",
-  "Haziran",
-  "Temmuz",
-  "Aðustos",
-  "Eylül",
-  "Ekim",
-  "Kasým",
-  "Aralýk"
+   "一月",
+   "二月",
+   "三月",
+   "四月",
+   "五月",
+   "六月",
+   "七月",
+   "八月",
+   "九月",
+   "十月",
+   "十一月",
+   "十二月"
 ];
-
-Date.getShortMonthName = function(month) {
-  return Date.monthNames[month].substring(0, 3);
-};
-
-Date.monthNumbers = {
-  Jan : 0,
-  Feb : 1,
-  Mar : 2,
-  Apr : 3,
-  May : 4,
-  Jun : 5,
-  Jul : 6,
-  Aug : 7,
-  Sep : 8,
-  Oct : 9,
-  Nov : 10,
-  Dec : 11
-};
-
-Date.getMonthNumber = function(name) {
-  return Date.monthNumbers[name.substring(0, 1).toUpperCase() + name.substring(1, 3).toLowerCase()];
-};
 
 Date.dayNames = [
-  "Pazar",
-  "Pazartesi",
-  "Salý",
-  "Ç‡arþŸamba",
-  "PerþŸembe",
-  "Cuma",
-  "Cumartesi"
+   "日",
+   "一",
+   "二",
+   "三",
+   "四",
+   "五",
+   "六"
 ];
-
-Date.shortDayNames = [
-  "Paz",
-  "Pzt",
-  "Sal",
-  "ÇrþŸ",
-  "Prþ",
-  "Cum",
-  "Cmt"
-];
-
-Date.getShortDayName = function(day) {
-  return Date.shortDayNames[day];
-};
 
 if(Ext.MessageBox){
-  Ext.MessageBox.buttonText = {
-    ok     : "Tamam",
-    cancel : "Ä°ptal",
-    yes    : "Evet",
-    no     : "Hayýr"
-  };
+   Ext.MessageBox.buttonText = {
+      ok     : "确定",
+      cancel : "取消",
+      yes    : "是",
+      no     : "否"
+   };
 }
 
 if(Ext.util.Format){
-  Ext.util.Format.date = function(v, format){
-    if(!v) return "";
-    if(!(v instanceof Date)) v = new Date(Date.parse(v));
-    return v.dateFormat(format || "d/m/Y");
-  };
+   Ext.util.Format.date = function(v, format){
+      if(!v) return "";
+      if(!(v instanceof Date)) v = new Date(Date.parse(v));
+      return v.dateFormat(format || "y年m月d日");
+   };
 }
 
 if(Ext.DatePicker){
-  Ext.apply(Ext.DatePicker.prototype, {
-    todayText         : "Bugün",
-    minText           : "Bu tarih izin verilen en küçük tarihten daha önce",
-    maxText           : "Bu tarih izin verilen en büyük tarihten daha sonra",
-    disabledDaysText  : "",
-    disabledDatesText : "",
-    monthNames        : Date.monthNames,
-    dayNames          : Date.dayNames,
-    nextText          : 'Gelecek Ay (Control+Right)',
-    prevText          : 'Ã–nceki Ay (Control+Left)',
-    monthYearText     : 'Bir ay sŸeçiniz (Yýlý artýrmak/azaltmak için Control+Up/Down)',
-    todayTip          : "{0} (BoþŸluk TuþŸu - Spacebar)",
-    format            : "d/m/Y",
-    okText            : "&#160;Tamam&#160;",
-    cancelText        : "Ä°ptal",
-    startDay          : 1
-  });
+   Ext.apply(Ext.DatePicker.prototype, {
+      todayText         : "今天",
+      minText           : "日期在最小日期之前",
+      maxText           : "日期在最大日期之后",
+      disabledDaysText  : "",
+      disabledDatesText : "",
+      monthNames        : Date.monthNames,
+      dayNames          : Date.dayNames,
+      nextText          : '下月 (Control+Right)',
+      prevText          : '上月 (Control+Left)',
+      monthYearText     : '选择一个月 (Control+Up/Down 来改变年)',
+      todayTip          : "{0} (空格键选择)",
+      format            : "y年m月d日",
+      okText            : "确定",
+      cancelText        : "取消"
+   });
 }
 
 if(Ext.PagingToolbar){
-  Ext.apply(Ext.PagingToolbar.prototype, {
-    beforePageText : "Sayfa",
-    afterPageText  : " / {0}",
-    firstText      : "Ä°lk Sayfa",
-    prevText       : "Ã–nceki Sayfa",
-    nextText       : "Sonraki Sayfa",
-    lastText       : "Son Sayfa",
-    refreshText    : "Yenile",
-    displayMsg     : "Gösterilen {0} - {1} / {2}",
-    emptyMsg       : 'Gösterilebilecek veri yok'
-  });
+   Ext.apply(Ext.PagingToolbar.prototype, {
+      beforePageText : "页",
+      afterPageText  : "页共 {0} 页",
+      firstText      : "第一页",
+      prevText       : "前一页",
+      nextText       : "下一页",
+      lastText       : "最后页",
+      refreshText    : "刷新",
+      displayMsg     : "显示 {0} - {1}，共 {2} 条",
+      emptyMsg       : '没有数据需要显示'
+   });
 }
 
 if(Ext.form.TextField){
-  Ext.apply(Ext.form.TextField.prototype, {
-    minLengthText : "Girilen verinin uzunluðu en az {0} olabilir",
-    maxLengthText : "Girilen verinin uzunluðu en fazla {0} olabilir",
-    blankText     : "Bu alan boþŸ býrakýlamaz",
-    regexText     : "",
-    emptyText     : null
-  });
+   Ext.apply(Ext.form.TextField.prototype, {
+      minLengthText : "该输入项的最小长度是 {0}",
+      maxLengthText : "该输入项的最大长度是 {0}",
+      blankText     : "该输入项为必输项",
+      regexText     : "",
+      emptyText     : null
+   });
 }
 
 if(Ext.form.NumberField){
-  Ext.apply(Ext.form.NumberField.prototype, {
-    minText : "En az {0} girilebilir",
-    maxText : "En çok {0} girilebilir",
-    nanText : "{0} geçersiz bir sayýdýr"
-  });
+   Ext.apply(Ext.form.NumberField.prototype, {
+      minText : "该输入项的最小值是 {0}",
+      maxText : "该输入项的最大值是 {0}",
+      nanText : "{0} 不是有效数值"
+   });
 }
 
 if(Ext.form.DateField){
-  Ext.apply(Ext.form.DateField.prototype, {
-    disabledDaysText  : "Disabled",
-    disabledDatesText : "Disabled",
-    minText           : "Bu tarih, {0} tarihinden daha sonra olmalýdýr", 
-    maxText           : "Bu tarih, {0} tarihinden daha önce olmalýdýr",
-    invalidText       : "{0} geçersiz bir tarihdir - tarih formatý {1} þŸeklinde olmalýdýr",
-    format            : "d/m/Y",
-    altFormats        : "d.m.y|d.m.Y|d/m/y|d-m-Y|d-m-y|d.m|d/m|d-m|dm|dmY|dmy|d|Y.m.d|Y-m-d|Y/m/d"
-  });
+   Ext.apply(Ext.form.DateField.prototype, {
+      disabledDaysText  : "禁用",
+      disabledDatesText : "禁用",
+      minText           : "该输入项的日期必须在 {0} 之后",
+      maxText           : "该输入项的日期必须在 {0} 之前",
+      invalidText       : "{0} 是无效的日期 - 必须符合格式： {1}",
+      format            : "y年m月d日"
+   });
 }
 
 if(Ext.form.ComboBox){
-  Ext.apply(Ext.form.ComboBox.prototype, {
-    loadingText       : "Yükleniyor ...",
-    valueNotFoundText : undefined
-  });
+   Ext.apply(Ext.form.ComboBox.prototype, {
+      loadingText       : "加载...",
+      valueNotFoundText : undefined
+   });
 }
 
 if(Ext.form.VTypes){
-	Ext.form.VTypes["emailText"]='Bu alan "user@domain.com" þŸeklinde elektronik posta formatýnda olmalýdýr';
-	Ext.form.VTypes["urlText"]='Bu alan "http://www.domain.com" þŸeklinde URL adres formatýnda olmalýdýr';
-	Ext.form.VTypes["alphaText"]='Bu alan sadece harf ve _ içermeli';
-	Ext.form.VTypes["alphanumText"]='Bu alan sadece harf, sayý ve _ içermeli';
-}
-
-if(Ext.form.HtmlEditor){
-  Ext.apply(Ext.form.HtmlEditor.prototype, {
-    createLinkText : 'Lütfen bu baðlantý için gerekli URL adresini giriniz:',
-    buttonTips : {
-      bold : {
-        title: 'Kalýn(Bold) (Ctrl+B)',
-        text: 'Þžeçili yazýyý kalýn yapar.',
-        cls: 'x-html-editor-tip'
-      },
-      italic : {
-        title: 'Ä°talik(Italic) (Ctrl+I)',
-        text: 'Þžeçili yazýyý italik yapar.',
-        cls: 'x-html-editor-tip'
-      },
-      underline : {
-        title: 'Alt Ã‡izgi(Underline) (Ctrl+U)',
-        text: 'Þžeçili yazýnýn altýný çizer.',
-        cls: 'x-html-editor-tip'
-      },
-      increasefontsize : {
-        title: 'Fontu büyült',
-        text: 'Yazý fontunu büyütür.',
-        cls: 'x-html-editor-tip'
-      },
-      decreasefontsize : {
-        title: 'Fontu küçült',
-        text: 'Yazý fontunu küçültür.',
-        cls: 'x-html-editor-tip'
-      },
-      backcolor : {
-        title: 'Arka Plan Rengi',
-        text: 'Seçili yazýnýn arka plan rengini deðiþŸtir.',
-        cls: 'x-html-editor-tip'
-      },
-      forecolor : {
-        title: 'Yazý Rengi',
-        text: 'Seçili yazýnýn rengini deðiþŸtir.',
-        cls: 'x-html-editor-tip'
-      },
-      justifyleft : {
-        title: 'Sola Daya',
-        text: 'Yazýyý sola daya.',
-        cls: 'x-html-editor-tip'
-      },
-      justifycenter : {
-        title: 'Ortala',
-        text: 'Yazýyý editörde ortala.',
-        cls: 'x-html-editor-tip'
-      },
-      justifyright : {
-        title: 'Saða daya',
-        text: 'Yazýyý saða daya.',
-        cls: 'x-html-editor-tip'
-      },
-      insertunorderedlist : {
-        title: 'Noktalý Liste',
-        text: 'Noktalý listeye baþŸla.',
-        cls: 'x-html-editor-tip'
-      },
-      insertorderedlist : {
-        title: 'Numaralý Liste',
-        text: 'Numaralý lisyeye baþŸla.',
-        cls: 'x-html-editor-tip'
-      },
-      createlink : {
-        title: 'Web Adresi(Hyperlink)',
-        text: 'Seçili yazýyý web adresi(hyperlink) yap.',
-        cls: 'x-html-editor-tip'
-      },
-      sourceedit : {
-        title: 'Kaynak kodu Düzenleme',
-        text: 'Kaynak kodu düzenleme moduna geç.',
-        cls: 'x-html-editor-tip'
-      }
-    }
-  });
+   Ext.apply(Ext.form.VTypes, {
+      emailText    : '该输入项必须是电子邮件地址，格式如： "user@domain.com"',
+      urlText      : '该输入项必须是URL地址，格式如： "http:/'+'/www.domain.com"',
+      alphaText    : '该输入项只能包含字符和_',
+      alphanumText : '该输入项只能包含字符,数字和_'
+   });
 }
 
 if(Ext.grid.GridView){
-  Ext.apply(Ext.grid.GridView.prototype, {
-    sortAscText  : "Artan sýrada sýrala",
-    sortDescText : "Azalan sýrada sýrala",
-    lockText     : "Kolonu kilitle",
-    unlockText   : "Kolon kilidini kaldýr",
-    columnsText  : "Kolonlar"
-  });
-}
-
-if(Ext.grid.GroupingView){
-  Ext.apply(Ext.grid.GroupingView.prototype, {
-    emptyGroupText : '(Yok)',
-    groupByText    : 'Bu Alana Göre Grupla',
-    showGroupsText : 'Gruplar Halinde Göster'
-  });
+   Ext.apply(Ext.grid.GridView.prototype, {
+      sortAscText  : "正序",
+      sortDescText : "逆序",
+      lockText     : "锁列",
+      unlockText   : "解锁列",
+      columnsText  : "列"
+   });
 }
 
 if(Ext.grid.PropertyColumnModel){
-  Ext.apply(Ext.grid.PropertyColumnModel.prototype, {
-    nameText   : "Ad",
-    valueText  : "Deðer",
-    dateFormat : "d/m/Y"
-  });
+   Ext.apply(Ext.grid.PropertyColumnModel.prototype, {
+      nameText   : "名称",
+      valueText  : "值",
+      dateFormat : "y年m月d日"
+   });
 }
 
-if(Ext.layout.BorderLayout.SplitRegion){
-  Ext.apply(Ext.layout.BorderLayout.SplitRegion.prototype, {
-    splitTip            : "Yeniden boyutlandýrmak için sürükle.",
-    collapsibleSplitTip : "Yeniden boyutlandýrmak için sürükle. Saklamak için çift týkla."
-  });
+if(Ext.layout.BorderLayout && Ext.layout.BorderLayout.SplitRegion){
+   Ext.apply(Ext.layout.BorderLayout.SplitRegion.prototype, {
+      splitTip            : "拖动来改变尺寸.",
+      collapsibleSplitTip : "拖动来改变尺寸. 双击隐藏."
+   });
 }
