@@ -21,3 +21,6 @@ msgstr ""
 msgid "User"
 msgstr "用户"
 
+msgid "Tasks"
+msgstr "任务"
+
