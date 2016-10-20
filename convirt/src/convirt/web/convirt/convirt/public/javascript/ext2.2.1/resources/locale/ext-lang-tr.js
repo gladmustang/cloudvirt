@@ -1,13 +1,30 @@
 /*
- * Simplified Chinese translation
- * By DavidHu
- * 09 April 2007
+ * Ext JS Library 2.3.0
+ * Copyright(c) 2006-2009, Ext JS, LLC.
+ * licensing@extjs.com
+ * 
+ * http://extjs.com/license
  */
 
-Ext.UpdateManager.defaults.indicatorText = '<div class="loading-indicator">加载中...</div>';
+/**
+ * List compiled by mystix on the extjs.com forums.
+ * Thank you Mystix!
+ *
+ * Turkish translation by Alper YAZGAN
+ * 2008-01-24, 10:29 AM 
+ * 
+ * Updated to 2.2 by YargicX
+ * 2008-10-05, 06:22 PM
+ */
+
+Ext.UpdateManager.defaults.indicatorText = '<div class="loading-indicator">加载中 ...</div>';
 
 if(Ext.View){
-   Ext.View.prototype.emptyText = "";
+  Ext.View.prototype.emptyText = "";
+}
+
+if(Ext.grid.Grid){
+  Ext.grid.Grid.prototype.ddText = "{0} 选择行";
 }
 
 if(Ext.grid.GridPanel){
@@ -15,11 +32,15 @@ if(Ext.grid.GridPanel){
 }
 
 if(Ext.TabPanelItem){
-   Ext.TabPanelItem.prototype.closeText = "关闭";
+  Ext.TabPanelItem.prototype.closeText = "关闭";
 }
 
 if(Ext.form.Field){
-   Ext.form.Field.prototype.invalidText = "输入值非法";
+  Ext.form.Field.prototype.invalidText = "输入值非法";
+}
+
+if(Ext.LoadMask){
+  Ext.LoadMask.prototype.msg = "加载中 ...";
 }
 
 Date.monthNames = [
@@ -37,7 +58,40 @@ Date.monthNames = [
    "十二月"
 ];
 
+Date.getShortMonthName = function(month) {
+  return Date.monthNames[month].substring(0, 3);
+};
+
+Date.monthNumbers = {
+  Jan : 0,
+  Feb : 1,
+  Mar : 2,
+  Apr : 3,
+  May : 4,
+  Jun : 5,
+  Jul : 6,
+  Aug : 7,
+  Sep : 8,
+  Oct : 9,
+  Nov : 10,
+  Dec : 11
+};
+
+Date.getMonthNumber = function(name) {
+  return Date.monthNumbers[name.substring(0, 1).toUpperCase() + name.substring(1, 3).toLowerCase()];
+};
+
 Date.dayNames = [
+   "星期日",
+   "星期一",
+   "星期二",
+   "星期三",
+   "星期四",
+   "星期五",
+   "星期六"
+];
+
+Date.shortDayNames = [
    "日",
    "一",
    "二",
@@ -47,21 +101,25 @@ Date.dayNames = [
    "六"
 ];
 
+Date.getShortDayName = function(day) {
+  return Date.shortDayNames[day];
+};
+
 if(Ext.MessageBox){
-   Ext.MessageBox.buttonText = {
-      ok     : "确定",
-      cancel : "取消",
-      yes    : "是",
-      no     : "否"
-   };
+  Ext.MessageBox.buttonText = {
+    ok     : "确定",
+    cancel : "取消",
+    yes    : "是",
+    no     : "否"
+  };
 }
 
 if(Ext.util.Format){
-   Ext.util.Format.date = function(v, format){
-      if(!v) return "";
-      if(!(v instanceof Date)) v = new Date(Date.parse(v));
-      return v.dateFormat(format || "y年m月d日");
-   };
+  Ext.util.Format.date = function(v, format){
+    if(!v) return "";
+    if(!(v instanceof Date)) v = new Date(Date.parse(v));
+    return v.dateFormat(format || "y年m月d日");
+  };
 }
 
 if(Ext.DatePicker){
@@ -95,6 +153,10 @@ if(Ext.PagingToolbar){
       displayMsg     : "显示 {0} - {1}，共 {2} 条",
       emptyMsg       : '没有数据需要显示'
    });
+}
+
+if(Ext.form.Field){
+  Ext.form.Field.prototype.invalidText = "无效的输入项";
 }
 
 if(Ext.form.TextField){
@@ -142,6 +204,85 @@ if(Ext.form.VTypes){
    });
 }
 
+
+if(Ext.form.HtmlEditor){
+  Ext.apply(Ext.form.HtmlEditor.prototype, {
+    createLinkText : 'Please enter the URL for the link:',
+    buttonTips : {
+      bold : {
+        title: 'Bold (Ctrl+B)',
+        text: 'Make the selected text bold.',
+        cls: 'x-html-editor-tip'
+      },
+      italic : {
+        title: 'Italic (Ctrl+I)',
+        text: 'Make the selected text italic.',
+        cls: 'x-html-editor-tip'
+      },
+      underline : {
+        title: 'Underline (Ctrl+U)',
+        text: 'Underline the selected text.',
+        cls: 'x-html-editor-tip'
+      },
+      increasefontsize : {
+        title: 'Grow Text',
+        text: 'Increase the font size.',
+        cls: 'x-html-editor-tip'
+      },
+      decreasefontsize : {
+        title: 'Shrink Text',
+        text: 'Decrease the font size.',
+        cls: 'x-html-editor-tip'
+      },
+      backcolor : {
+        title: 'Text Highlight Color',
+        text: 'Change the background color of the selected text.',
+        cls: 'x-html-editor-tip'
+      },
+      forecolor : {
+        title: 'Font Color',
+        text: 'Change the color of the selected text.',
+        cls: 'x-html-editor-tip'
+      },
+      justifyleft : {
+        title: 'Align Text Left',
+        text: 'Align text to the left.',
+        cls: 'x-html-editor-tip'
+      },
+      justifycenter : {
+        title: 'Center Text',
+        text: 'Center text in the editor.',
+        cls: 'x-html-editor-tip'
+      },
+      justifyright : {
+        title: 'Align Text Right',
+        text: 'Align text to the right.',
+        cls: 'x-html-editor-tip'
+      },
+      insertunorderedlist : {
+        title: 'Bullet List',
+        text: 'Start a bulleted list.',
+        cls: 'x-html-editor-tip'
+      },
+      insertorderedlist : {
+        title: 'Numbered List',
+        text: 'Start a numbered list.',
+        cls: 'x-html-editor-tip'
+      },
+      createlink : {
+        title: 'Hyperlink',
+        text: 'Make the selected text a hyperlink.',
+        cls: 'x-html-editor-tip'
+      },
+      sourceedit : {
+        title: 'Source Edit',
+        text: 'Switch to source editing mode.',
+        cls: 'x-html-editor-tip'
+      }
+    }
+  });
+}
+
 if(Ext.grid.GridView){
    Ext.apply(Ext.grid.GridView.prototype, {
       sortAscText  : "正序",
@@ -150,6 +291,14 @@ if(Ext.grid.GridView){
       unlockText   : "解锁列",
       columnsText  : "列"
    });
+}
+
+if(Ext.grid.GroupingView){
+  Ext.apply(Ext.grid.GroupingView.prototype, {
+    emptyGroupText : '(None)',
+    groupByText    : 'Group By This Field',
+    showGroupsText : 'Show in Groups'
+  });
 }
 
 if(Ext.grid.PropertyColumnModel){
@@ -165,4 +314,26 @@ if(Ext.layout.BorderLayout && Ext.layout.BorderLayout.SplitRegion){
       splitTip            : "拖动来改变尺寸.",
       collapsibleSplitTip : "拖动来改变尺寸. 双击隐藏."
    });
+}
+
+if(Ext.form.TimeField){
+  Ext.apply(Ext.form.TimeField.prototype, {
+    minText : "The time in this field must be equal to or after {0}",
+    maxText : "The time in this field must be equal to or before {0}",
+    invalidText : "{0} is not a valid time",
+    format : "g:i A",
+    altFormats : "g:ia|g:iA|g:i a|g:i A|h:i|g:i|H:i|ga|ha|gA|h a|g a|g A|gi|hi|gia|hia|g|H"
+  });
+}
+
+if(Ext.form.CheckboxGroup){
+  Ext.apply(Ext.form.CheckboxGroup.prototype, {
+    blankText : "You must select at least one item in this group"
+  });
+}
+
+if(Ext.form.RadioGroup){
+  Ext.apply(Ext.form.RadioGroup.prototype, {
+    blankText : "You must select one item in this group"
+  });
 }

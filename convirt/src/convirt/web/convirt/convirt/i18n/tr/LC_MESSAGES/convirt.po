@@ -24,4 +24,13 @@ msgstr "用户"
 msgid "Tasks"
 msgstr "任务"
 
+msgid "Close"
+msgstr "关闭"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "OK"
+msgstr "确定"
+
 
