@@ -272,6 +272,8 @@ function dashboardUI(){
         header_html_link+= "         <wr id='header-warning' class='warning'>  <a id='header-warning-link' href='#'> <img id='header-warning-img' src='icons/warning.png' title='' style='display:none;' /> </a> </wr>";
         
         header_html_link+= "        <div class='header-right-right'>";
+
+    //remove resource related content
         /*
         header_html_link+= "            <ul class='admin-nav-menu'>";
         if (is_admin == 'True') {
@@ -282,6 +284,8 @@ function dashboardUI(){
         header_html_link+= "                <li class='logout'><a href='#' onclick=javascript:window.location='/user_logout'></a></li>";
         header_html_link+= "            </ul>";
         */
+
+    /*
 var r1 = Object(); r1["isNew"] = false; r1["name"] = "Documentation"; r1["url"] = "http://www.convirture.com/wiki/index.php?title=Main_Page";
 var r2 = Object(); r2["name"] = "Forums"; r2["url"] = "http://www.convirture.com/forums/";
 var r3 = Object(); r3["name"] = "Certified Configurations"; r3["url"] = "http://convirture.com/support_configurations.php";
@@ -290,7 +294,7 @@ var r5 = Object(); r5["name"] = "How To's"; r5["url"] = "http://www.convirture.c
 var r6 = Object(); r6["name"] = "Registration"; r6["url"] = "http://www.convirture.com/register.php?did=$did";
 var defResData = [ r1, r2, r3, r4, r5, r6 ];
 
-    var ajaxReq = ajaxRequest("/dashboard/get_resources", 0, "GET");
+   var ajaxReq = ajaxRequest("/dashboard/get_resources", 0, "GET");
     ajaxReq.request({
         success: function(xhr) {
             showResourcesMenu(xhr.responseText);
@@ -329,10 +333,12 @@ function showResourcesMenu(resStr) {
 
 var resData = defResData;
 var newRes = '';
+*/
 var menu_html = '';
 header_html_link += '<nav>';
 header_html_link += '  <ul id="mainmenu">';
-header_html_link += '    <li id="resourcemenu">';
+
+/*header_html_link += '    <li id="resourcemenu">';
 menu_html += '      <ul class="submenu">';
 for (i = 0; i < resData.length; i++) {
     r = resData[i];
@@ -346,9 +352,10 @@ for (i = 0; i < resData.length; i++) {
 menu_html += '      </ul>';
 menu_html = '      <a target="_blank" href="http://www.convirture.com/getconvirt.php">Resources' + newRes + '</a>' + menu_html;
 header_html_link += menu_html;
-header_html_link += '    </li>';
+header_html_link += '    </li>';*/
 
-header_html_link += "                <li><a target='_blank' href='http://www.convirture.com/feedback.php?did=" + did +"' target='_blank'>Feedback</a></li>";
+//header_html_link += "                <li><a target='_blank' href='http://www.convirture.com/feedback.php?did=" + did +"' target='_blank'>Feedback</a></li>";
+
 if (is_admin == 'True') {
     header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Administration')+"',705,470,adminconfig());>"+_("Admin")+"</a></li>";
 }
@@ -360,7 +367,7 @@ header_html_link += '</nav>';
 
         header_html_link+= "        </div>";
 
-        header_html_link+="<div class='header-right-right' style ='text-align:right' ><a style='text-decoration:none;color: #004C8A;' target='_blank' href=";
+/*        header_html_link+="<div class='header-right-right' style ='text-align:right' ><a style='text-decoration:none;color: #004C8A;' target='_blank' href=";
         var rand_no = Math.ceil(100*Math.random());
         if (rand_no%2==0){
             header_html_link+=convirt.constants.upgrade_to_ee+">"+_('Upgrade to ConVirt Enterprise');
@@ -369,7 +376,7 @@ header_html_link += '</nav>';
         }
         header_html_link+="</a></div>";
         header_html_link+= "    </div>";
-        header_html_link+= "</div>";
+        header_html_link+= "</div>";*/
 
     var headerPanel=new Ext.Panel({
         height:63,
