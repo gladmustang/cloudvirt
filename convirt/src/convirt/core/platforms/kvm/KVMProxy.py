@@ -796,8 +796,10 @@ class KVMProxy(VMM):
         while i <= wait_time:
             time.sleep(5)
             (output,prompt) = self.send_command(id, cmd)
-            print "check source VM migration status:" + output
             if prompt and "Migration status" in output:
+                m=re.match(r'[.\s\S]*(Migration status: \w+)[.\s\S]+(remaining ram: \d+ \w+)[.\s\S]*',output)
+                if not (m==None):
+                    print "check source VM migration status:\n" + m.group(1)+"\n"+m.group(2)+"\n"
                 if "completed" in output:
                     migrate_completed=True
                     return (migrate_completed,wait_time_over)
