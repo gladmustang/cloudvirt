@@ -1,0 +1,20 @@
+#!/bin/bash
+
+prg_name=`readlink -f $0`
+base=`dirname $prg_name`
+if [ "${base}" == "" ]; then
+    base="."
+fi
+
+cd $base/tg2env/bin/
+. activate
+
+cd $base/src/convirt/web/convirt/
+python setup.py compile_catalog
+cd convirt/i18n/
+./po-to-js.pl
+echo "cat" `pwd "../public/javascript/ext2.2.1/resources/locale/"`"convirt-lang-tr.js"
+cat ../public/javascript/ext2.2.1/resources/locale/convirt-lang-tr.js
+echo
+deactivate
+

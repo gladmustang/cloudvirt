@@ -19,5 +19,5 @@ msgstr ""
 
 #: convirt/public/javascript/dashboard.js:10
 msgid "User"
-msgstr "Kullanıcı"
+msgstr "用户"
 
