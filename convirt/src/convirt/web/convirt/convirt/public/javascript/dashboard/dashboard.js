@@ -350,7 +350,7 @@ header_html_link += '    </li>';
 
 header_html_link += "                <li><a target='_blank' href='http://www.convirture.com/feedback.php?did=" + did +"' target='_blank'>Feedback</a></li>";
 if (is_admin == 'True') {
-    header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Administration')+"',705,470,adminconfig());>Admin</a></li>";
+    header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Administration')+"',705,470,adminconfig());>"+_("Admin")+"</a></li>";
 }
 header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Tasks')+"',740,370,Tasks());>Tasks</a></li>";
 header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Password')+"',400,200,changepass(user_name));>Change Password</a></li>";

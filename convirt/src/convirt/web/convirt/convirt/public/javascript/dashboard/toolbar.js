@@ -129,7 +129,7 @@ function getToolBar(){
         id:'logout'        
     });
     var lbl_administration=new Ext.form.Label({
-        html:"<a href='#' style='text-decoration:none;font-weight:bold' onclick= javascript:showWindow('Users',705,470,adminconfig());>Admin</a>&nbsp",
+        html:"<a href='#' style='text-decoration:none;font-weight:bold' onclick= javascript:showWindow('Users',705,470,adminconfig());>"+_("Admin")+"</a>&nbsp",
         id:'lbl_administration'
     });
     var lbl_user=new Ext.form.Label({

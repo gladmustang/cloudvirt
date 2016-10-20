@@ -21,9 +21,7 @@ msgstr ""
 msgid "User"
 msgstr "用户"
 
-msgid "Tasks"
-msgstr "任务"
-
+#通用类
 msgid "Close"
 msgstr "关闭"
 
@@ -32,5 +30,19 @@ msgstr "刷新"
 
 msgid "OK"
 msgstr "确定"
+
+msgid "Cancel"
+msgstr "取消"
+
+#toolbar
+msgid "Admin"
+msgstr "管理"
+
+msgid "Logout"
+msgstr "退出"
+
+#任务类
+msgid "Tasks"
+msgstr "任务"
 
 
