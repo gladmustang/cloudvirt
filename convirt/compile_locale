@@ -13,8 +13,9 @@ cd $base/src/convirt/web/convirt/
 python setup.py compile_catalog
 cd convirt/i18n/
 ./po-to-js.pl
-echo "cat" `pwd "../public/javascript/ext2.2.1/resources/locale/"`"convirt-lang-tr.js"
-cat ../public/javascript/ext2.2.1/resources/locale/convirt-lang-tr.js
+cd ../public/javascript/ext2.2.1/resources/locale/
+echo "cat" `pwd`"/convirt-lang-tr.js"
+cat convirt-lang-tr.js
 echo
 deactivate
 
