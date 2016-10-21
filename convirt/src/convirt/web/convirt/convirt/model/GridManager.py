@@ -2784,8 +2784,7 @@ class GridManager:
                 log_msg = "Could not find ServerPool:%s" %(serverpool)
                 LOGGER.info(log_msg)
             else:
-                sp = DBSession.query(ServerGroup).filter(ServerGroup.id == sp_ent.entity_id).\
-                        filter(ServerGroup.type == None).first()
+                sp = DBSession.query(ServerGroup).filter(ServerGroup.id == sp_ent.entity_id).first()
                 if not sp:
                     bro_msg += br_str + "Could not find ServerPool2:%s" %(serverpool)
                     log_msg = "Could not find ServerPool:%s" %(serverpool)
