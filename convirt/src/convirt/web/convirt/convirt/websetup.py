@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #   ConVirt   -  Copyright (c) 2009 Convirture Corp.
 #   ======
 #
@@ -15,8 +16,9 @@
 #
 # author : ConVirt Team
 #
-# -*- coding: utf-8 -*-
+
 """Setup the convirt application"""
+
 
 import logging
 
@@ -145,7 +147,7 @@ def setup_app(command, conf, vars):
 
     tot_entities=[]
     entities=[]
-    si={'id':1,'name':u'Data Center','type':'DATA_CENTER'}
+    si={'id':1,'name':u'数据中心','type':'DATA_CENTER'}
     #for si in sites:
     site=model.Site(si['name'])
     s=model.Entity()
@@ -164,7 +166,8 @@ def setup_app(command, conf, vars):
 
     locn=tg.config.get(constants.prop_image_store)
     image_store_location= to_unicode(os.path.abspath(locn))
-    img_str={'id':2,'name':u'Template Library','type':'IMAGE_STORE'}
+    #img_str={'id':2,'name':u'Template Library','type':'IMAGE_STORE'}
+    img_str={'id':2,'name':u'模板库','type':'IMAGE_STORE'}
     #for img_str in image_stores:
     image_store = ImageStore(registry)
     image_store.name=img_str['name']
@@ -188,9 +191,9 @@ def setup_app(command, conf, vars):
     tot_entities.extend(entities)
 
     server_pools_dict={}
-    server_pools=[{'id':4,'name':u'Desktops','type':'SERVER_POOL'}
-    ,{'id':5,'name':u'Servers','type':'SERVER_POOL'}
-    ,{'id':6,'name':u'QA Lab','type':'SERVER_POOL'}
+    server_pools=[{'id':4,'name':u'桌面云','type':'SERVER_POOL'}
+    ,{'id':5,'name':u'服务器云','type':'SERVER_POOL'}
+    # ,{'id':6,'name':u'QA Lab','type':'SERVER_POOL'}
     ]
     sp_entities=[]
     for sp in server_pools:
