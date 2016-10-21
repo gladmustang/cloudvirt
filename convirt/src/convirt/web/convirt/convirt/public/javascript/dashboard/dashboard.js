@@ -60,7 +60,7 @@ function dashboardUI(){
     var myWidth = dims[0], myHeight = dims[1];
     
     var lbl_header=new Ext.form.Label({
-        html:'<div align="center"><font size=4 face="Verdana" ><b>ConVirt 2.1</b></font></div>',
+        html:'<div align="center"><font size=4 face="Verdana" ><b>Wish Cloud 1.0</b></font></div>',
         id:'lbl_header'
     });
     
@@ -359,9 +359,9 @@ header_html_link += '    </li>';*/
 if (is_admin == 'True') {
     header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Administration')+"',705,470,adminconfig());>"+_("Admin")+"</a></li>";
 }
-header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Tasks')+"',740,370,Tasks());>Tasks</a></li>";
-header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Password')+"',400,200,changepass(user_name));>Change Password</a></li>";
-header_html_link += "                <li><a href='#' onclick=javascript:window.location='/user_logout'>Logout</a></li>";
+header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Tasks')+"',740,370,Tasks());>"+_("Tasks")+"</a></li>";
+header_html_link += "                <li><a href='#' onclick=javascript:showWindow('"+_('Password')+"',400,200,changepass(user_name));>"+_("Change Password")+"</a></li>";
+header_html_link += "                <li><a href='#' onclick=javascript:window.location='/user_logout'>"+_("Logout")+"</a></li>";
 header_html_link += '        </ul>';
 header_html_link += '</nav>';
 

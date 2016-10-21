@@ -34,6 +34,9 @@ msgstr "确定"
 msgid "Cancel"
 msgstr "取消"
 
+msgid "Tasks"
+msgstr "任务"
+
 #toolbar
 msgid "Admin"
 msgstr "管理"
@@ -41,9 +44,12 @@ msgstr "管理"
 msgid "Logout"
 msgstr "退出"
 
+msgid "Change Password"
+msgstr "修改密码"
+
+
 #任务类
-msgid "Tasks"
-msgstr "任务"
+
 
 
 
