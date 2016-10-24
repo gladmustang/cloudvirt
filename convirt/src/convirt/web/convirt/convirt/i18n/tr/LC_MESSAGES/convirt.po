@@ -63,6 +63,9 @@ msgstr "概览"
 msgid "Summary"
 msgstr "总结"
 
+msgid "Server Pools"
+msgstr "服务器池"
+
 msgid "Top 5 Servers"
 msgstr "前5的服务器"
 
@@ -113,6 +116,9 @@ msgstr "主机{0}使用率(%)"
 msgid "Configuration"
 msgstr "配置"
 
+msgid "Total CPU count"
+msgstr "CPU总数"
+
 #服务器
 msgid "Servers"
 msgstr "服务器"
@@ -149,5 +155,18 @@ msgstr "在服务器%s上导入虚拟机"
 
 msgid "Succeeded"
 msgstr "成功"
+
+msgid "Not Started"
+msgstr "未开始"
+
+msgid "Started"
+msgstr "开始"
+
+msgid "Failed"
+msgstr "失败"
+
+msgid "Canceled"
+msgstr "取消"
+
 
 

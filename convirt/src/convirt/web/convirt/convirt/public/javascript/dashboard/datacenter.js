@@ -509,7 +509,11 @@ function data_center_info_grid(node_id){
             }
         },
         columns: [//action,
-             {header: "", width: 120, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+             {header: "", width: 120, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name',
+                    renderer:function(value,params,record,row){
+                        return _(value)
+                    }
+             },
              {header: "", width: 100, sortable: true,dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:data_center_info_store
@@ -558,7 +562,11 @@ function data_center_sec_info_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 100, sortable: false, css:'font-weight:bold;',dataIndex: 'name'},
+            {header: "", width: 100, sortable: false, css:'font-weight:bold;',dataIndex: 'name',
+                    renderer:function(value,params,record,row){
+                        return _(value)
+                    }
+            },
             {header: "", width: 300, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:data_center_sec_info_store
@@ -612,7 +620,12 @@ function data_center_vm_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 130, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 130, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name',
+                    renderer:function(value,params,record,row){
+                        return _(value)
+                    }
+
+            },
             {header: "", width: 100, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_info_store
