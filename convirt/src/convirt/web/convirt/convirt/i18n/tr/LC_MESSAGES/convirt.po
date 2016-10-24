@@ -47,9 +47,107 @@ msgstr "退出"
 msgid "Change Password"
 msgstr "修改密码"
 
+#主面板
+msgid "Actions"
+msgstr "动作"
+
+msgid "Select Action"
+msgstr "选择动作"
+
+
+#概览
+#data center
+msgid "Overview"
+msgstr "概览"
+
+msgid "Summary"
+msgstr "总结"
+
+msgid "Top 5 Servers"
+msgstr "前5的服务器"
+
+msgid "Top 5 Servers are calculated based on the last hour data. Historical data is shown for these servers."
+msgstr "负载最高的5台服务器是根据过去一个小时内的监控数据计算得来的，这些服务器的历史数据如图所示。"
+
+msgid "Last 12 Hours"
+msgstr "过去12小時"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "Last 24 Hours"
+msgstr "过去24小時"
+
+msgid "Last 7 Days"
+msgstr "过去7小時"
+
+msgid "Last 30 Days"
+msgstr "过去30天"
+
+msgid "Week To Date"
+msgstr "本周"
+
+msgid "Month To Date"
+msgstr "本月"
+
+msgid "Custom"
+msgstr "自定义"
+
+
+msgid "Top 5 Servers by {0} Usage"
+msgstr "{0}使用率前5的服务器"
+
+msgid "Top 5 Virtual Machines by {0} Usage"
+msgstr "{0}使用率前5的虚拟机"
+
+msgid "Name"
+msgstr "名字"
+
+msgid "{0} Usage(%)"
+msgstr "{0} 使用率(%)"
+
+msgid "Host {0}(%)"
+msgstr "主机{0}使用率(%)"
+
+#配置
+msgid "Configuration"
+msgstr "配置"
+
+#服务器
+msgid "Servers"
+msgstr "服务器"
+
+#虚拟机
+msgid "Virtual Machines"
+msgstr "虚拟机"
+
 
 #任务类
+msgid "Task"
+msgstr "任务"
 
+msgid "Entity Name"
+msgstr "对象名称"
 
+msgid "Entity Type"
+msgstr "对象类型"
+
+msgid "Username"
+msgstr "用户"
+
+msgid "Start Time"
+msgstr "开始时间"
+
+msgid "End Time"
+msgstr "结束时间"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Importing Virtual Machine on %s"
+msgstr "在服务器%s上导入虚拟机"
+
+msgid "Succeeded"
+msgstr "成功"
 
 

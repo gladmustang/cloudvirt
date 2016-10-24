@@ -229,7 +229,7 @@ function TasksGrid(){
                     '!important; background-position: right;'+
                     'background-repeat: no-repeat;cursor: pointer;"';
             }
-            return value;
+            return _(value);
         }
     }
     ]);

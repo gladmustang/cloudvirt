@@ -847,8 +847,8 @@ function getTop5Info(){
         icon: '/icons/information.png',
         cls: 'x-btn-icon',
         tooltip: {
-            text:'Top 5 Servers are calculated based on the last hour data.'+
-                ' Historical data is shown for these servers.'
+            text:_('Top 5 Servers are calculated based on the last hour data.'+
+                ' Historical data is shown for these servers.')
         }
     });
     return info_button;

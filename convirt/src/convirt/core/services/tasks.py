@@ -42,6 +42,7 @@ from convirt.model.AvailabilityWorker import AvailabilityWorker
 from convirt.model.VMAvailabilityWorker import VMAvailabilityWorker
 from convirt.model.CollectMetricsWorker import CollectMetricsWorker
 from datetime import datetime, timedelta
+from pylons.i18n import ugettext as _, lazy_ugettext as l_
 
 
 LOGGER = logging.getLogger("convirt.viewModel")
@@ -50,7 +51,7 @@ MTR_LOGGER = logging.getLogger("METRICS_TIMING")
 WRK_LOGGER = logging.getLogger("WORKER")
 
 def m_(string):
-    return string
+    return _(string)
 
 class NodeTask(Task):
     def get_node_id(self):
