@@ -183,7 +183,10 @@ function TasksGrid(){
         header: _("Task"),
         width: 200,
         dataIndex: 'name',
-        sortable:true        
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return _(value)
+        }
     },
     {
         header: _("Entity Name"),
