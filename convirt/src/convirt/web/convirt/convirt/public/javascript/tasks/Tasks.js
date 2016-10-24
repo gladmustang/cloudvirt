@@ -185,7 +185,7 @@ function TasksGrid(){
         dataIndex: 'name',
         sortable:true,
         renderer:function(value,params,record,row) {
-            return _(value)
+            return value
         }
     },
     {

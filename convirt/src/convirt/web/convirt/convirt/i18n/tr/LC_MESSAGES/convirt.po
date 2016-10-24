@@ -129,7 +129,22 @@ msgid "Configuration"
 msgstr "配置"
 
 msgid "Total CPU count"
-msgstr "CPU总数"
+msgstr "CPU 总数"
+
+msgid "Total Memory"
+msgstr "Memory 总数"
+
+msgid "Storage Available"
+msgstr "可分配存储空间"
+
+msgid "Networks"
+msgstr "网络"
+
+msgid "Host Operating System"
+msgstr "宿主机操作系统"
+
+msgid "Guest Operating System"
+msgstr "客户机操作系统"
 
 #服务器
 msgid "Servers"
