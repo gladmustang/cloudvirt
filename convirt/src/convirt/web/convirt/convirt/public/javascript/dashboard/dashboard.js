@@ -709,8 +709,8 @@ function registration(){
     if(registered=='True'){
         return true;
     }
-    var url="http://www.convirture.com/register.php?did="+did;
-    window.open(url, "_blank");
+/*    var url="http://www.convirture.com/register.php?did="+did;
+    window.open(url, "_blank");*/
 
     var url="/dashboard/set_registered";
     var ajaxReq=ajaxRequest(url,0,"GET");
