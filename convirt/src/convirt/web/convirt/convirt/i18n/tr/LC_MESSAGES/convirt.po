@@ -66,6 +66,18 @@ msgstr "总结"
 msgid "Server Pools"
 msgstr "服务器池"
 
+msgid "Virtual Machine Density"
+msgstr "虚拟机密度"
+
+msgid "Virtualization Platform"
+msgstr "虚拟化平台"
+
+msgid "Notifications"
+msgstr "日志消息"
+
+msgid "Storage Allocation (%)"
+msgstr "存储已分配 (%)"
+
 msgid "Top 5 Servers"
 msgstr "前5的服务器"
 
