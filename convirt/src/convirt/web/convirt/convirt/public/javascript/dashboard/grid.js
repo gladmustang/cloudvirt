@@ -375,21 +375,21 @@ function getVMState(value, meta, rec){
     //alert(value);
     var state="Unknown";
     if(value===convirt.constants.RUNNING){
-        state='Running';
+        state=_('Running');
     }else if(value===convirt.constants.BLOCKED){
-        state='Blocked';
+        state=_('Blocked');
     }else if(value===convirt.constants.PAUSED){
-        state='Paused';
+        state=_('Paused');
     }else if(value===convirt.constants.SHUTDOWN){
-        state='Shutdown';
+        state=_('Shut Down');
     }else if(value===convirt.constants.CRASHED){
-        state='Crashed';
+        state=_('Crashed');
     }else if(value===convirt.constants.NOT_STARTED){
-        state='Not Started';
+        state=_('Not Started');
     }else if(value===convirt.constants.UNKNOWN){
-        state='Unknown';
+        state=_('Unknown');
     }else{
-        state='Unknown';
+        state=_('Unknown');
     }
     return state;
 }
