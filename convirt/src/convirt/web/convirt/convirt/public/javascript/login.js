@@ -79,7 +79,7 @@ function loginconfig(){
 
     });
     var welcome_label=new Ext.form.Label({
-        html:'<div class="bluebackgroundcolor" ><center>'+_('Welcome to ConVirt 2.5')+'</center></div><br>',
+        html:'<div class="bluebackgroundcolor" ><center>'+_('Welcome to Wish Cloud')+'</center></div><br>',
         xtype:'label'
     });
     login.insert(0,welcome_label)

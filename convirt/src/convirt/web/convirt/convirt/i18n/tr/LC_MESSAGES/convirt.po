@@ -47,6 +47,19 @@ msgstr "退出"
 msgid "Change Password"
 msgstr "修改密码"
 
+#登录
+msgid "Welcome to Wish Cloud"
+msgstr "欢迎光临希望云数据中心"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Reset"
+msgstr "重置"
+
 #主面板
 msgid "Actions"
 msgstr "动作"
