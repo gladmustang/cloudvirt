@@ -37,6 +37,24 @@ msgstr "取消"
 msgid "Tasks"
 msgstr "任务"
 
+msgid "New"
+msgstr "新建"
+
+msgid "Remove"
+msgstr "删除"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Test"
+msgstr "测试"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Error"
+msgstr "错误"
+
 #toolbar
 msgid "Admin"
 msgstr "管理"
@@ -59,12 +77,6 @@ msgstr "登录"
 
 msgid "Reset"
 msgstr "重置"
-
-msgid "New"
-msgstr "新建"
-
-msgid "Remove"
-msgstr "删除"
 
 #用户动作
 msgid "Actions"
@@ -471,4 +483,21 @@ msgstr "创建人"
 msgid "Created Time"
 msgstr "创建时间"
 
+msgid "Add Search"
+msgstr "添加搜索"
+
+msgid "Max row count"
+msgstr "最大返回行数"
+
+msgid "Property"
+msgstr "属性"
+
+msgid "Filter"
+msgstr "过滤条件"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Please select a record from the list"
+msgstr "请从列表中选择一条记录"
 

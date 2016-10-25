@@ -1346,7 +1346,7 @@ function CustomSearchDefList(type,node_id,lists_level,query_store){
         listeners: {
             click: function(btn) {
                 if(!custom_grid.getSelectionModel().getSelected()){
-                    Ext.MessageBox.alert(_("Error"),_("Please select a record from the ist"));
+                    Ext.MessageBox.alert(_("Error"),_("Please select a record from the list"));
                     return false;
                 }
                 var edit_rec=custom_grid.getSelectionModel().getSelected();
