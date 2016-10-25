@@ -453,7 +453,11 @@ function server_pool_vm_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 130, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 130, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'
+                , renderer:function(value){
+                    return _(value)
+                }
+            },
             {header: "", width: 120, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_info_store
@@ -1023,7 +1027,11 @@ function srvr_pool_summary_grid(node_id,node){
             }
         },
         columns: [//action,
-            {header: "", width: 120, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 120, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'
+                , renderer: function(value){
+                    return _(value)
+                }
+            },
             {header: "", width: 100, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:summary_store

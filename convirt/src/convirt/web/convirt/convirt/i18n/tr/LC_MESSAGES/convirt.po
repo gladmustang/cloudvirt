@@ -190,7 +190,7 @@ msgid "Notifications"
 msgstr "日志消息"
 
 msgid "Storage Allocation (%)"
-msgstr "存储已分配 (%)"
+msgstr "已分配存储 (%)"
 
 msgid "Top 5 Servers"
 msgstr "前5的服务器"
@@ -395,6 +395,11 @@ msgstr "暂停"
 
 msgid "Crashed"
 msgstr "崩溃"
+
+#server pool
+#summary
+msgid "Storage Used"
+msgstr "已使用存储"
 
 #虚拟机
 msgid "Virtual Machines"
