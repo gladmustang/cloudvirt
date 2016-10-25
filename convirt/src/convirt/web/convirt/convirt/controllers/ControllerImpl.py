@@ -17,6 +17,7 @@ from convirt.viewModel.Userinfo import Userinfo
 from convirt.viewModel.EmailService import EmailService
 from convirt.core.utils.utils import to_unicode,to_str,print_traceback
 from convirt.model.TopCache import TopCache
+from pylons.i18n import ugettext as _, lazy_ugettext as l_
 
 import convirt.core.utils.constants
 constants = convirt.core.utils.constants
@@ -264,7 +265,7 @@ class ControllerImpl(ControllerBase):
 
         for o in ops:
             if o.display==True:
-                result.append(dict(value=o.display_id,text=o.display_name,id=o.id,icon=o.icon))
+                result.append(dict(value=o.display_id,text=_(o.display_name),id=o.id,icon=o.icon))
             if menu_combo!='True' and o.has_separator==True:
                     result.append(dict(name='--'))
         return result    

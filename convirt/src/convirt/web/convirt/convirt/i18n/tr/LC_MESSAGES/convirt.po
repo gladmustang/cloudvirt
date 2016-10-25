@@ -67,6 +67,107 @@ msgstr "动作"
 msgid "Select Action"
 msgstr "选择动作"
 
+msgid "Add Server Pool"
+msgstr "添加服务器资源池"
+
+msgid "Remove Server Pool"
+msgstr "删除服务器资源池"
+
+msgid "Manage Storage"
+msgstr "管理存储"
+
+msgid "Manage Virtual Networks"
+msgstr "管理虚拟交换网络"
+
+msgid "Add Server"
+msgstr "添加服务器"
+
+msgid "Connect All"
+msgstr "全部连接"
+
+msgid "Provision Virtual Machine"
+msgstr "创建虚拟机"
+
+msgid "Provisioning Settings"
+msgstr "查看设置"
+
+msgid "Edit Server"
+msgstr "编辑服务器"
+
+msgid "Open SSH Terminal"
+msgstr "打开SSH终端"
+
+msgid "Connect Server"
+msgstr "连接服务器"
+
+msgid "Move Server"
+msgstr "移动服务器"
+
+msgid "Restore Hibernated"
+msgstr "恢复休眠状态虚拟机"
+
+msgid "Import Virtual Machine Config File(s)"
+msgstr "导入虚拟机配置文件"
+
+msgid "Start All Virtual Machines"
+msgstr "启动全部虚拟机"
+
+msgid "Shutdown All Virtual Machines"
+msgstr "关闭全部虚拟机"
+
+msgid "Kill All Virtual Machines"
+msgstr "强行终止全部虚机机"
+
+msgid "Migrate All Virtual Machines"
+msgstr "迁移全部虚拟机"
+
+msgid "Remove Server"
+msgstr "删除服务器"
+
+msgid "Annotate"
+msgstr "注解"
+
+msgid "Edit Settings"
+msgstr "编辑虚拟机设置"
+
+msgid "Edit Virtual Machine Config File"
+msgstr "手动编辑虚拟机配置文件"
+
+msgid "View Console"
+msgstr "远程管理"
+
+msgid "Migrate Virtual Machine"
+msgstr "迁移虚拟机"
+
+msgid "Start"
+msgstr "启动虚拟机"
+
+msgid "Start and View Console"
+msgstr "启动并远程管理虚拟机"
+
+msgid "Pause"
+msgstr "暂停虚拟机"
+
+msgid "Reboot"
+msgstr "重启虚拟机"
+
+msgid "Resume"
+msgstr "继续虚拟机"
+
+msgid "Shutdown"
+msgstr "关闭虚拟机"
+
+msgid "Kill"
+msgstr "强行终止虚拟机"
+
+msgid "Hibernate"
+msgstr "休眠虚拟机"
+
+msgid "Set Boot Device"
+msgstr "设置虚拟机启动设备"
+
+msgid "Remove Virtual Machine Config"
+msgstr "删除虚拟机配置"
 
 #概览
 #data center
@@ -77,7 +178,7 @@ msgid "Summary"
 msgstr "总结"
 
 msgid "Server Pools"
-msgstr "服务器池"
+msgstr "服务器资源池"
 
 msgid "Virtual Machine Density"
 msgstr "虚拟机密度"
@@ -163,7 +264,7 @@ msgid "Storage Resources"
 msgstr "存储资源"
 
 msgid "Virtual Networks"
-msgstr "虚拟网络"
+msgstr "虚拟交换网络"
 
 #服务器
 msgid "Servers"
