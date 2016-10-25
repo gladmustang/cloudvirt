@@ -60,6 +60,12 @@ msgstr "登录"
 msgid "Reset"
 msgstr "重置"
 
+msgid "New"
+msgstr "新建"
+
+msgid "Remove"
+msgstr "删除"
+
 #用户动作
 msgid "Actions"
 msgstr "动作"
@@ -331,7 +337,7 @@ msgid "The table shows top 50 Down Servers"
 msgstr "关机状态的前50台服务器"
 
 msgid "Custom Search"
-msgstr "定制搜索"
+msgstr "自定义搜索"
 
 msgid "Down Servers"
 msgstr "关机状态的服务器"
@@ -449,6 +455,20 @@ msgstr "取消"
 msgid "Error Notifications"
 msgstr "错误日志"
 
+#for custom search window
+msgid "Search (By Name): "
+msgstr "名称搜索"
 
+msgid "Search"
+msgstr "搜索"
+
+msgid "Condition"
+msgstr "条件"
+
+msgid "Created By"
+msgstr "创建人"
+
+msgid "Created Time"
+msgstr "创建时间"
 
 

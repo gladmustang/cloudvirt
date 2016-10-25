@@ -1263,7 +1263,7 @@ function CustomSearchDefList(type,node_id,lists_level,query_store){
 
     },
     {
-        header: _("Creadted Time"),
+        header: _("Created Time"),
         width: 160,
         dataIndex: 'created_date',
         sortable:true,
@@ -1442,7 +1442,7 @@ function CustomSearchDefList(type,node_id,lists_level,query_store){
 
 //    return custompanel;
      var win=new Ext.Window({
-        title:"Search",
+        title:_("Search"),
         width: 530,
         layout:'fit',
         height: 455,
