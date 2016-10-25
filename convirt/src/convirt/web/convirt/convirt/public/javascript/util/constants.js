@@ -89,6 +89,10 @@ convirt.constants={
         ['Windows', 'Windows']
     ]
 
+    ,DOWNSERVERS: "Down Servers"
+    ,DOWNVM: "Down VMs"
+    ,RUNNINGVM: "Running VMs"
+
     ,OS_NAMES :[
         ['SUSE', 'SUSE', 'Linux'],
         ['SLES', 'SLES', 'Linux'],

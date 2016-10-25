@@ -470,7 +470,7 @@ function showVMList(node_id,type,prntPanel){
     vm_query_store.load();  
 
      var tb_lbl=new Ext.form.Label({
-        html:getHdrMsg("The table shows top 50 Virtual Machines by current CPU Utilization(%)")
+        html:getHdrMsg(_("The table shows top 50 Virtual Machines by current CPU Utilization(%)"))
     });
 
 
@@ -494,20 +494,20 @@ function showVMList(node_id,type,prntPanel){
         listeners:{
             select:function(combo,record,index){
                 if (combo.getValue()==convirt.constants.TOP50BYCPUVM){
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Virtual Machines by current CPU Utilization(%)."),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Virtual Machines by current CPU Utilization(%).")),false);
                 }
                 else if(combo.getValue()==convirt.constants.TOP50BYMEMVM){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Virtual Machines by current Memory Utilization(%)."),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Virtual Machines by current Memory Utilization(%).")),false);
                 }
                 else if(combo.getValue()==convirt.constants.DOWNVM){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Down Virtual Machines"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Down Virtual Machines")),false);
 
                 }
                 else if(combo.getValue()==convirt.constants.RUNNINGVM){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Running Virtual Machines"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Running Virtual Machines")),false);
 
                 }
                 else{
@@ -542,7 +542,7 @@ function showVMList(node_id,type,prntPanel){
 
 
     var custom_btn=new Ext.Button({
-        tooltip:'Custom Search',
+        tooltip:_('Custom Search'),
         tooltipType : "title",
         icon:'icons/add_search.png',
         id: 'add',
@@ -680,7 +680,7 @@ function showServerList(node_id,type,prntPanel){
     query_store.load();
 
      var tb_lbl=new Ext.form.Label({
-        html:getHdrMsg("The table shows top 50 Servers by current CPU Utilization(%)")
+        html:getHdrMsg(_("The table shows top 50 Servers by current CPU Utilization(%)"))
     });
 
     var server_query_combo=new Ext.form.ComboBox({
@@ -704,20 +704,20 @@ function showServerList(node_id,type,prntPanel){
             select:function(combo,record,index){
                
                 if (combo.getValue()==convirt.constants.TOP50BYCPU){                     
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Servers by current CPU Utilization(%)"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Servers by current CPU Utilization(%)")),false);
                 }
                 else if(combo.getValue()==convirt.constants.TOP50BYMEM){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Servers by current Memory Utilization(%)"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Servers by current Memory Utilization(%)")),false);
                 }
                 else if(combo.getValue()==convirt.constants.DOWNSERVERS){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Down Servers"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Down Servers")),false);
                     
                 }
                 else if(combo.getValue()==convirt.constants.STANDBYSERVERS){
 
-                    tb_lbl.setText(getHdrMsg("The table shows top 50 Standby Servers"),false);
+                    tb_lbl.setText(getHdrMsg(_("The table shows top 50 Standby Servers")),false);
                     
                 }
                 else{
@@ -749,7 +749,7 @@ function showServerList(node_id,type,prntPanel){
     });
 
     var custom_btn=new Ext.Button({
-        tooltip:'Custom Search',
+        tooltip:_('Custom Search'),
         tooltipType : "title",
         icon:'icons/add_search.png',
         id: 'add',

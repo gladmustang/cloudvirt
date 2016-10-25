@@ -159,9 +159,60 @@ msgstr "宿主机操作系统"
 msgid "Guest Operating System"
 msgstr "客户机操作系统"
 
+msgid "Storage Resources"
+msgstr "存储资源"
+
+msgid "Virtual Networks"
+msgstr "虚拟网络"
+
 #服务器
 msgid "Servers"
 msgstr "服务器"
+
+msgid "Server Information"
+msgstr "服务器信息"
+
+msgid "The table shows top 50 Servers by current CPU Utilization(%)"
+msgstr "当前CPU使用率最高的50台服务器(%)"
+
+msgid "Search: "
+msgstr "搜索: "
+
+msgid "Select Type"
+msgstr "选择类型"
+
+msgid "Virtual Machines Information"
+msgstr "虚拟机信息"
+
+msgid "The table shows top 50 Virtual Machines by current CPU Utilization(%)"
+msgstr "当前CPU使用率最高的50台虚拟机(%)"
+
+msgid "The table shows top 50 Virtual Machines by current CPU Utilization(%)."
+msgstr "当前CPU使用率最高的50台虚拟机(%)."
+
+msgid "The table shows top 50 Virtual Machines by current Memory Utilization(%)."
+msgstr "当前Memory使用率最高的50台虚拟机(%)."
+
+msgid "The table shows top 50 Down Virtual Machines"
+msgstr "关机状态的前50台虚拟机"
+
+msgid "The table shows top 50 Running Virtual Machines"
+msgstr "运行状态的前50台虚拟机"
+
+msgid "The table shows top 50 Servers by current Memory Utilization(%)"
+msgstr "当前Memory使用率最高的50台服务器(%)"
+
+msgid "The table shows top 50 Standby Servers"
+msgstr "待机状态的前50台服务器"
+
+msgid "The table shows top 50 Down Servers"
+msgstr "关机状态的前50台服务器"
+
+msgid "Custom Search"
+msgstr "定制搜索"
+
+msgid "Down Servers"
+msgstr "关机状态的服务器"
 
 #虚拟机
 msgid "Virtual Machines"
