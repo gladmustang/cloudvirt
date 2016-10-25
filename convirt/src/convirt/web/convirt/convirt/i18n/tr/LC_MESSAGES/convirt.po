@@ -447,7 +447,7 @@ msgid "Canceled"
 msgstr "取消"
 
 msgid "Error Notifications"
-msgstr "错误通知"
+msgstr "错误日志"
 
 
 
