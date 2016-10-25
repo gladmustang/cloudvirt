@@ -880,13 +880,13 @@ function server_pool_config_page(configPanel,node_id,node){
         bodyBorder:false
     });
     var dummy_panel3 = new Ext.Panel({
-        width:'0.5%',
+        columnWidth:.005,
         border:false,
         html:'&nbsp;&nbsp;',
         bodyBorder:false
     });
     var dummy_panel2 = new Ext.Panel({
-        width:'0.5%',
+        columnWidth:.005,
         border:false,
         html:'&nbsp;&nbsp;',
         bodyBorder:false
@@ -915,14 +915,14 @@ function server_pool_config_page(configPanel,node_id,node){
     });
     var panel1_1 = new Ext.Panel({
         height:245,
-        width:'29%',
+        columnWidth:.29,
         border:false,
         bodyBorder:false
         ,layout:'fit'
     });
     var panel1_2 = new Ext.Panel({
         height:245,
-        width:'35%',
+        columnWidth:.35,
         cls: 'whitebackground',
         border:true,
         bodyBorder:true
@@ -932,7 +932,7 @@ function server_pool_config_page(configPanel,node_id,node){
 
     var panel1_3 = new Ext.Panel({
         height:245,
-        width:'35%',
+        columnWidth:.35,
         cls: 'whitebackground',
         border:true,
         bodyBorder:true
