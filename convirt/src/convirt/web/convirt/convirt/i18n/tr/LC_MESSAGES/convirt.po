@@ -486,7 +486,7 @@ msgid "Distribution"
 msgstr "分发版本"
 
 msgid "Architecture"
-msgstr "架构"
+msgstr "体系结构"
 
 msgid "Model"
 msgstr "型号"
@@ -520,7 +520,7 @@ msgid "General"
 msgstr "通用"
 
 msgid "Display Configuration"
-msgstr "显示配置"
+msgstr "显示设备配置"
 
 msgid "USB Configuration"
 msgstr "USB配置"
@@ -545,6 +545,47 @@ msgstr "模式"
 
 msgid "Shared"
 msgstr "已共享"
+
+msgid "Use Unused Display"
+msgstr "使用未使用的显示设备"
+
+msgid "Standard Vga"
+msgstr "标准VGA"
+
+msgid "USB Enabled"
+msgstr "USB使能"
+
+msgid "USB Device"
+msgstr "USB设备"
+
+msgid "Bootloader"
+msgstr "启动加载器"
+
+msgid "Root Device"
+msgstr "根设备"
+
+msgid "Kernel Args"
+msgstr "核心参数"
+
+msgid "Boot Device"
+msgstr "引导设备"
+
+msgid "Architecture Lib directory"
+msgstr "结构库目录"
+
+msgid "Network Mode"
+msgstr "网络模式"
+
+msgid "Shadow Memory"
+msgstr "影子内存"
+
+msgid "Device Model"
+msgstr "设备模型"
+
+msgid "Builder"
+msgstr "提供商"
+
+
 
 #任务类
 msgid "Task"
