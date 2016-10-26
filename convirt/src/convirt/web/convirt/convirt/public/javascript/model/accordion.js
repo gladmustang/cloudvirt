@@ -57,7 +57,7 @@ function adminconfig() {
 
     var item2 = new Ext.Panel({
         title: _('SMTP Config'),
-        html: '&nbsp&nbsp<a href="#" onclick="javascript:showNewUI(emailSetupUI());"><font size="2" face="Helvetica"color="black">Email Setup</font></a>',
+        html: '&nbsp&nbsp<a href="#" onclick="javascript:showNewUI(emailSetupUI());"><font size="2" face="Helvetica"color="black">'+_('Email Setup')+'</font></a>',
         cls:'empty'
 
     });
@@ -324,7 +324,7 @@ var email_new_button=new Ext.Button({
     });
      var emailpanel=new Ext.Panel({
         id:"emailpanel",
-        title:'Email Setup',
+        title:_('Email Setup'),
         layout:"form",
         width:535,
         height:435,

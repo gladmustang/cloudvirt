@@ -711,5 +711,6 @@ msgstr "|添加用户到用户组"
 msgid "Search (By Name):"
 msgstr "名称搜索"
 
-
+msgid "Email Setup"
+msgstr "邮件设置"
 
