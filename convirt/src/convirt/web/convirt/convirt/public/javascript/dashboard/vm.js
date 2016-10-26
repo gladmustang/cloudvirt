@@ -26,7 +26,7 @@ function vm_summary_page(mainpanel,node_id,node){
         html:getChartHdrMsg(node.text,"Hourly","CPU")
     });
      var label1_2=new Ext.form.Label({
-        html:getChartHdrMsg(node.text,"Hourly","Memory")
+        html:getChartHdrMsg(node.text,"Hourly",_("Memory"))
     });
 
     var avg_fdate="",avg_tdate="";
@@ -358,7 +358,11 @@ function vm_info_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 130, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 130, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'
+                , renderer: function(value){
+                    return _(value)
+                }
+            },
             {header: "", width: 120, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_info_store
@@ -853,6 +857,10 @@ function vm_config_page(configPanel,node_id,node){
     configPanel.doLayout();
 }
 
+function i18nValue(value) {
+    return _(value)
+}
+
 function get_generalinfo(node_id){
 
     var vm_general_store =new Ext.data.JsonStore({
@@ -900,7 +908,7 @@ function get_generalinfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false, css:'font-weight:bold;color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false, css:'font-weight:bold;color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_general_store
@@ -956,7 +964,7 @@ function get_templateinfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_template_store
@@ -1013,7 +1021,7 @@ function get_bootparaminfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_bootparam_store
@@ -1070,7 +1078,7 @@ function get_displayinfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_display_store
@@ -1128,7 +1136,7 @@ function get_usbdeviceinfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_usbdevice_store
@@ -1185,7 +1193,7 @@ function get_advancedinfo(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name', renderer: i18nValue},
             {header: "", width: 350, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:adv_store

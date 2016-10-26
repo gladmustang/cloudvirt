@@ -504,6 +504,47 @@ msgstr "速度 (MHz)"
 msgid "Virtual Machines"
 msgstr "虚拟机"
 
+msgid "Virtual CPUs"
+msgstr "虚拟CPU数"
+
+msgid "Host CPU Usage(%)"
+msgstr "主机CPU使用(%)"
+
+msgid "Memory Utilization(%)"
+msgstr "内存使用率(%)"
+
+msgid "Network"
+msgstr "网络"
+
+msgid "General"
+msgstr "通用"
+
+msgid "Display Configuration"
+msgstr "显示配置"
+
+msgid "USB Configuration"
+msgstr "USB配置"
+
+msgid "Boot Parameters"
+msgstr "启动参数"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Storage Information"
+msgstr "存储信息"
+
+msgid "Network Information"
+msgstr "网络信息"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "Shared"
+msgstr "已共享"
 
 #任务类
 msgid "Task"
