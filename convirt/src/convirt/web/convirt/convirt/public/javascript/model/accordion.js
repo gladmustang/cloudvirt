@@ -56,7 +56,7 @@ function adminconfig() {
     });
 
     var item2 = new Ext.Panel({
-        title: 'SMTP Config',
+        title: _('SMTP Config'),
         html: '&nbsp&nbsp<a href="#" onclick="javascript:showNewUI(emailSetupUI());"><font size="2" face="Helvetica"color="black">Email Setup</font></a>',
         cls:'empty'
 
@@ -75,7 +75,7 @@ function adminconfig() {
 
     var close_button= new Ext.Button({
         id: 'close',
-        text: 'Close',
+        text: _('Close'),
         icon:'icons/cancel.png',
         cls:'x-btn-text-icon',
         listeners: {

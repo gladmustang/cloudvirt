@@ -680,3 +680,36 @@ msgstr "新密码"
 msgid "Confirm Password"
 msgstr "确认新密码"
 
+#管理button
+msgid "Administration"
+msgstr "管理"
+
+msgid "User Management"
+msgstr "用户管理"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Groups"
+msgstr "用户组"
+
+msgid "SMTP Config"
+msgstr "SMTP配置"
+
+msgid "Create / Edit users"
+msgstr "创建/编辑用户"
+
+msgid " Assign Users to Groups"
+msgstr "|为用户指定组"
+
+msgid "Create/Edit Groups,"
+msgstr "创建/编辑用户组"
+
+msgid "Add Users to Groups"
+msgstr "|添加用户到用户组"
+
+msgid "Search (By Name):"
+msgstr "名称搜索"
+
+
+
