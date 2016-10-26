@@ -865,7 +865,7 @@ function server_config_grid(node_id,node,config){
     });
 
    var label_config=new Ext.form.Label({
-       html:'<div class="toolbar_hdg">'+format(_("{0} Information"),config)+'</div>'
+       html:'<div class="toolbar_hdg">'+format(_("{0} Information"),_(config))+'</div>'
    });
     
     var srvr_config_grid = new Ext.grid.GridPanel({
@@ -892,7 +892,11 @@ function server_config_grid(node_id,node,config){
             }
         },
         columns: [//action,
-            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'label'},
+            {header: "", width: 150, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'label'
+                , renderer: function(value){
+                    return _(value)
+                }
+            },
             {header: "", width: 280, sortable: false, dataIndex: 'value',renderer:UIMakeUP,css: 'white-space: normal !important;'}
         ],
         store:server_config_store

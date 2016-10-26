@@ -194,7 +194,7 @@ msgid "Remove Virtual Machine Config"
 msgstr "删除虚拟机配置"
 
 #data center
-#概览
+#概览面板
 msgid "Overview"
 msgstr "概览"
 
@@ -262,7 +262,7 @@ msgstr "{0} 使用率(%)"
 msgid "Host {0}(%)"
 msgstr "主机{0}使用率(%)"
 
-#配置
+#配置面板
 msgid "Configuration"
 msgstr "配置"
 
@@ -311,7 +311,7 @@ msgstr "服务器"
 msgid "Details"
 msgstr "细节"
 
-#服务器
+#服务器面板
 msgid "Servers"
 msgstr "服务器"
 
@@ -424,6 +424,69 @@ msgstr "崩溃"
 #summary
 msgid "Storage Used"
 msgstr "已使用存储"
+
+#server
+#summary
+msgid "Memory"
+msgstr "内存"
+
+msgid "Storage"
+msgstr "存储"
+
+msgid "{0} Utilization"
+msgstr "{0}使用率"
+
+msgid "CPU Usage"
+msgstr "CPU使用"
+
+msgid "Memory Usage"
+msgstr "内存使用"
+
+#配置面板
+msgid "{0} Information"
+msgstr "{0}信息"
+
+msgid "Platform"
+msgstr "虚拟化平台"
+
+msgid "OS"
+msgstr "操作系统"
+
+msgid "Available Interfaces"
+msgstr "可获取到的网络接口"
+
+msgid "Mounted Devices"
+msgstr "已挂载设备"
+
+msgid "Version"
+msgstr "版本"
+
+msgid " Availble Memory (MB)"
+msgstr "可获取内存"
+
+msgid "Total Memory (MB)"
+msgstr "总内存"
+
+msgid "Kernel"
+msgstr "内核"
+
+msgid "Distribution"
+msgstr "分发版本"
+
+msgid "Architecture"
+msgstr "架构"
+
+msgid "Model"
+msgstr "型号"
+
+msgid "Vendor Id"
+msgstr "供应商ID号"
+
+msgid "Processors"
+msgstr "处理器数量"
+
+msgid "Speed (MHz)"
+msgstr "速度 (MHz)"
 
 #虚拟机
 msgid "Virtual Machines"
