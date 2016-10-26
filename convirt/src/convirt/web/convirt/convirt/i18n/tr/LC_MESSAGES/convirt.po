@@ -293,10 +293,10 @@ msgstr "虚拟交换网络"
 msgid "Type"
 msgstr "类型"
 
-msgid "Size(GB)"
-msgstr "尺寸(GB)"
+msgid "Size(GB)" #data center layer
+msgstr "大小 (GB)"
 
-msgid "Size(GB)"
+msgid "Size (GB)" #server layer
 msgstr "大小 (GB)"
 
 msgid "Allocation(%)"
@@ -309,7 +309,7 @@ msgid "Server"
 msgstr "服务器"
 
 msgid "Details"
-msgstr "细节"
+msgstr "详细信息"
 
 #服务器面板
 msgid "Servers"
@@ -441,6 +441,18 @@ msgstr "CPU使用"
 
 msgid "Memory Usage"
 msgstr "内存使用"
+
+msgid "IP Address"
+msgstr "IP地址"
+
+msgid "Device"
+msgstr "设备"
+
+msgid "Mounted On"
+msgstr "挂载目录"
+
+msgid "Size"
+msgstr "大小"
 
 #配置面板
 msgid "{0} Information"
