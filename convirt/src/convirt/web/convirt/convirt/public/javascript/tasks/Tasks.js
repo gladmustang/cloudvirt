@@ -135,7 +135,7 @@ function Tasks(){
                 var record = grid.getStore().getAt(rowIndex);
                 if(record.get('status') =='Failed'||record.get('status') =='Succeeded'){
                     var err=record.get('errmsg');
-                    showTaskMessage('Message',err);
+                    showTaskMessage(_('Message'),err);
                 }
             }
         },
@@ -325,7 +325,7 @@ function TasksGrid(){
                 var record = grid.getStore().getAt(rowIndex);
                 if(record.get('status') =='Failed'||record.get('status') =='Succeeded'){
                     var err=record.get('errmsg');
-                    showTaskMessage('Message',err);
+                    showTaskMessage(_('Message'),err);
                 }
             }
         }

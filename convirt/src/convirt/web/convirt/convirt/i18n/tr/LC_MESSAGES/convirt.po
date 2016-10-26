@@ -43,6 +43,9 @@ msgstr "新建"
 msgid "Remove"
 msgstr "删除"
 
+msgid "Edit"
+msgstr "编辑"
+
 msgid "Add"
 msgstr "添加"
 
@@ -54,6 +57,9 @@ msgstr "保存"
 
 msgid "Error"
 msgstr "错误"
+
+msgid "Message"
+msgstr "消息"
 
 #toolbar
 msgid "Admin"
@@ -467,6 +473,9 @@ msgstr "取消"
 msgid "Error Notifications"
 msgstr "错误日志"
 
+msgid "Displays submitted task information and their status."
+msgstr "已提交的任务信息和状态"
+
 #for custom search window
 msgid "Search (By Name): "
 msgstr "名称搜索"
@@ -500,4 +509,14 @@ msgstr "值"
 
 msgid "Please select a record from the list"
 msgstr "请从列表中选择一条记录"
+
+#change password
+msgid "Old Password"
+msgstr "旧密码"
+
+msgid "New Password"
+msgstr "新密码"
+
+msgid "Confirm Password"
+msgstr "确认新密码"
 

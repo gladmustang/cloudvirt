@@ -59,7 +59,7 @@ function changepass(username){
         monitorValid:true,
         items:[old_passwd,new_passwd,confirm_passwd],
         buttons:[{
-            text:'OK',
+            text:_('OK'),
             icon:'icons/accept.png',
             cls:'x-btn-text-icon',
             handler:function(){
@@ -113,7 +113,7 @@ function changepass(username){
             }
         },
         {
-            text: 'Cancel',
+            text: _('Cancel'),
             icon:'icons/cancel.png',
             cls:'x-btn-text-icon',
             handler:function()
