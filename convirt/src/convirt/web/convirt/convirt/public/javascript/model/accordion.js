@@ -112,7 +112,7 @@ function showNewUI(inplink) {
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 function emailSetupUI(){
     var email_label=new Ext.form.Label({
-        html:'<div class="backgroundcolor" width="250">Configure/Edit Email setup<br/></div>'
+        html:'<div class="backgroundcolor" width="250">'+_('Configure/Edit Email setup')+'<br/></div>'
     });
 
 
@@ -153,7 +153,7 @@ var email_new_button=new Ext.Button({
                 var emailsetup_id= edit_rec.get('emailsetup_id');
                 var servername=edit_rec.get('servername');
                 var url='delete_emailrecord?emailsetup_id='+emailsetup_id;//alert(url);
-                Ext.MessageBox.confirm("Confirm","About to delete email record:"+servername+"?", function (id){
+                Ext.MessageBox.confirm(_("Confirm"),_("About to delete email record:")+servername+"?", function (id){
                     if(id=='yes'){
                         var ajaxReq=ajaxRequest(url,0,"POST",true);
                         ajaxReq.request({
@@ -183,7 +183,7 @@ var email_new_button=new Ext.Button({
         listeners: {
             click: function(btn) {
                 if(!email_grid.getSelectionModel().getSelected()){
-                    Ext.MessageBox.alert("Error","Please select the record from the list");
+                    Ext.MessageBox.alert(_("Error"),_("Please select the record from the list"));
                     return false;
                 }
                 var edit_rec=email_grid.getSelectionModel().getSelected();
@@ -303,7 +303,7 @@ var email_new_button=new Ext.Button({
         id:'email_grid',
         layout:'fit',
        tbar:[
-            'Search (By Server Name): ',new Ext.form.TextField({
+            _('Search (By Server Name): '),new Ext.form.TextField({
             fieldLabel: 'Search',
             name: 'search',
             id: 'search',
@@ -343,7 +343,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
     var email_cancel_button= new Ext.Button({
         id: 'cancel',
-        text: 'Cancel',
+        text: _('Cancel'),
         icon:'icons/cancel.png',
         cls:'x-btn-text-icon',
         listeners: {
@@ -356,7 +356,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
     var email_test_button= new Ext.Button({
         id: 'test',
-        text: 'Test',
+        text: _('Test'),
         icon:'icons/accept.png',
         cls:'x-btn-text-icon',
         listeners: {
@@ -398,7 +398,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
     var email_save_button=new Ext.Button({
         id: 'save',
-        text: 'Save',
+        text: _('Save'),
         icon:'icons/accept.png',
         cls:'x-btn-text-icon',
         listeners: {

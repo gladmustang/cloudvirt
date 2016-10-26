@@ -714,3 +714,18 @@ msgstr "名称搜索"
 msgid "Email Setup"
 msgstr "邮件设置"
 
+msgid "Configure/Edit Email setup"
+msgstr "配置/编辑邮件设置"
+
+msgid "Search (By Server Name): "
+msgstr "通过服务器名称搜索:"
+
+msgid "Server Name"
+msgstr "服务器名称"
+
+msgid "User Name"
+msgstr "用户名称"
+
+msgid "port"
+msgstr "端口"
+
