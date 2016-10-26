@@ -257,7 +257,7 @@ msgid "Name"
 msgstr "名称"
 
 msgid "{0} Usage(%)"
-msgstr "{0} 使用率(%)"
+msgstr "{0}使用率(%)"
 
 msgid "Host {0}(%)"
 msgstr "主机{0}使用率(%)"

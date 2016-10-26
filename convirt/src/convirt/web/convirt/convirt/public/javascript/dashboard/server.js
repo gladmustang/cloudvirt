@@ -978,7 +978,7 @@ function topNvms(node_id,node,metric){
             sortable:true
         },
         {
-            header: format(_("Host {0}(%)"),metric),
+            header: format(_("Host {0}(%)"),_(metric)),
             width: 230,
             sortable:true,
             dataIndex: 'usage',
@@ -1001,7 +1001,7 @@ function topNvms(node_id,node,metric){
     top_store.load();
     
     var label=new Ext.form.Label({
-        html:'<div class="toolbar_hdg">'+format(_("Top 5 Virtual Machines by {0} Usage"),metric)+'</div>',
+        html:'<div class="toolbar_hdg">'+format(_("Top 5 Virtual Machines by {0} Usage"),_(metric))+'</div>',
         id:'label_task'
     });
 
