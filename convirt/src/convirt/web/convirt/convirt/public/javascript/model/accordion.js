@@ -118,7 +118,7 @@ function emailSetupUI(){
 
 var email_new_button=new Ext.Button({
         id: 'emailsetup_new',
-        text: 'New',
+        text: _('New'),
         icon:'icons/add.png',
         cls:'x-btn-text-icon',
         listeners: {
@@ -139,7 +139,7 @@ var email_new_button=new Ext.Button({
 
     var email_remove_button=new Ext.Button({
         id: 'email_remove',
-        text: 'Remove',
+        text: _('Remove'),
         icon:'icons/delete.png',
         cls:'x-btn-text-icon',
         listeners: {
@@ -177,7 +177,7 @@ var email_new_button=new Ext.Button({
 
     var email_edit_button= new Ext.Button({
         id: 'email_edit',
-        text: 'Edit',
+        text: _('Edit'),
         icon:'icons/file_edit.png',
         cls:'x-btn-text-icon',
         listeners: {
@@ -237,7 +237,7 @@ var email_new_button=new Ext.Button({
         editor: title_edit
     },
     {
-        header: "Server Name",
+        header: _("Server Name"),
         width: 150,
         dataIndex: 'servername',
         sortable:true,
@@ -246,7 +246,7 @@ var email_new_button=new Ext.Button({
 
     },
     {
-        header: "Description",
+        header: _("Description"),
         width: 150,
         dataIndex: 'desc',
         sortable:true,
@@ -255,7 +255,7 @@ var email_new_button=new Ext.Button({
 
     },
     {
-        header: "User Name",
+        header: _("User Name"),
         width: 150,
         sortable: false,
         dataIndex: 'username',
@@ -264,7 +264,7 @@ var email_new_button=new Ext.Button({
 
     },
     {
-        header: "port",
+        header: _("port"),
         width: 210,
         sortable: false,
         dataIndex: 'port',
