@@ -528,13 +528,13 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
     });
 
     var radio_no_var=  new Ext.form.Radio({
-        boxLabel: 'No', name: 'rgcol', inputValue: 1, id: 'no',checked: true});
+        boxLabel: 'No', name: 'rgcol', inputValue: 1, id: 'no',checked: true,height:50});
 
     var radio_tls_var=  new Ext.form.Radio({
-        boxLabel: 'TLS', name: 'rgcol', inputValue: 2, id: 'tls'});
+        boxLabel: 'TLS', name: 'rgcol', inputValue: 2, id: 'tls',height:50});
 
     var radio_ssl_var=  new Ext.form.Radio({
-        boxLabel: 'SSL', name: 'rgcol', inputValue: 3, id:'ssl'});
+        boxLabel: 'SSL', name: 'rgcol', inputValue: 3, id:'ssl',height:50});
 
     var checkbox_var=  new Ext.form.Checkbox({
         name: 'use_name_password',
@@ -569,7 +569,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
             password_var,
             {
                 xtype: 'radiogroup',
-                fieldLabel: 'Use Secure Connection',
+                fieldLabel: _('Use Secure Connection'),
                 itemCls: 'x-check-group-alt',
                 columns: 3,
                 width: 150,
@@ -589,7 +589,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
    simple = new Ext.FormPanel({
         labelWidth: 80, // label settings here cascade unless overridden
         frame:true,
-        title: 'Mail Server',
+        title: _('Mail Server'),
         bodyStyle:'padding:5px 5px 0',
         width: 300,
         height:300,
