@@ -473,6 +473,9 @@ msgstr "取消"
 msgid "Error Notifications"
 msgstr "错误日志"
 
+msgid "Error Message"
+msgstr "错误消息"
+
 msgid "Displays submitted task information and their status."
 msgstr "已提交的任务信息和状态"
 

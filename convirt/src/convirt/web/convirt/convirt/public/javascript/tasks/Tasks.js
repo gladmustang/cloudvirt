@@ -728,7 +728,7 @@ function create_notifications_grid(entList,entType){
                 var record = grid.getStore().getAt(rowIndex);
                 if(record.get('status') =='Failed'){
                     var err=record.get('errmsg');
-                    showTaskMessage('Error Message',err);
+                    showTaskMessage(_('Error Message'),err);
                 }
             }
         }
@@ -853,7 +853,7 @@ function create_sysTasks_grid(){
                 var record = grid.getStore().getAt(rowIndex);
                 if(record.get('status') =='Failed'){
                     var err=record.get('errmsg');
-                    showTaskMessage('Error Message',err);
+                    showTaskMessage(_('Error Message'),err);
                 }
             }
         }

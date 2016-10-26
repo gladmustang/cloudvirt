@@ -584,7 +584,11 @@ function server_info_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 100, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 100, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'
+                , renderer: function(value){
+                    return _(value)
+                }
+            },
             {header: "", width: 200, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:server_info_store
@@ -686,7 +690,11 @@ function server_vm_grid(node_id){
             }
         },
         columns: [//action,
-            {header: "", width: 140, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 140, sortable: false,  css:'font-weight:bold; color:#414141;',dataIndex: 'name'
+                , renderer: function (value){
+                    return _(value)
+                }
+            },
             {header: "", width: 100, sortable: false, dataIndex: 'value',renderer:UIMakeUP}
         ],
         store:vm_info_store
