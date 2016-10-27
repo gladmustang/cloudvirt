@@ -26,7 +26,7 @@ Ext.form.VTypes.portnum 	= function(v){
 };
 
 function Test(){
-             Ext.MessageBox.alert("Error","Please select the record from the user list");
+             Ext.MessageBox.alert(_("Error"),_("Please select the record from the user list"));
 }
 
 function adminconfig() {
@@ -124,7 +124,7 @@ var email_new_button=new Ext.Button({
         listeners: {
             click: function(btn) {
                 var w=new Ext.Window({
-                    title :'New EmailSetup',
+                    title :_('New EmailSetup'),
                     width :370,
                     height:400,
                     modal : true,
@@ -162,11 +162,11 @@ var email_new_button=new Ext.Button({
                                 if(response.success){
                                     email_grid.getStore().load();
                                 }else{
-                                    Ext.MessageBox.alert("Failure",response.msg);
+                                    Ext.MessageBox.alert(_("Failure"),response.msg);
                                 }
                             },
                             failure: function(xhr){
-                                Ext.MessageBox.alert( "Failure " , xhr.statusText);
+                                Ext.MessageBox.alert( _("Failure ") , xhr.statusText);
                             }
                         });
                     }
@@ -210,11 +210,11 @@ var email_new_button=new Ext.Button({
                             w.show();
 
                         }else{
-                            Ext.MessageBox.alert("Failure",response.msg);
+                            Ext.MessageBox.alert(_("Failure"),response.msg);
                         }
                     },
                     failure: function(xhr){
-                        Ext.MessageBox.alert( "Failure " , xhr.statusText);
+                        Ext.MessageBox.alert( _("Failure ") , xhr.statusText);
                     }
                 });
 
@@ -384,11 +384,11 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
                             if(response.success){
                                 Ext.MessageBox.alert("Sucess",response.msg);
                             }else{
-                                Ext.MessageBox.alert("Failure",response.msg);
+                                Ext.MessageBox.alert(_("Failure"),response.msg);
                             }
                         },
                         failure: function(xhr){
-                            Ext.MessageBox.alert( "Failure " , xhr.statusText);
+                            Ext.MessageBox.alert( _("Failure ") , xhr.statusText);
                         }
                     });
 
@@ -437,19 +437,19 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
                                     w.close();
                                     grid.getStore().load();
                             }else{
-                                Ext.MessageBox.alert("Failure",response.msg);
+                                Ext.MessageBox.alert(_("Failure"),response.msg);
                             }
 
                         },
                         failure: function(xhr){
-                            Ext.MessageBox.alert( "Failure " , xhr.statusText);
+                            Ext.MessageBox.alert( _("Failure ") , xhr.statusText);
                         }
                     });
 
                 }
                 else
                 {
-                    Ext.MessageBox.alert( "Failure " , 'Invalid enteries');
+                    Ext.MessageBox.alert( _("Failure ") , 'Invalid enteries');
                 }
             }
 //
@@ -475,14 +475,14 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
 
      var desc_var=new Ext.form.TextField({
-        fieldLabel: 'Description',
+        fieldLabel: _('Description'),
         name: 'desc',
         width: 150,
         id: 'desc'
     });
 
     var servername_var=new Ext.form.TextField({
-        fieldLabel: 'ServerName',
+        fieldLabel: _('ServerName'),
         name: 'servername',
         id: 'servername',
         width: 150,
@@ -490,7 +490,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
     });
 
     var port_var = new Ext.form.TextField({
-        fieldLabel: 'Port',
+        fieldLabel: _('Port'),
         name: 'port',
         id: 'port',
         width: 50,
@@ -500,7 +500,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
     var settingGroup = {
         xtype: 'fieldset',
-        title: 'Security and Authentication',
+        title: _('Security and Authentication'),
         autoHeight: true,
         bodyStyle:'padding:5px 5px 0',
         items: [desc_var,
@@ -510,7 +510,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
     }
 
      var useremail_var = new Ext.form.TextField({
-        fieldLabel: 'User Name',
+        fieldLabel: _('User Name'),
         width: 150,
         name: 'useremail',
         id: 'useremail',
@@ -520,7 +520,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
      });
 
     var password_var = new Ext.form.TextField({
-        fieldLabel: 'Password',
+        fieldLabel: _('Password'),
         width: 150,
         name: 'password',
         id: 'password',
@@ -539,7 +539,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
     var checkbox_var=  new Ext.form.Checkbox({
         name: 'use_name_password',
         checked: true,
-        boxLabel: 'Use Name and Password',
+        boxLabel: _('Use Name and Password'),
         listeners: {
             check: function(this_checkbox, checked) {
                 if(checked)
@@ -561,7 +561,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
 
      var authenticationGroup = {
         xtype: 'fieldset',
-        title: 'Settings',
+        title: _('Settings'),
         autoHeight: true,
         items: [
             checkbox_var,

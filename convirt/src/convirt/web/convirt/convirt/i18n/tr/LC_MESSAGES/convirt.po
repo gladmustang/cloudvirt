@@ -67,6 +67,12 @@ msgstr "警告"
 msgid "Message"
 msgstr "消息"
 
+msgid "Failure"
+msgstr "失败"
+
+msgid "Failure "
+msgstr "失败"
+
 #toolbar
 msgid "Admin"
 msgstr "管理"
@@ -830,6 +836,29 @@ msgstr "确认"
 
 msgid "About to delete user:"
 msgstr "将要删除用户:"
+
+#email setup
+msgid "New EmailSetup"
+msgstr "新建邮件设置"
+
+msgid "Mail Server"
+msgstr "邮件服务器"
+
+msgid "Security and Authentication"
+msgstr "安全和认证"
+
+msgid "Use Secure Connection"
+msgstr "使用安全连接"
+
+msgid "Use Name and Password"
+msgstr "使用用户名和密码"
+
+msgid "Port"
+msgstr "端口"
+
+msgid "ServerName"
+msgstr "服务器名"
+
 
 #popup chart
 msgid "Metric"
