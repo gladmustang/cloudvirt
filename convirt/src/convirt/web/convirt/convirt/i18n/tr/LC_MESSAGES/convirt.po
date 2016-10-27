@@ -733,10 +733,10 @@ msgid "Search (By Server Name): "
 msgstr "通过服务器名称搜索:"
 
 msgid "Server Name"
-msgstr "服务器名称"
+msgstr "服务器名"
 
 msgid "User Name"
-msgstr "用户名称"
+msgstr "用户名"
 
 msgid "port"
 msgstr "端口"
