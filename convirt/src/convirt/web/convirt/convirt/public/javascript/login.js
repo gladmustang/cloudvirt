@@ -146,7 +146,7 @@ function submitLoginForm(login){
                     }
                     break;
             }
-            Ext.Msg.alert(_("Failure"), msg,function(id){
+            Ext.Msg.alert(_("Failure"), _(msg),function(id){
                 login.getForm().reset();
                 login.getForm().findField('login').focus(true);
             });

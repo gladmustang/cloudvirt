@@ -99,6 +99,9 @@ msgstr "登录"
 msgid "Reset"
 msgstr "重置"
 
+msgid "Invalid username provided for CMS authentication."
+msgstr "无效的用户名"
+
 #用户动作
 msgid "Actions"
 msgstr "动作"
