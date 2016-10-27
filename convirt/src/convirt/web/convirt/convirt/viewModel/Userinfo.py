@@ -626,7 +626,7 @@ class Userinfo:
                 ent_id=e.id
                 ent_name=e.name
                 disp_name=e.display_name
-                result.append(dict(entid=ent_id,entname=ent_name, dispname=disp_name))
+                result.append(dict(entid=ent_id,entname=ent_name, dispname=_(disp_name)))
         return result
 
     def save_enttype_details(self,login,enttypename,dispname):

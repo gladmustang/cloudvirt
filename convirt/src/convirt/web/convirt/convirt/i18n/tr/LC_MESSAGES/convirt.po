@@ -729,3 +729,46 @@ msgstr "用户名称"
 msgid "port"
 msgstr "端口"
 
+#chart
+msgid "Metric"
+msgstr "度量"
+
+msgid "GO"
+msgstr "确定"
+
+msgid "Period"
+msgstr "时间段"
+
+msgid "Compare"
+msgstr "比较"
+
+msgid "Compare &nbsp;&nbsp;"
+msgstr "比较 &nbsp;&nbsp;"
+
+msgid "Select"
+msgstr "选择"
+
+msgid "Virtual Machine"
+msgstr "虚拟机"
+
+msgid "Data Center"
+msgstr "数据中心"
+
+msgid "Warning."
+msgstr "警告"
+
+msgid "Please select an Entity."
+msgstr "请选择一个对象!"
+
+msgid "Select Entities for Comparison."
+msgstr "请选择对象进行比较!"
+
+msgid "Please select different Entities."
+msgstr "请选择不同的对象!"
+
+
+
+
+
+
+
