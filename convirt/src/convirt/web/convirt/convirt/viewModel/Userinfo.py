@@ -119,6 +119,8 @@ class Userinfo:
 
         if status=="InActive":
            user.status=False
+        elif status=="Active":
+            user.status=True
 
 #        for group in user.groups:
 #            user.groups.remove(group)
@@ -465,7 +467,7 @@ class Userinfo:
             result=[]
 
             dic={ "Active": "Active",
-                 "InActive" : "InAactive",
+                 "InActive" : "InActive",
                 }
             for key in dic.keys():
                   result.append(dict(id=dic[key],value=key))
