@@ -63,7 +63,7 @@ class EmailService:
                 DBSession.add(email_setup_obj)
                 emailsetupid = email_setup_obj.getEmailSetupId()
                 EmailManager().add_entity(to_unicode(servername), emailsetupid, to_unicode(constants.EMAIL), None)
-                return dict(success=True, msg="New Record Added Sucessfully")
+                return dict(success=True, msg="New Record Added Successfully")
 
     # API to update EmailSetup dialog entries into the EmailSetup/Credentials table
     def update_email_setup_details(self, desc, servername, port, useremail, password, secure):

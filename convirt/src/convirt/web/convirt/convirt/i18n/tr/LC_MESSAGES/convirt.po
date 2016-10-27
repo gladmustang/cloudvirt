@@ -874,6 +874,15 @@ msgstr "无效对象"
 msgid "Please select the record from the list"
 msgstr "请从列表中选择记录"
 
+msgid "Edit Email Setup"
+msgstr "编辑邮件设置"
+
+msgid "About to delete email record:"
+msgstr "将要删除邮件设置记录"
+
+msgid "New Record Added Successfully"
+msgstr "新记录添加成功"
+
 #popup chart
 msgid "Metric"
 msgstr "度量"

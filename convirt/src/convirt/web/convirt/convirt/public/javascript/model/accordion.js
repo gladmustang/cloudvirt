@@ -433,7 +433,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
                         success: function(xhr) {
                             var response=Ext.util.JSON.decode(xhr.responseText);
                             if(response.success){
-                                Ext.MessageBox.alert("Success",response.msg);
+                                Ext.MessageBox.alert(_("Success"),_(response.msg));
                                     w.close();
                                     grid.getStore().load();
                             }else{
