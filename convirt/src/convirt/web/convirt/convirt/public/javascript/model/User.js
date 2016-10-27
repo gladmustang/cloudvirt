@@ -29,7 +29,7 @@ function userUI(){
         listeners: {
             click: function(btn) {
                 var w=new Ext.Window({
-                    title :'New User',
+                    title :_('New User'),
                     width :370,
                     height:400,
                     modal : true,

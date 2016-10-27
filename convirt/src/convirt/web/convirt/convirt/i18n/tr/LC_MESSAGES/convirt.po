@@ -58,6 +58,9 @@ msgstr "保存"
 msgid "Error"
 msgstr "错误"
 
+msgid "Errors"
+msgstr "错误"
+
 msgid "Message"
 msgstr "消息"
 
@@ -729,7 +732,54 @@ msgstr "用户名称"
 msgid "port"
 msgstr "端口"
 
-#chart
+#new group
+msgid "New Group"
+msgstr "新建用户组"
+
+msgid "Group"
+msgstr "用户组"
+
+msgid "Available Users"
+msgstr "可选择用户"
+
+msgid "Selected Users"
+msgstr "已选择用户"
+
+msgid "Some of the required information is missing."
+msgstr "缺少必要的信息"
+
+msgid "Please select a record from the group list"
+msgstr "请从用户组列表中选择一条记录"
+
+#new user
+msgid "New User"
+msgstr "新建用户"
+
+msgid "First Name"
+msgstr "名字"
+
+msgid "Last Name"
+msgstr "姓氏"
+
+msgid "Nick Name"
+msgstr "昵称"
+
+msgid "Retype Password"
+msgstr "重输密码"
+
+msgid "Email"
+msgstr "邮件"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Active"
+msgstr "激活"
+
+msgid "InActive"
+msgstr "未激活"
+
+#popup chart
 msgid "Metric"
 msgstr "度量"
 
