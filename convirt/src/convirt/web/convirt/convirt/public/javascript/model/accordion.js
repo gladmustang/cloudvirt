@@ -200,7 +200,7 @@ var email_new_button=new Ext.Button({
                             var email_details = response.emailsetup_details[0]
                             //popup the Edit window
                             var w=new Ext.Window({
-                                title :'Edit Email Setup',
+                                title :_('Edit Email Setup'),
                                 width :370,
                                 height:400,
                                 modal : true,

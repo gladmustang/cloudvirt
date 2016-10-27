@@ -74,7 +74,7 @@ class EmailService:
             emaildetails.use_secure = secure
             emaildetails.credential.cred_details['user_email'] = useremail
             emaildetails.credential.cred_details['password'] = password
-            return dict(success=True, msg="Record updated sucessfully")
+            return dict(success=True, msg="Record updated successfully")
         else:
             return dict(success=False, msg="Record updation failed")
 
