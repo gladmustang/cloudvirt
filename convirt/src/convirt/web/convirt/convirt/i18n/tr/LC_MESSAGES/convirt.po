@@ -859,6 +859,11 @@ msgstr "端口"
 msgid "ServerName"
 msgstr "服务器名"
 
+msgid "Invalid enteries"
+msgstr "无效对象"
+
+msgid "Please select the record from the list"
+msgstr "请从列表中选择记录"
 
 #popup chart
 msgid "Metric"

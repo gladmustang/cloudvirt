@@ -145,7 +145,7 @@ var email_new_button=new Ext.Button({
         listeners: {
             click: function(btn) {
                 if(!email_grid.getSelectionModel().getSelected()){
-                    Ext.MessageBox.alert("Error","Please select the record from the list");
+                    Ext.MessageBox.alert(_("Error"),_("Please select the record from the list"));
                     return false;
                 }
                 var edit_rec=email_grid.getSelectionModel().getSelected();
@@ -449,7 +449,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
                 }
                 else
                 {
-                    Ext.MessageBox.alert( _("Failure ") , 'Invalid enteries');
+                    Ext.MessageBox.alert( _("Failure ") , _('Invalid enteries'));
                 }
             }
 //
