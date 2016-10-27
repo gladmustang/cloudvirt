@@ -668,7 +668,7 @@ function userDetailsPanel(grid,mode,user,w){
         display_name.setValue(user.displayname);
         user_email.setValue(user.email);
         user_phone.setValue(user.phone);
-        user_status.setValue(user.status);
+        user_status.setValue(_(user.status));
         user_group.setValue(user.groupname);
         user_rightpanel.add(user_group);
         user_rightpanel.add(passwrd_fldset);

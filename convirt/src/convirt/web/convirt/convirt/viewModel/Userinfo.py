@@ -470,7 +470,7 @@ class Userinfo:
                  "InActive" : "InActive",
                 }
             for key in dic.keys():
-                  result.append(dict(id=dic[key],value=key))
+                  result.append(dict(id=key,value=_(dic[key])))
         except Exception, ex:
             LOGGER.error((ex).replace("'",""))
             print_traceback()
