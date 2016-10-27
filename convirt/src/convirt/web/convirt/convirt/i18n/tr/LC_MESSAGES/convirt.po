@@ -73,6 +73,9 @@ msgstr "失败"
 msgid "Failure "
 msgstr "失败"
 
+msgid "Your session has expired. Please login again."
+msgstr "登录超时, 请重新登录!"
+
 #toolbar
 msgid "Admin"
 msgstr "管理"

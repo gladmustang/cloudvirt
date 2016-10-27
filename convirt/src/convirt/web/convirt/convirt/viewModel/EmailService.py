@@ -48,7 +48,8 @@ class EmailService:
 
     # API to save EmailSetup dialog entries into the EmailSetup/Credentials table
     def save_email_setup_details(self, desc, servername, port, useremail, password, secure):
-        SiteRecord = DBSession.query(Site).filter(Site.name == 'Data Center').first()
+        #SiteRecord = DBSession.query(Site).filter(Site.name == 'Data Center').first()
+        SiteRecord = DBSession.query(Site).first()
         if SiteRecord:
             site_id = SiteRecord.id
             # check if record for same server name avoid duplicate records of same name
