@@ -61,6 +61,9 @@ msgstr "错误"
 msgid "Errors"
 msgstr "错误"
 
+msgid "Warning"
+msgstr "警告"
+
 msgid "Message"
 msgstr "消息"
 
@@ -751,6 +754,14 @@ msgstr "缺少必要的信息"
 msgid "Please select a record from the group list"
 msgstr "请从用户组列表中选择一条记录"
 
+#edit group
+msgid "Edit Group"
+msgstr "编辑用户组"
+
+#delete group
+msgid "About to delete group:"
+msgstr "将要删除用户组:"
+
 #new user
 msgid "New User"
 msgstr "新建用户"
@@ -778,6 +789,47 @@ msgstr "激活"
 
 msgid "InActive"
 msgstr "未激活"
+
+msgid "Please enter valid Email-Id"
+msgstr "请输入有效的邮件地址"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Successfully saved the values"
+msgstr "信息保存成功"
+
+msgid "Password is not matching retyped password"
+msgstr "密码和重输密码不匹配"
+
+#edit user
+msgid "Edit User"
+msgstr "编辑用户"
+
+msgid "Audit"
+msgstr "审计"
+
+msgid "Created Date"
+msgstr "创建时间"
+
+msgid "Modified By"
+msgstr "修改者"
+
+msgid "Modified Date"
+msgstr "修改时间"
+
+msgid "Please select the record from the user list"
+msgstr "请从用户列表中选择记录"
+
+msgid "Please select a record from the user list"
+msgstr "请从用户列表中选择一条记录"
+
+#delete user
+msgid "Confirm"
+msgstr "确认"
+
+msgid "About to delete user:"
+msgstr "将要删除用户:"
 
 #popup chart
 msgid "Metric"
