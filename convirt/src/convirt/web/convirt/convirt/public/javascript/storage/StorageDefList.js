@@ -188,7 +188,7 @@ function StorageDefList(node){
                 if(checkSelectedStorage(storage_grid)){
                     if(storage_grid.getSelectionModel().getCount()>0){
                         var rec=storage_grid.getSelectionModel().getSelected();
-                        var message_text = "If you remove storage " + rec.get('name') + ", it would unmount the storage. Do you wish to remove it?";
+                        var message_text = _("If you remove storage ") + rec.get('name') + _(", it would unmount the storage. Do you wish to remove it?");
                         var storage_id=storage_grid.getSelectionModel().getSelected().get('id');
                         CheckAndRemoveStorage(storage_id,node,storage_grid,message_text);
                         /*
@@ -396,7 +396,7 @@ function CheckAndRemoveStorage(storage_id,node,grid,message_text){
             var response=Ext.util.JSON.decode(xhr.responseText);
             if(response.success){
                 if(response.msg == "IN_USE") {
-                    Ext.MessageBox.confirm(_("Confirm"),"One of more Virtual Machines seems to be using the storage. Are you sure you want to continue ?",function(id){
+                    Ext.MessageBox.confirm(_("Confirm"),_("One of more Virtual Machines seems to be using the storage. Are you sure you want to continue ?"),function(id){
                         if(id=='yes'){
                             removeStorage(storage_id,node,grid);
                         }
@@ -522,7 +522,7 @@ function showServerStorageDefList(id, sStatus) {
     }
 
     var lbl_desc=new Ext.form.Label({
-        html:"<div><font size='2'><i>This represents the list of servers linked with the selected storage along with the status.</i></font></div><br/>"
+        html:"<div><font size='2'><i>"+_("This represents the list of servers linked with the selected storage along with the status.")+"</i></font></div><br/>"
     });
 
     var label_level = "";
@@ -612,7 +612,7 @@ function showServerStorageDefList(id, sStatus) {
 
 function associate_defns(def_type, def_ids){
     if(def_ids == ""){
-        Ext.MessageBox.alert("Warning","Please select storage");
+        Ext.MessageBox.alert(_("Warning"),_("Please select storage"));
         return;
     }
 
@@ -628,11 +628,11 @@ function associate_defns(def_type, def_ids){
                 closeWindow(windowid);
                 storage_grid.enable();
             }else{
-                Ext.MessageBox.alert("Failure",response.msg);
+                Ext.MessageBox.alert(_("Failure"),response.msg);
             }
         },
         failure: function(xhr){
-            Ext.MessageBox.alert( "Failure " , xhr.statusText);
+            Ext.MessageBox.alert( _("Failure ") , xhr.statusText);
         }
     });
 }

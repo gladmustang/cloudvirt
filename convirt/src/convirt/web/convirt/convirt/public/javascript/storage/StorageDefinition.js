@@ -737,7 +737,8 @@ function StorageDefinition(node, mode, storage, storage_scope, host, vm_config_a
                                 Ext.Msg.alert(_("Failure"),action.result.msg );
                             },
 
-                            waitMsg:msg
+                            waitMsg:msg,
+                            waitTitle: _("Please Wait...")
                         });
                     }
                 }else{
@@ -898,7 +899,7 @@ function StorageDefinition(node, mode, storage, storage_scope, host, vm_config_a
     var sp_list_columnModel = new Ext.grid.ColumnModel([
         {header: "Id", hidden: true, dataIndex: 'id'},
         {header: "", width: 25, sortable: false, renderer: showSPCheckBox, dataIndex: 'associated'},
-        {header: "Server Pool", width: 300, sortable:true, defaultSortable:true, dataIndex: 'serverpool'}
+        {header: _("Server Pool"), width: 300, sortable:true, defaultSortable:true, dataIndex: 'serverpool'}
     ]);
     var sp_list_store = new Ext.data.JsonStore({
         url: '/storage/get_sp_list?' + sSiteId + sSelectedDefId,
@@ -1177,7 +1178,8 @@ function testStorageDef(url,mode,node,nodename,type,result_fldset,resultGrid){
                 }
             },
 
-            waitMsg:msg
+            waitMsg:msg,
+            waitTitle: _("Please Wait...")
         });
     }else{
         Ext.MessageBox.alert(_('Errors'), _('Some of the required information is missing.'));
@@ -1191,7 +1193,7 @@ function processOutput(details,type,result_fldset,resultGrid){
         storage_def_form.findById("resultLbl").setVisible(false);
         return;
     }
-    var text="<img src='../icons/accept.png'/> &nbsp;<b>Success:</b>&nbsp;&nbsp;"+_("Total Size")+":&nbsp;"+details.SUMMARY.TOTAL+" GB";
+    var text="<img src='../icons/accept.png'/> &nbsp;<b>"+_("Success:")+"</b>&nbsp;&nbsp;"+_("Total Size")+":&nbsp;"+details.SUMMARY.TOTAL+" GB";
 
     var dataObj=new Array(),fields=new Array(),columnModel=new Array();
     if (type=='iscsi'){

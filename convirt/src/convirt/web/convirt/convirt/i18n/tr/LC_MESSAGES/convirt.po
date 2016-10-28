@@ -942,10 +942,16 @@ msgstr "资源池{0}中的所有服务器都将被删除, 继续?"
 msgid "This represents shared storage resources available to all servers in a Server Pool to which the storage is attached."
 msgstr "与服务器资源池所关联的存储资源是共享资源，该资源池中所有的服务器均可使用"
 
+msgid "This represents shared storage resources available to all servers with in a Server Pool."
+msgstr "资源池中所有的服务器均可使用的共享存储资源"
+
+msgid "This represents shared storage resources available to a server."
+msgstr "服务器可使用的共享存储资源"
+
 msgid "Storage Details"
 msgstr "存储资源详细信息"
 
-msgid "Definitiion"
+msgid "Definition"
 msgstr "定义"
 
 msgid "Share"
@@ -968,6 +974,51 @@ msgstr "已发现存储"
 
 msgid "Disks"
 msgstr "磁盘"
+
+msgid "Success:"
+msgstr "成功:"
+
+msgid "Total Size"
+msgstr "总大小"
+
+msgid "Available Size"
+msgstr "可分配大小"
+
+msgid "Testing Storage..."
+msgstr "测试存储..."
+
+msgid "Please Wait..."
+msgstr "请等待..."
+
+msgid "Adding Storage..."
+msgstr "添加存储..."
+
+msgid "Updating Storage..."
+msgstr "更新存储..."
+
+msgid "Please select a storage."
+msgstr "请选择一个存储"
+
+msgid "One of more Virtual Machines seems to be using the storage. Are you sure you want to continue ?"
+msgstr "一个或多个虚拟机正在使用该存储, 需要继续吗?"
+
+msgid "Rename Shared Storage"
+msgstr "重命名共享存储"
+
+msgid "Please enter valid Name."
+msgstr "请输入有效名称"
+
+msgid "Enter new Shared Storage Name"
+msgstr "请输入新的共享存储名称"
+
+msgid "This represents the list of servers linked with the selected storage along with the status."
+msgstr "与所选择的存储关联的服务器列表和状态"
+
+msgid "If you remove storage "
+msgstr "如果您删除存储"
+
+msgid ", it would unmount the storage. Do you wish to remove it?"
+msgstr ", 会将存储从服务器上卸载。 想要继续删除吗?"
 
 
 
