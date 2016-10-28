@@ -124,9 +124,9 @@ function VirtualNetwork(node){
                             return
                         }
                     }
-                    var message_text = "Do you wish to remove network " + net_rec.get('name') + "?";
+                    var message_text = _("Do you wish to remove network ") + net_rec.get('name') + "?";
                     if(node.attributes.nodetype == 'SERVER_POOL' &&  net_rec.get('scope') == 'DC') {
-                        message_text = "Do you wish to disassociate network " + net_rec.get('name') + "?";
+                        message_text = _("Do you wish to disassociate network ") + net_rec.get('name') + "?";
                     }
                     Ext.MessageBox.confirm(_("Confirm"),message_text,function(id){
                         if(id=='yes'){
