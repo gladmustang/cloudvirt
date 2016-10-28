@@ -319,7 +319,7 @@ function StorageDefList(node){
     });
 
     var lbl=new Ext.form.Label({
-         html:'<div style="" class="labelheading">'+headingmsg+'</div>'
+         html:'<div style="" class="labelheading">'+_(headingmsg)+'</div>'
     });
 
 	storage_panel = new Ext.Panel({

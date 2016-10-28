@@ -131,7 +131,7 @@ msgid "Connect All"
 msgstr "全部连接"
 
 msgid "Provision Virtual Machine"
-msgstr "创建虚拟机"
+msgstr "创建或克隆虚拟机"
 
 msgid "Provisioning Settings"
 msgstr "查看设置"
@@ -382,7 +382,7 @@ msgid "Down Servers"
 msgstr "关机状态的服务器"
 
 msgid "Server Pool"
-msgstr "资源池"
+msgstr "服务器资源池"
 
 msgid "Virtual Machine Summary"
 msgstr "虚拟机总结"
@@ -865,6 +865,9 @@ msgstr "使用用户名和密码"
 msgid "Port"
 msgstr "端口"
 
+msgid "Settings"
+msgstr "设置"
+
 msgid "ServerName"
 msgstr "服务器名"
 
@@ -924,7 +927,51 @@ msgid "Please select different Entities."
 msgstr "请选择不同的对象!"
 
 
+#action window begin
+#data center action
+msgid "Enter Server Pool Name"
+msgstr "请输入服务器资源池名称"
 
+msgid "Please enter valid Group Name."
+msgstr "请输入有效的资源池名称"
+
+msgid "All servers in the server pool, {0} will be removed. Continue?"
+msgstr "资源池{0}中的所有服务器都将被删除, 继续?"
+
+#storage management
+msgid "This represents shared storage resources available to all servers in a Server Pool to which the storage is attached."
+msgstr "与服务器资源池所关联的存储资源是共享资源，该资源池中所有的服务器均可使用"
+
+msgid "Storage Details"
+msgstr "存储资源详细信息"
+
+msgid "Definitiion"
+msgstr "定义"
+
+msgid "Share"
+msgstr "共享"
+
+msgid "Mount Point"
+msgstr "挂载点"
+
+msgid "Validate / Select Storage"
+msgstr "验证 / 选择存储"
+
+msgid "Managed Server"
+msgstr "管理服务器"
+
+msgid "Scan"
+msgstr "扫描"
+
+msgid "Discovered Storage"
+msgstr "已发现存储"
+
+msgid "Disks"
+msgstr "磁盘"
+
+
+
+#action window end
 
 
 

@@ -340,14 +340,14 @@ function addServerPool(node){
                 success: function(xhr) {
                     var response=Ext.util.JSON.decode(xhr.responseText);
                     if(response.success){
-                        Ext.MessageBox.alert(_("Success"),response.msg);
+                        Ext.MessageBox.alert(_("Success"),_(response.msg));
                         node.fireEvent('click',node);
                     }else{
-                        Ext.MessageBox.alert(_("Failure"),response.msg);
+                        Ext.MessageBox.alert(_("Failure"),_(response.msg));
                     }
                 },
                 failure: function(xhr){
-                    Ext.MessageBox.alert( _("Failure") , xhr.statusText);
+                    Ext.MessageBox.alert( _("Failure") , _(xhr.statusText));
                 }
             });
         }
