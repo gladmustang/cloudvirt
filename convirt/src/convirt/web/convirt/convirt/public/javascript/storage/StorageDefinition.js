@@ -493,7 +493,7 @@ function StorageDefinition(node, mode, storage, storage_scope, host, vm_config_a
 
     //Start-Added for getting from existing definitions
     var from_dc_radio=new Ext.form.Label({
-        html: "<div><font style: size='2'>Select From Storage Resources</font></div>",
+        html: "<div><font style: size='2'>"+_("Select From Storage Resources")+"</font></div>",
         id:'from_dc'
     });
 
@@ -551,7 +551,7 @@ function StorageDefinition(node, mode, storage, storage_scope, host, vm_config_a
             new Ext.Button({
                 name: 'btnAssociate',
                 id: 'btnAssociate',
-                text:"Attach",    //Associate
+                text:_("Attach"),    //Associate
                 icon:'icons/accept.png',
                 cls:'x-btn-text-icon',
                 listeners: {

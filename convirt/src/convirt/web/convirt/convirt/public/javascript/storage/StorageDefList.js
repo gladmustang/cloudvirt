@@ -297,7 +297,7 @@ function StorageDefList(node){
             new Ext.Button({
                 name: 'btnRefreshStorage',
                 id: 'btnRefreshStorage',
-                text:"Refresh",
+                text:_("Refresh"),
                 icon:'icons/refresh.png',
                 cls:'x-btn-text-icon',
                 hidden: false,

@@ -1020,6 +1020,15 @@ msgstr "如果您删除存储"
 msgid ", it would unmount the storage. Do you wish to remove it?"
 msgstr ", 会将存储从服务器上卸载。 想要继续删除吗?"
 
+msgid "Attach"
+msgstr "关联"
+
+msgid "Detach"
+msgstr "解除关联"
+
+msgid "Select From Storage Resources"
+msgstr "从存储资源中选择"
+
 
 
 #action window end
