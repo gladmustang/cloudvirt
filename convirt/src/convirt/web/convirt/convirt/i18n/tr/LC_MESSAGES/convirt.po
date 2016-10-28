@@ -964,7 +964,7 @@ msgid "Validate / Select Storage"
 msgstr "验证 / 选择存储"
 
 msgid "Managed Server"
-msgstr "管理服务器"
+msgstr "物理服务器"
 
 msgid "Scan"
 msgstr "扫描"
@@ -1028,6 +1028,55 @@ msgstr "解除关联"
 
 msgid "Select From Storage Resources"
 msgstr "从存储资源中选择"
+
+#network management
+msgid "Manage Virtual Network"
+msgstr "管理虚拟交换网络"
+
+msgid "Virtual Networks allow VMs on the same managed server to communicate with each other"
+msgstr "虚拟交换网络使得同一台物理服务器上的虚拟机可以相互通讯"
+
+msgid "Scope"
+msgstr "范围"
+
+msgid "Select a Target Node"
+msgstr "选择一个目标节点"
+
+msgid "Only connected servers will be shown here."
+msgstr "只有已连接的服务器才会在这里显示"
+
+msgid "Please select a Managed Node."
+msgstr "请选择一个物理节点"
+
+msgid "New Definition"
+msgstr "新的定义"
+
+msgid "Specify Virtual Network Details"
+msgstr "指定虚拟交换网络详细信息"
+
+msgid "Isolated or NAT"
+msgstr "隔离或者NAT"
+
+msgid "Host only(Isolated)"
+msgstr "Host only(隔离)"
+
+msgid "NAT Forwarded"
+msgstr "NAT传递"
+
+msgid "Tip: Create isolated N/W or forward to a physical N/W using NAT."
+msgstr "说明: 创建隔离网络或者使用NAT传递到物理网络"
+
+msgid "Tip: A bridge is created to for every virtual network defined."
+msgstr "说明: 每一个定义的虚拟交换网络会创建一个bridge"
+
+msgid "Address space"
+msgstr "地址空间"
+
+msgid "DHCP Range"
+msgstr "DHCP范围"
+
+msgid "Bridge Name"
+msgstr "Bridge名称"
 
 
 

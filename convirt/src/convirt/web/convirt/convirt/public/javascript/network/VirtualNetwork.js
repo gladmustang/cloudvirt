@@ -221,7 +221,7 @@ function VirtualNetwork(node){
             new Ext.Button({
                 name: 'btnRefreshNetwork',
                 id: 'btnRefreshNetwork',
-                text:"Refresh",
+                text:_("Refresh"),
                 icon:'icons/refresh.png',
                 cls:'x-btn-text-icon',
                 hidden: false,

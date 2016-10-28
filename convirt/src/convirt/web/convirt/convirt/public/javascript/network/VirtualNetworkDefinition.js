@@ -78,11 +78,11 @@ function VirtualNetworkDefinition(node,mode,response,parentPanel,network_scope,w
     });
 
     var lb3=new Ext.form.Label({
-        html:'<table><tr><td width="100"></td><td width="275"><i>Tip: Create isolated N/W or forward to a physical N/W using NAT.</i></td></tr></table>'
+        html:'<table><tr><td width="100"></td><td width="275"><i>'+_('Tip: Create isolated N/W or forward to a physical N/W using NAT.')+'</i></td></tr></table>'
 
     });
     var lb4=new Ext.form.Label({
-        html:'<table><tr><td width="100"></td><td width="275"><i>Tip: A bridge is created to for every virtual network defined.</i></td></tr></table>'
+        html:'<table><tr><td width="100"></td><td width="275"><i>'+_('Tip: A bridge is created to for every virtual network defined.')+'</i></td></tr></table>'
     });
 
     var hostonly_radio=new Ext.form.Radio({
