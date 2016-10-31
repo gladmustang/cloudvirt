@@ -974,8 +974,8 @@ function show_task_popup(msg) {
                         style: {
                             'background-color': '#000'
                         },
-                        title: 'Task',
-                        html: msg,
+                        title: _('Task'),
+                        html: _(msg),
                         bodyBorde:true,
                         targetXY: [x,y],
 //                        dismissDelay: 10,

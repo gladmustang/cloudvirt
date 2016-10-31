@@ -115,6 +115,7 @@ msgstr "动作"
 msgid "Select Action"
 msgstr "选择动作"
 
+##get_context_menu_items
 msgid "Add Server Pool"
 msgstr "添加服务器资源池"
 
@@ -216,6 +217,9 @@ msgstr "设置虚拟机启动设备"
 
 msgid "Remove Virtual Machine Config"
 msgstr "删除虚拟机配置"
+
+msgid "Remove Virtual Machine"
+msgstr "删除虚拟机"
 
 #data center
 #概览面板
@@ -1358,6 +1362,28 @@ msgstr "说明: 如果不指定, 将自动生成MAC网络地址"
 msgid "Can not delete the server.                        Running Virtual Machines exist under the Server. "
 msgstr "无法删除服务器，服务器下面有正在运行的虚拟机。"
 
+#server action
+msgid "Select a Target Server Pool"
+msgstr "选择一个目标服务器资源池"
+
+msgid "Host"
+msgstr "主机"
+
+msgid "Restore Virtual Machine Task Submitted"
+msgstr "恢复虚拟机任务已提交"
+
+msgid "Select Virtual Machine configuration file(s)"
+msgstr "选择虚拟机配置文件(可多选)"
+
+msgid "Import Virtual Machine Task Submitted."
+msgstr "导入虚拟机任务已提交"
+
+msgid "Shutdown All Virtual Machine Task Submitted."
+msgstr "关闭全部虚拟机任务已提交"
+
+##action.js ## server_action
+msgid "{0} in {1} on {2}? "
+msgstr "在{2}下面的{1}上{0}"
 
 
 #action window end

@@ -388,9 +388,9 @@ function restoreVM(node,directory,filenames){
         success: function(xhr) {
             var import_response=Ext.util.JSON.decode(xhr.responseText);
             if(import_response.success)
-                Ext.MessageBox.alert(_("Success"),import_response.msg);
+                Ext.MessageBox.alert(_("Success"),_(import_response.msg));
             else
-                Ext.MessageBox.alert(_("Error"),import_response.msg);
+                Ext.MessageBox.alert(_("Error"),_(import_response.msg));
 //            node.fireEvent('click',node);
 //            task_panel_do();
         },
