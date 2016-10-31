@@ -107,7 +107,7 @@ function KVMUI(node,prntNode,mode,mgd_node){
                     prntNode.fireEvent('click',prntNode);
                 },
                 failure: function(form, action) {
-                    Ext.Msg.alert(_("Failure"),action.result.msg );
+                    Ext.Msg.alert(_("Failure"),_(action.result.msg) );
                 },
 
                 waitMsg:_('Adding...'),

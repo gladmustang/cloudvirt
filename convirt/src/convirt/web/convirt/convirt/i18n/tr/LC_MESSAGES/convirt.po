@@ -1130,6 +1130,9 @@ msgstr "正在添加..."
 msgid "Server Added"
 msgstr "服务器已添加"
 
+msgid "timed out"
+msgstr "超时"
+
 msgid "Server Updated"
 msgstr "服务器已更新"
 
@@ -1362,6 +1365,7 @@ msgstr "说明: 如果不指定, 将自动生成MAC网络地址"
 msgid "Can not delete the server.                        Running Virtual Machines exist under the Server. "
 msgstr "无法删除服务器，服务器下面有正在运行的虚拟机。"
 
+
 #server action
 msgid "Select a Target Server Pool"
 msgstr "选择一个目标服务器资源池"
@@ -1381,9 +1385,24 @@ msgstr "导入虚拟机任务已提交"
 msgid "Shutdown All Virtual Machine Task Submitted."
 msgstr "关闭全部虚拟机任务已提交"
 
+msgid "Start All Virtual Machine Task Submitted."
+msgstr "启动全部虚拟机任务已提交"
+
+msgid "Kill All Virtual Machine Task Submitted."
+msgstr "强行终止全部虚拟机任务已提交"
+
+msgid "Remove Server Task Submitted."
+msgstr "删除服务器任务已提交"
+
 ##action.js ## server_action
 msgid "{0} in {1} on {2}? "
-msgstr "在{2}下面的{1}上{0}"
+msgstr "在{2}下面的{1}上{0}?"
+
+msgid "Remove {0} from {1}? "
+msgstr "从{1}中删除{0}?"
+
+msgid "Live Migration"
+msgstr "在线迁移"
 
 
 #action window end
