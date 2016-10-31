@@ -35,6 +35,8 @@ from convirt.model import DBSession
 from sqlalchemy import *
 from convirt.model.ImageStore import Image
 from convirt.core.utils.utils import get_config
+from pylons.i18n import ugettext as _, lazy_ugettext as l_
+
 class VMService:
     def __init__(self):
         self.appliance_store = Basic.getApplianceStore()
@@ -288,7 +290,7 @@ class VMService:
                  "Clone Reference Disk" : "USE_REF_DISK",
                  }
             for key in dic.keys():
-                  result.append(dict(id=dic[key],value=key))
+                  result.append(dict(id=dic[key],value=_(key)))
         except Exception, ex:
             print_traceback()
             LOGGER.error(to_str(ex).replace("'",""))
@@ -338,7 +340,7 @@ class VMService:
 
             for key in value_map.keys():
                 (type,disk_type)=value_map[key]
-                result.append(dict(id=type,value=key,disk_type=disk_type))
+                result.append(dict(id=type,value=_(key),disk_type=disk_type))
         except Exception, ex:
             print_traceback()
             LOGGER.error(to_str(ex).replace("'",""))
@@ -447,7 +449,7 @@ class VMService:
             dic={ "Disk Image": "disk_image",
                  "Disk Content" : "disk_content" }
             for key in dic.keys():
-                    result.append(dict(id=dic[key],value=key))
+                    result.append(dict(id=dic[key],value=_(key)))
         except Exception, ex:
             print_traceback()
             LOGGER.error(to_str(ex).replace("'",""))

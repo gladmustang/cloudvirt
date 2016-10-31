@@ -442,7 +442,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
         }
     });
      var vm_config_filename=new Ext.form.TriggerField({
-            fieldLabel: 'Config File Name',
+            fieldLabel: _('Config File Name'),
             name: 'vm_config_filename',
             allowBlank:false,
             id: 'vm_config_filename',
@@ -454,7 +454,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
                 if(mgd_node != null){
                     url="node_id="+mgd_node.attributes.id;
                 }
-                file_browser=new Ext.Window({title:"Select File",width : 515,height: 425,modal : true,resizable : false});
+                file_browser=new Ext.Window({title:_("Select File"),width : 515,height: 425,modal : true,resizable : false});
                 file_browser.add(FileBrowser("/","",url,true,false,vm_config_filename,file_browser));
                 if(!vm_config_filename. disabled)
                     file_browser.show();

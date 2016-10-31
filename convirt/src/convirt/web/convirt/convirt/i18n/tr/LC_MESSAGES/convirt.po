@@ -541,7 +541,7 @@ msgid "Network"
 msgstr "网络"
 
 msgid "General"
-msgstr "通用"
+msgstr "常规"
 
 msgid "Display Configuration"
 msgstr "显示设备配置"
@@ -1156,6 +1156,153 @@ msgstr "模板参数"
 
 msgid "Change Settings"
 msgstr "改变设置"
+
+msgid "Template Group"
+msgstr "模板组"
+
+msgid "Template Name"
+msgstr "模板名"
+
+msgid "VM"
+msgstr "虚拟机"
+
+msgid "Config File Name"
+msgstr "配置文件名"
+
+msgid "Memory (MB)"
+msgstr "内存 (MB)"
+
+msgid "Guest OS Flavor"
+msgstr "客户机操作系统类型"
+
+msgid "Guest OS Name"
+msgstr "客户机操作系统名称"
+
+msgid "Guest OS Version"
+msgstr "客户机操作系统版本"
+
+msgid "Start VM after Provisioning"
+msgstr "创建后立即开启虚拟机"
+
+msgid "Start VM on Server up"
+msgstr "服务器启动时开启虚拟机"
+
+msgid "Select File"
+msgstr "选择文件"
+
+msgid "Directory"
+msgstr "目录"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "<b>Storage</b>"
+msgstr "存储"
+
+msgid "Up"
+msgstr "上移"
+
+msgid "Down"
+msgstr "下移"
+
+msgid "VM Device"
+msgstr "虚拟机设备"
+
+msgid "Storage Name"
+msgstr "存储名称"
+
+msgid "&nbsp; Use Up or Down arrow to change the sequence of disks. &nbsp;"
+msgstr "&nbsp; 使用上移或者下移箭头来改变磁盘的顺序 &nbsp;"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "The sequence of disks to be saved  will be in the same order as shown in the table."
+msgstr "磁盘保存的顺序和表里显示的顺寻一致"
+
+msgid "<b>Networks</b>"
+msgstr "网络"
+
+msgid "<b>Miscellaneous</b>"
+msgstr "额外参数"
+
+msgid "<b>Template Parameters</b>"
+msgstr "模板参数"
+
+msgid "Attribute"
+msgstr "属性"
+
+msgid "Please select an item from the list"
+msgstr "请从列表中选择一项"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "VM Device Details"
+msgstr "虚拟机设备详细信息"
+
+msgid "Size  (MB)"
+msgstr "大小  (MB)"
+
+msgid "File System"
+msgstr "文件系统"
+
+msgid "Device Mode"
+msgstr "设备模式"
+
+msgid "Storage Definition"
+msgstr "存储定义"
+
+msgid "Portal"
+msgstr "入口"
+
+msgid "Target"
+msgstr "目标"
+
+msgid "Network Interfaces"
+msgstr "网络接口"
+
+msgid "Mount Options"
+msgstr "挂载选项"
+
+msgid "Select Storage"
+msgstr "选择存储"
+
+msgid "Show only available disks"
+msgstr "仅仅显示可分配磁盘"
+
+### disk storage options
+msgid "Create New Disk"
+msgstr "创建新磁盘"
+
+msgid "Use Physical Device"
+msgstr "使用物理设备"
+
+msgid "Use ISO File"
+msgstr "使用ISO文件"
+
+msgid "Clone Reference Disk"
+msgstr "克隆黄金磁盘"
+
+####get_disks_type_map
+msgid "Logical Volume"
+msgstr "逻辑卷"
+
+msgid "Select Existing Device"
+msgstr "选择现有的设备"
+
+msgid "Select Existing File Disk"
+msgstr "选择现有的文件磁盘"
+
+msgid "File (VBD)"
+msgstr "文件(VBD)"
+
+####get_ref_disk_type_map
+msgid "Disk Content"
+msgstr "磁盘内容"
+
+msgid "Disk Image"
+msgstr "磁盘镜像"
 
 ##delete server
 msgid "Can not delete the server.                        Running Virtual Machines exist under the Server. "
