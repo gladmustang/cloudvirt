@@ -2309,7 +2309,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
     var nwlb=new Ext.form.Label({
         //        margins: {left:200},
         html:'<div align="left" width="400" style="margin-left:130px"><i>'+
-            _("Specify the network that you wish the VM use. ")+'</i></div><br/>'
+            _("Specify the network that you wish the VM use.")+'</i></div><br/>'
     });
     var nwlb3=new Ext.form.Label({
         //        margins: {left:200},
@@ -2338,7 +2338,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
     });
     available_nws_store.load();
     var available_nws=new Ext.form.ComboBox({
-        fieldLabel: _('Select Network:'),
+        fieldLabel: _('Select Network'),
         store:available_nws_store,
         triggerAction:'all',
         emptyText :"",
@@ -2356,7 +2356,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
     });
 
     var specify_mac=new Ext.form.Checkbox({
-        fieldLabel:_('Specify MAC address:'),
+        fieldLabel:_('Specify MAC address'),
         width: 200,
         checkboxToggle:false,
         checked:false,
@@ -2372,7 +2372,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
         }
     });
     var mac_address=new Ext.form.TextField({
-        fieldLabel: _('MAC address:'),
+        fieldLabel: _('MAC address'),
         name: 'MAC address',
         width: 220,
         id: 'address',
@@ -2411,7 +2411,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
 
      nw_model.load();
      var network_model=new Ext.form.ComboBox({
-        fieldLabel: _('Network Model:'),
+        fieldLabel: _('Network Model'),
         store:nw_model,
         triggerAction:'all',
         emptyText :"",

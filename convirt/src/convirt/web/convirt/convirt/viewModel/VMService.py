@@ -477,7 +477,7 @@ class VMService:
                }
 
     def get_disk_type_map_4_iso(self):
-        return { "Select ISO ": ("file", "ISO")
+        return { "Select ISO": ("file", "ISO")
                }
 
     def get_disk_type_map_4_vm_config(self):

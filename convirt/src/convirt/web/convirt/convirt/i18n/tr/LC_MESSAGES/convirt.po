@@ -1235,6 +1235,10 @@ msgstr "属性"
 msgid "Please select an item from the list"
 msgstr "请从列表中选择一项"
 
+msgid "Please enter VM name under General tab"
+msgstr "请在常规标签下面输入虚拟机名字"
+
+###storage detail config
 msgid "Options"
 msgstr "选项"
 
@@ -1250,6 +1254,7 @@ msgstr "文件系统"
 msgid "Device Mode"
 msgstr "设备模式"
 
+#### storage definition
 msgid "Storage Definition"
 msgstr "存储定义"
 
@@ -1271,7 +1276,14 @@ msgstr "选择存储"
 msgid "Show only available disks"
 msgstr "仅仅显示可分配磁盘"
 
-### disk storage options
+####error msg
+msgid "This Device is already used"
+msgstr "这个设备已被使用"
+
+msgid "Please select Device under VM Device Details"
+msgstr "请在虚拟机设备详细信息下面选择虚拟机设备"
+
+#### disk storage options
 msgid "Create New Disk"
 msgstr "创建新磁盘"
 
@@ -1297,12 +1309,50 @@ msgstr "选择现有的文件磁盘"
 msgid "File (VBD)"
 msgstr "文件(VBD)"
 
+msgid "Select ISO"
+msgstr "选择ISO"
+
 ####get_ref_disk_type_map
 msgid "Disk Content"
 msgstr "磁盘内容"
 
 msgid "Disk Image"
 msgstr "磁盘镜像"
+
+msgid "Ref Details"
+msgstr "磁盘参考文件详细信息"
+
+msgid "Ref Disk Type"
+msgstr "参考文件磁盘类型"
+
+msgid "Ref Format"
+msgstr "参考文件格式"
+
+msgid "Ref Loc"
+msgstr "参考文件位置"
+
+###newtork vmconfig
+msgid "Network Details"
+msgstr "网络详细信息"
+
+msgid "Select Network"
+msgstr "选择网络"
+
+msgid "Specify MAC address"
+msgstr "指定MAC地址"
+
+msgid "MAC address"
+msgstr "MAC地址"
+
+msgid "Network Model"
+msgstr "网络模型"
+
+msgid "Specify the network that you wish the VM use."
+msgstr "指定虚拟机使用的网络"
+
+msgid "Tip: If not Specified, auto generated mac would be used."
+msgstr "说明: 如果不指定, 将自动生成MAC网络地址"
+
 
 ##delete server
 msgid "Can not delete the server.                        Running Virtual Machines exist under the Server. "
