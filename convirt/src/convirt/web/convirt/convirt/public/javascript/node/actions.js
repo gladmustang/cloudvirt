@@ -365,10 +365,10 @@ function removeServerPool(node){
                 success: function(xhr) {
                     var response=Ext.util.JSON.decode(xhr.responseText);
                     if(response.success){
-                        Ext.MessageBox.alert(_("Success"),response.msg);
+                        Ext.MessageBox.alert(_("Success"),_(response.msg));
                         node.parentNode.fireEvent('click',node.parentNode);
                     }else{
-                        Ext.MessageBox.alert(_("Failure"),response.msg);
+                        Ext.MessageBox.alert(_("Failure"),_(response.msg));
                     }
                 },
                 failure: function(xhr){

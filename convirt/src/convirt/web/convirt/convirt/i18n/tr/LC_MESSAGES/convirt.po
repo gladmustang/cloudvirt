@@ -1096,7 +1096,7 @@ msgstr "您确定要删除网络"
 msgid "Do you wish to disassociate network "
 msgstr "您确定要解除网络关联"
 
-#server pool
+#server pool action
 msgid "Select Platform"
 msgstr "选择虚拟化平台"
 
@@ -1115,6 +1115,17 @@ msgstr "使用SSH密钥"
 msgid "Adding..."
 msgstr "添加..."
 
+msgid "Settings defined here override the values in the template at the time of provisioning."
+msgstr "这里定义的设置将在创建虚拟机的时候覆盖模板中定义的值"
+
+msgid "(Values begining with # are ignored)"
+msgstr "(以#开头的值将会被忽略)"
+
+msgid "Variable"
+msgstr "变量"
+
+msgid "Server Pool Removed."
+msgstr "服务器池已删除"
 
 
 #action window end
