@@ -1394,15 +1394,47 @@ msgstr "强行终止全部虚拟机任务已提交"
 msgid "Remove Server Task Submitted."
 msgstr "删除服务器任务已提交"
 
+msgid "Annotation Task Submitted."
+msgstr "注解任务已提交"
+
 ##action.js ## server_action
 msgid "{0} in {1} on {2}? "
-msgstr "在{2}下面的{1}上{0}?"
+msgstr "在{2}下面的{1}上{0}? "
 
 msgid "Remove {0} from {1}? "
-msgstr "从{1}中删除{0}?"
+msgstr "从{1}中删除{0}? "
+
+msgid "All VMs under this server will be removed. "
+msgstr "这台服务器下的所有虚拟机将被删除, "
+
+msgid "Related VBDs/Volumes will not be deleted."
+msgstr "相关的VBD或者卷不会被删除。"
+
+##comment
+msgid "Please enter annotation below, others will be notified via email."
+msgstr "请在下面输入注解, 该注解会通过邮件通知其他相关的人"
+
+msgid "Annotation "
+msgstr "注解"
+
+msgid "Last Modified by :&nbsp;&nbsp;"
+msgstr "上一次修订者 :&nbsp;&nbsp;"
+
+msgid "Last Modified by :"
+msgstr "上一次修订者 :"
+
+msgid "Clear"
+msgstr "清除"
+
+msgid "Clearing the annotation. Continue?"
+msgstr "清除注解, 继续?"
+
+msgid "No annotations defined."
+msgstr "没有注解被定义"
 
 msgid "Live Migration"
 msgstr "在线迁移"
+
 
 
 #action window end

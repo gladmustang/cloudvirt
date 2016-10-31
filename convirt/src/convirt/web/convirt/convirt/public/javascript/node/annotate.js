@@ -30,7 +30,7 @@ function process_annotation(node,action,username,text){
     });
     var modified_by=(username==null)?"":username;
     var user_name=new Ext.form.Label({
-         html: _("Last Modified by :&nbsp;&nbsp;"+modified_by)
+         html: _("Last Modified by :&nbsp;&nbsp;")+modified_by
      });
 //    var user_name = new Ext.form.TextField({
 //        fieldLabel: 'Last Modified by:',
@@ -50,7 +50,7 @@ function process_annotation(node,action,username,text){
 //    });
 
     var user_annotation = new Ext.form.TextArea({
-        fieldLabel: 'Annotation ',
+        fieldLabel: _('Annotation '),
         name: 'user_annotation',
         id: 'user_annotation',
         width: 260,
@@ -93,7 +93,7 @@ function process_annotation(node,action,username,text){
                      Ext.MessageBox.confirm(_("Confirm"),msg,function(id){
                         if (id == 'yes'){
                             user_annotation.setValue("");
-                            user_name.setText("Last Modified by :");
+                            user_name.setText(_("Last Modified by :"));
                             modified_by="";
                             var url="/node/process_annotation?node_id="+node.attributes.id;
                             save_annotation(url);
@@ -164,7 +164,7 @@ function save_annotation(url){
                     show_task_popup(response.msg);
 
                 }else{
-                    Ext.MessageBox.alert( _("Failure") , response.msg);
+                    Ext.MessageBox.alert( _("Failure") , _(response.msg));
                 }
             },
             failure: function(xhr){
