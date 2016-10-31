@@ -1127,6 +1127,22 @@ msgstr "变量"
 msgid "Server Pool Removed."
 msgstr "服务器池已删除"
 
+## provision vm
+msgid "Provisioning Virtual Machine"
+msgstr "创建或克隆虚拟机"
+
+msgid "Boot Params"
+msgstr "启动参数"
+
+msgid "Miscellaneous"
+msgstr "额外参数"
+
+msgid "Template Parameters"
+msgstr "模板参数"
+
+msgid "Change Settings"
+msgstr "改变设置"
+
 
 #action window end
 

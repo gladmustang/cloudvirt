@@ -43,7 +43,7 @@ function Provision(dest_node,img_node,action){
                     if (img_node!=null)
                         get_initvmconfig(img_node,action,response.node.id,group_id,n); 
                     else{                        
-                        showWindow(_("Provisioning Virtual Machine "),640,480,VMConfigSettings(action,response.node.id,group_id,img_node,null,null,null,n));
+                        showWindow(_("Provisioning Virtual Machine"),640,480,VMConfigSettings(action,response.node.id,group_id,img_node,null,null,null,n));
                     }
                 }else{
                     Ext.MessageBox.alert(_("Failure"),response.msg);
