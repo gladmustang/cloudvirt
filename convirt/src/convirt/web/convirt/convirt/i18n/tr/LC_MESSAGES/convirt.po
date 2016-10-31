@@ -105,6 +105,9 @@ msgstr "无效的用户名"
 msgid "Invalid password provided for CMS authentication."
 msgstr "无效的密码"
 
+msgid "Connecting"
+msgstr "正在连接"
+
 #用户动作
 msgid "Actions"
 msgstr "动作"
@@ -1092,6 +1095,25 @@ msgstr "您确定要删除网络"
 
 msgid "Do you wish to disassociate network "
 msgstr "您确定要解除网络关联"
+
+#server pool
+msgid "Select Platform"
+msgstr "选择虚拟化平台"
+
+msgid "Please select a Platform."
+msgstr "请选择一个虚拟化平台"
+
+msgid "Host Name"
+msgstr "主机名"
+
+msgid "SSH Port"
+msgstr "SSH端口"
+
+msgid "Use SSH Keys"
+msgstr "使用SSH密钥"
+
+msgid "Adding..."
+msgstr "添加..."
 
 
 

@@ -35,7 +35,7 @@ function select_platform(prntNode){
         fieldLabel: _('Select Platform'),
         allowBlank:false,
         store: store,
-        emptyText :"Select Platform",
+        emptyText :_("Select Platform"),
         mode: 'local',
         displayField:'name',
         valueField:'value',

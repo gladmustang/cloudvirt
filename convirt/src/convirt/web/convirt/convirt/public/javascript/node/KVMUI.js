@@ -110,7 +110,9 @@ function KVMUI(node,prntNode,mode,mgd_node){
                     Ext.Msg.alert(_("Failure"),action.result.msg );
                 },
 
-                waitMsg:_('Adding...')
+                waitMsg:_('Adding...'),
+                waitTitle:_("Please Wait...")
+
             });
         }else{
             Ext.MessageBox.alert(_('Errors'), _('Some of the required information is missing.'));
