@@ -256,7 +256,7 @@ msgid "Last 24 Hours"
 msgstr "过去24小時"
 
 msgid "Last 7 Days"
-msgstr "过去7小時"
+msgstr "过去7天"
 
 msgid "Last 30 Days"
 msgstr "过去30天"
@@ -929,6 +929,14 @@ msgstr "请选择对象进行比较!"
 msgid "Please select different Entities."
 msgstr "请选择不同的对象!"
 
+msgid "Show Average"
+msgstr "显示均值"
+
+msgid "From"
+msgstr "起始"
+
+msgid "To"
+msgstr "结束"
 
 #action window begin
 #data center action
@@ -1113,7 +1121,13 @@ msgid "Use SSH Keys"
 msgstr "使用SSH密钥"
 
 msgid "Adding..."
-msgstr "添加..."
+msgstr "正在添加..."
+
+msgid "Server Added"
+msgstr "服务器已添加"
+
+msgid "Server Updated"
+msgstr "服务器已更新"
 
 msgid "Settings defined here override the values in the template at the time of provisioning."
 msgstr "这里定义的设置将在创建虚拟机的时候覆盖模板中定义的值"
@@ -1142,6 +1156,11 @@ msgstr "模板参数"
 
 msgid "Change Settings"
 msgstr "改变设置"
+
+##delete server
+msgid "Can not delete the server.                        Running Virtual Machines exist under the Server. "
+msgstr "无法删除服务器，服务器下面有正在运行的虚拟机。"
+
 
 
 #action window end

@@ -102,7 +102,7 @@ function KVMUI(node,prntNode,mode,mgd_node){
                     use_keys:use_keys.getValue() 
                 },
                 success: function(form,action) {
-                    Ext.Msg.alert(_("Success"),action.result.msg );
+                    Ext.Msg.alert(_("Success"),_(action.result.msg) );
                     closeWindow();
                     prntNode.fireEvent('click',prntNode);
                 },

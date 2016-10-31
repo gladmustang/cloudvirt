@@ -268,7 +268,7 @@ function removeNode(node){
                             confirmAction(node,url,id,null,false);
                 });
             }else{
-                Ext.MessageBox.alert(_("Failure"),response.msg);
+                Ext.MessageBox.alert(_("Failure"),_(response.msg));
             }
         },
         failure: function(xhr){
