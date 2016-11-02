@@ -116,7 +116,7 @@ function create_summary_grid(imagestore_id){
             }
         },
         columns: [
-            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex:'name'},
+            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex:'name', renderer:function(value){ return _(value)}},
             {header: "", width: 320, sortable: false,dataIndex:'value'}
         ],
         store:summary_store,
@@ -437,7 +437,7 @@ function create_summary_store_grid(grp_id){
             }
         },
         columns: [
-            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex:'name'},
+            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex:'name',renderer:function(value){ return _(value)}},
             {header: "", width: 320, sortable: false,dataIndex:'value'}
         ],
         store:summary_st_store,

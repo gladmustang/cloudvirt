@@ -1632,7 +1632,12 @@ msgstr "内存(MB)"
 msgid "Virtual Machines provisioned using this Template"
 msgstr "使用该模板创建或者克隆的虚拟机"
 
+msgid "Template Groups"
+msgstr "模板组个数"
 
+msgid "Group Name"
+msgstr "组名"
 
-
+msgid "Total Templates"
+msgstr "总模板数"
 

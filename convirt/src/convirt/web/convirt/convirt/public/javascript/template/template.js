@@ -456,7 +456,7 @@ function create_template_info_grid(image_id){
             }
         },
         columns: [
-            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name'},
+            {header: "", width: 150, sortable: false, css:'font-weight:bold; color:#414141;',dataIndex: 'name',renderer:function(value){ return _(value)}},
             {header: "", width: 200, sortable: false, dataIndex: 'value'},
             {header: "", width: 130, sortable: false, dataIndex: 'imageid',hidden:true}
         ],
