@@ -208,7 +208,7 @@ function create_imagestore_grid(imagestore_id){
     });
 
     imagestore_store.load()
-    var lbl_msg='Templates Information';
+    var lbl_msg=_('Templates Information');
     var tb_lbl=new Ext.form.Label({
         html:'<div class="toolbar_hdg">'+lbl_msg+'</div>'
     });
@@ -715,7 +715,7 @@ function create_imagegroup_grid(imagegroup_id){
     });
     imagegroup_info_store.load();
 
-    var lbl_msg='Templates Information';
+    var lbl_msg=_('Templates Information');
     var tb_lbl=new Ext.form.Label({
         html:'<div class="toolbar_hdg">'+lbl_msg+'</div>'
     });

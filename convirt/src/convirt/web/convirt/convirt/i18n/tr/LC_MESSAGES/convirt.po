@@ -1619,8 +1619,18 @@ msgstr "删除模板:-"
 msgid "Delete Template , "
 msgstr "删除模板"
 
+##template panel in dashboard
+msgid "Templates Information"
+msgstr "模板信息"
 
+msgid "CPUs"
+msgstr "CPU个数"
 
+msgid "Memory(MB)"
+msgstr "内存(MB)"
+
+msgid "Virtual Machines provisioned using this Template"
+msgstr "使用该模板创建或者克隆的虚拟机"
 
 
 
