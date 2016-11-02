@@ -1272,6 +1272,12 @@ msgstr "文件系统"
 msgid "Device Mode"
 msgstr "设备模式"
 
+msgid "In Memory"
+msgstr "在内存中"
+
+msgid "On Disk"
+msgstr "在磁盘上"
+
 #### storage definition
 msgid "Storage Definition"
 msgstr "存储定义"

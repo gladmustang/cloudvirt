@@ -2981,7 +2981,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
 
     var radio_group= new  Ext.form.RadioGroup({
         fieldLabel: _('Change Settings'),
-        columns: [100, 100],
+        columns: [175, 175],
         vertical: true,
         id:'radiogroup',
         items: [inmemory,indisk]
@@ -2990,7 +2990,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
 
     var change_settings=new Ext.Panel({
         id:"change_settings",
-        width:435,
+        width:455,
         layout:"form",
         height:35,
         frame:false,
@@ -3157,7 +3157,7 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
 
     var right_panel=new Ext.Panel({
         id:"right_panel",
-        width:448,
+        width:468,
         height:600,
         //frame:true,
         cls: 'whitebackground',
