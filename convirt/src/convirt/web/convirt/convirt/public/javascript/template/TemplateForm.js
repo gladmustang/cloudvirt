@@ -47,7 +47,6 @@ function templateform(node){
             '</td></table>',
         id:'appliance',
         name:'radio',
-        checked:true,
         listeners:{
             check:function(field,checked){               
                  if(checked==true){                    
@@ -62,6 +61,7 @@ function templateform(node){
             '</td></table>',
         id:'refdisk',
         name:'radio',
+        checked:true,
         listeners:{
             check:function(field,checked){
                  if(checked==true){                  

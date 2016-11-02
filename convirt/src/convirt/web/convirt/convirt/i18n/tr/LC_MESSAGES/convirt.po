@@ -76,6 +76,7 @@ msgstr "失败"
 msgid "Your session has expired. Please login again."
 msgstr "登录超时, 请重新登录!"
 
+
 #toolbar
 msgid "Admin"
 msgstr "管理"
@@ -107,6 +108,10 @@ msgstr "无效的密码"
 
 msgid "Connecting"
 msgstr "正在连接"
+
+msgid "Please enter Username and Password."
+msgstr "请输入用户名和密码"
+
 
 #用户动作
 msgid "Actions"
@@ -220,6 +225,12 @@ msgstr "删除虚拟机配置"
 
 msgid "Remove Virtual Machine"
 msgstr "删除虚拟机"
+
+msgid "Add Template Group"
+msgstr "添加模板组"
+
+msgid "Create Template "
+msgstr "创建模板"
 
 #data center
 #概览面板
@@ -1504,8 +1515,113 @@ msgstr "警告: 相关的VBD/卷也将被删除!"
 msgid "WARNING: Related VBDs/Volumes will not be deleted because the server is down."
 msgstr "警告: 由于服务器不在线，相关的VBD/卷不会被删除!"
 
-
 #action window end
+
+#template
+##action
+msgid "Enter Template Group Name"
+msgstr "请输入模板组名称"
+
+msgid "Create Template"
+msgstr "创建模板"
+
+msgid "Create a new Template using any of the following methods"
+msgstr "使用下面任意的方法创建一个新的模板"
+
+msgid "Import Appliance"
+msgstr "导入器件"
+
+msgid "Browse integrated catalogs and select an application to import as a Template."
+msgstr "浏览器件目录，选择一个器件并导入成为模板"
+
+msgid "Using a Reference Disk"
+msgstr "使用基准磁盘"
+
+msgid "Convert your reference disk or appliance that you have already downloaded as a Template."
+msgstr "将一个基准磁盘或者下载的器件转换成模板"
+
+msgid "Reference Disk Details"
+msgstr "基准磁盘详细信息"
+
+msgid "Specify download url or file location of the appliance/reference disk to be imported"
+msgstr "指定将要被导入的器件/基准磁盘的下载地址或者文件路径"
+
+msgid "Select Template Group"
+msgstr "选择模板组"
+
+msgid "Provider"
+msgstr "提供商"
+
+msgid "Package"
+msgstr "包结构"
+
+msgid "Select Appliance"
+msgstr "选择器件"
+
+msgid "Rename Template Group"
+msgstr "重命名模板组"
+
+msgid "Rename Group"
+msgstr "重命名组"
+
+msgid "Enter new Template Group Name"
+msgstr "请输入新的模板组名称"
+
+msgid "Remove Template Group"
+msgstr "删除模板组"
+
+msgid "All templates in the template group, {0} will be removed. Continue?"
+msgstr "在模板组{0}中的所有模板将被删除。继续?"
+
+###template action
+msgid "Provision"
+msgstr "创建或克隆"
+
+msgid "Template Settings"
+msgstr "模板设置"
+
+msgid "Edit Template Script"
+msgstr "编辑模板脚本"
+
+msgid "Edit Provisioning Script:-"
+msgstr "编辑创建或克隆脚本:-"
+
+msgid "Edit Template Description"
+msgstr "编辑模板描述信息"
+
+msgid "Edit Description:-"
+msgstr "编辑描述信息:-"
+
+msgid "Create Like"
+msgstr "创建相似模板"
+
+msgid "Create Like Template:-"
+msgstr "创建相似模板:-"
+
+msgid "Enter Template Name"
+msgstr "请输入模板名称"
+
+msgid "Rename Template"
+msgstr "重命名模板"
+
+msgid "Rename Template:-"
+msgstr "重命名模板:-"
+
+msgid "Enter new Name for Template"
+msgstr "请为模板输入新的名称"
+
+msgid "Remove Template"
+msgstr "删除模板"
+
+msgid "Remove Template:-"
+msgstr "删除模板:-"
+
+msgid "Delete Template , "
+msgstr "删除模板"
+
+
+
+
 
 
 

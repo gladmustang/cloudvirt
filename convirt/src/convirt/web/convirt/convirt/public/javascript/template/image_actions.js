@@ -73,7 +73,7 @@ function addImageGroup(node){
 }
 
 function removeImageGroup(node){
-    var msg=format("All templates in the template group, {0} will be removed. Continue?",node.text); 
+    var msg=format(_("All templates in the template group, {0} will be removed. Continue?"),node.text);
     Ext.MessageBox.confirm(_("Confirm"),msg,function(id){
         if (id == 'yes'){
             var url="/template/remove_image_group?group_id="+node.attributes.nodeid;
