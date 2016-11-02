@@ -213,7 +213,7 @@ msgid "Hibernate"
 msgstr "休眠虚拟机"
 
 msgid "Set Boot Device"
-msgstr "设置虚拟机启动设备"
+msgstr "设置虚拟机引导设备"
 
 msgid "Remove Virtual Machine Config"
 msgstr "删除虚拟机配置"
@@ -1388,6 +1388,9 @@ msgstr "关闭全部虚拟机任务已提交"
 msgid "Start All Virtual Machine Task Submitted."
 msgstr "启动全部虚拟机任务已提交"
 
+msgid "Start Virtual Machine Task Submitted."
+msgstr "启动虚拟机任务已提交"
+
 msgid "Kill All Virtual Machine Task Submitted."
 msgstr "强行终止全部虚拟机任务已提交"
 
@@ -1396,6 +1399,24 @@ msgstr "删除服务器任务已提交"
 
 msgid "Annotation Task Submitted."
 msgstr "注解任务已提交"
+
+msgid "Pause Virtual Machine Task Submitted."
+msgstr "暂停虚拟机任务已提交"
+
+msgid "Unpause Virtual Machine Task Submitted."
+msgstr "继续虚拟机任务已提交"
+
+msgid "Reboot Virtual Machine Task Submitted."
+msgstr "重启虚拟机任务已提交"
+
+msgid "Shutdown Virtual Machine Task Submitted."
+msgstr "关闭虚拟机任务已提交"
+
+msgid "Kill Virtual Machine Task Submitted."
+msgstr "强行终止虚拟机任务已提交"
+
+msgid "Snapshot Virtual Machine Task Submitted"
+msgstr "休眠虚拟机任务已提交"
 
 ##action.js ## server_action
 msgid "{0} in {1} on {2}? "
@@ -1435,6 +1456,53 @@ msgstr "没有注解被定义"
 msgid "Live Migration"
 msgstr "在线迁移"
 
+# vm layer
+msgid "Virtual Machine Config Settings for "
+msgstr "虚拟机设置:-"
+
+msgid "Edit Config File:-"
+msgstr "编辑配置文件:-"
+
+##for remote view console setting
+msgid "You can select local viewer for connecting to the Virtual Machine."
+msgstr "您能够选择使用本地VNC Viewer来连接到虚拟机"
+
+msgid "Use Local Viewer:&nbsp;"
+msgstr "使用本地VNC Viewer:&nbsp;"
+
+msgid "Use VNC Applet"
+msgstr "使用VNC Applet"
+
+msgid "Please select a value from list"
+msgstr "请从列表中选择一个值"
+
+msgid "Virtual Machine is not Running."
+msgstr "虚拟机没有运行"
+
+##vm common action
+msgid "{0} {1} on {2}? "
+msgstr "在{2}上{0} {1}? "
+
+msgid "Set Boot Device:-"
+msgstr "设置引导设备:-"
+
+msgid "Disk"
+msgstr "磁盘"
+
+msgid "Remove {0} from list under {1}?"
+msgstr "从{1}下面的列表中删除 {0}?"
+
+msgid "Remove {0} from list under {1}?"
+msgstr "从{1}下面的列表中删除 {0}?"
+
+msgid "Delete {0} on {1}? "
+msgstr "在{1}上删除{0}?"
+
+msgid "WARNING: Related VBDs/Volumes would also be deleted."
+msgstr "警告: 相关的VBD/卷也将被删除!"
+
+msgid "WARNING: Related VBDs/Volumes will not be deleted because the server is down."
+msgstr "警告: 由于服务器不在线，相关的VBD/卷不会被删除!"
 
 
 #action window end

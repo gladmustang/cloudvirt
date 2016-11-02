@@ -671,7 +671,8 @@ function removeVM(vm,action){
                 if(response.node_up === false){
                     url+="&force=True";
                 }
-                var msg="Delete "+ vm.text+" on "+vm.parentNode.text+"?";
+                //var msg="Delete "+ vm.text+" on "+vm.parentNode.text+"?";
+                var msg=format(_("Delete {0} on {1}? "), vm.text, vm.parentNode.text);
                 if(response.node_up === false){
                     msg+="<br>"+_("WARNING: Related VBDs/Volumes will not be deleted "+
                                     "because the server is down.");
@@ -924,7 +925,7 @@ function transferNode(node,src_grp,dest_grp,forcefully){
                     getVNCInfo(node,dom);
                  }else{
                      if(command_combo.getValue()==""){
-                         Ext.MessageBox.alert( _("Failure") , "Please select a value from list");
+                         Ext.MessageBox.alert( _("Failure") , _("Please select a value from list"));
                          return;
                      }
                      setCookie(convirt.constants.VM_CONSOLE_LOCAL_CMD,command_combo.getValue());
