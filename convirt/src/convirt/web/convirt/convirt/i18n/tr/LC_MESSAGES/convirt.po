@@ -1702,35 +1702,66 @@ msgstr "关闭{0}成功完成"
 msgid "/Importing Virtual Machine on ([\\w\\.]*)$/"
 msgstr "在{0}上导入虚拟机"
 
+msgid "/Importing Virtual Machine on ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上导入虚拟机成功完成"
+
 msgid "/Server Pool (\\w*) Added.$/"
 msgstr "服务器资源池{0}已添加"
 
 msgid "/Remove ([\\w\\.]*)$/"
 msgstr "删除{0}"
 
+msgid "/Remove ([\\w\\.]*) Completed Successfully.$/"
+msgstr "删除{0}成功完成"
+
 msgid "/Provisioning (\\w*)$/"
 msgstr "创建或克隆{0}"
+
+msgid "/Provisioning (\\w*) Completed Successfully.$/"
+msgstr "创建或克隆{0}成功完成"
 
 msgid "/Killing (\\w*)$/"
 msgstr "强行终止{0}"
 
+msgid "/Killing (\\w*) Completed Successfully.$/"
+msgstr "强行终止{0}成功完成"
+
 msgid "/Deleting (\\w*)$/"
 msgstr "删除{0}"
+
+msgid "/Deleting (\\w*) Completed Successfully.$/"
+msgstr "删除{0}成功完成"
 
 msgid "/Pausing (\\w*)$/"
 msgstr "暂停{0}"
 
+msgid "/Pausing (\\w*) Completed Successfully.$/"
+msgstr "暂停{0}成功完成"
+
 msgid "/Resuming (\\w*)$/"
 msgstr "继续{0}"
+
+msgid "/Resuming (\\w*) Completed Successfully.$/"
+msgstr "继续{0}成功完成"
 
 msgid "/Rebooting (\\w*)$/"
 msgstr "重启{0}"
 
+msgid "/Rebooting (\\w*) Completed Successfully.$/"
+msgstr "重启{0}成功完成"
+
 msgid "/Snapshot vm ([\\w\\.]*)$/"
 msgstr "在{0}上休眠虚拟机"
 
+msgid "/Snapshot vm ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上休眠虚拟机成功完成"
+
 msgid "/Add Annotation Task/"
 msgstr "添加注解任务"
+
+msgid "/Virtual Machine (\\w*) is not running$/"
+msgstr "虚拟机{0}未运行"
+
 
 
 
