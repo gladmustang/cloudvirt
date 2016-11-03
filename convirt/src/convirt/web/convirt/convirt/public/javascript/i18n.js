@@ -22,3 +22,29 @@ function _(s) {
     return s;
 }
 
+
+function r_(s) {
+    if (typeof(r_i18n) != 'undefined') {
+        for(var key in r_i18n) {
+            if(typeof (r_i18n [key])=="function" )
+                continue;
+            var regx = eval(key);
+            var match=null;
+            if (match=regx.exec(s)) {
+                var value=r_i18n[key];
+                var params=""
+                for(var i=1;i<match.length;i++) {
+                    if(i!=match.length-1)
+                        params+="'"+match[i]+"',"
+                    else
+                        params+="'"+match[i]+"'"
+                }
+                result = eval("format(value,"+params+")");
+                return result;
+            }
+
+        }
+        return s;
+    }
+}
+

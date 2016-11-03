@@ -1657,3 +1657,12 @@ msgstr "总模板数"
 msgid "/Starting (.*)/"
 msgstr "启动{0}"
 
+msgid "/Importing Virtual Machine on (.*)/"
+msgstr "在{0}上导入虚拟机"
+
+msgid "/Server Pool (.*) Added./"
+msgstr "服务器资源池{0}已添加"
+
+
+
+

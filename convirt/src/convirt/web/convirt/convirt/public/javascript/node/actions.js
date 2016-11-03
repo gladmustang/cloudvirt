@@ -340,7 +340,7 @@ function addServerPool(node){
                 success: function(xhr) {
                     var response=Ext.util.JSON.decode(xhr.responseText);
                     if(response.success){
-                        Ext.MessageBox.alert(_("Success"),_(response.msg));
+                        Ext.MessageBox.alert(_("Success"),r_(response.msg));
                         node.fireEvent('click',node);
                     }else{
                         Ext.MessageBox.alert(_("Failure"),_(response.msg));
