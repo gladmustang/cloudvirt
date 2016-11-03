@@ -58,8 +58,15 @@ for (<./*/LC_MESSAGES/convirt*.po>) {
                 }
             } 
             _decode_entities($msgstr, { nbsp => "\xc2\xa0", ocirc => "\xc3\xb4" });
-            $out .= "i18n[\"$msgid\"] = \"$msgstr\";\n";
+            my $match = $msgid;
+            if ($match =~ /^\/.*\/$/) {
+                $out .= "r_i18n[\"$msgid\"] = \"$msgstr\";\n";
+            } else{
+                $out .= "i18n[\"$msgid\"] = \"$msgstr\";\n";
+            }
+
         }
+
     }
     close FP;
     $out = substr($out, 0, -2);
@@ -73,6 +80,10 @@ for (<./*/LC_MESSAGES/convirt*.po>) {
 
 if (typeof(i18n) == 'undefined') {
     var i18n = Array()
+}
+
+if (typeof(r_i18n) == 'undefined') {
+    var r_i18n = Array()
 }
 
 EOF

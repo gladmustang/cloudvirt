@@ -109,6 +109,9 @@ msgstr "无效的密码"
 msgid "Connecting"
 msgstr "正在连接"
 
+msgid "Sending data..."
+msgstr "正在发送数据..."
+
 msgid "Please enter Username and Password."
 msgstr "请输入用户名和密码"
 
@@ -1646,4 +1649,11 @@ msgstr "组名"
 
 msgid "Total Templates"
 msgstr "总模板数"
+
+
+
+#regular expression section
+
+msgid "/Starting (.*)/"
+msgstr "启动{0}"
 
