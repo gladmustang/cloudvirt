@@ -31,7 +31,10 @@ function Tasks(){
         header: _("Task"),
         width: 100,
         dataIndex: 'name',
-        sortable:true        
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return r_(value)
+        }
     },
     {
         header: _("Entity Name"),
@@ -43,7 +46,10 @@ function Tasks(){
         header: _("Entity Type"),
         width: 100,
         dataIndex: 'enttype',
-        sortable:true
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return _(value)
+        }
     },
     {
         header: _("Username"),
@@ -72,12 +78,12 @@ function Tasks(){
         sortable:true,
         renderer:function(value,params,record,row){
             if(value =='Failed'|| value =='Succeeded'){
-                params.attr='ext:qtip="Show Message"' +
+                params.attr='ext:qtip="'+_('Show Message')+'"' +
                     'style="background-image:url(icons/information.png) '+
                     '!important; background-position: right;'+
                     'background-repeat: no-repeat;cursor: pointer;"';
             }
-            return value;
+            return _(value);
         }
     }
     ]);
@@ -230,7 +236,7 @@ function TasksGrid(){
         sortable:true,
         renderer:function(value,params,record,row){            
               if(value =='Failed' || value =='Succeeded'){
-                params.attr='ext:qtip="Show Message"' +
+                params.attr='ext:qtip='+'"'+_('Show Message')+'"' +
                     'style="background-image:url(icons/information.png) '+
                     '!important; background-position: right;'+
                     'background-repeat: no-repeat;cursor: pointer;"';
@@ -667,7 +673,10 @@ function create_notifications_grid(entList,entType){
         header: _("Task"),
         dataIndex: 'name',
         width:150,
-        sortable:true
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return r_(value)
+        }
     },    
     {
         header: _("Entity Name"),
@@ -679,7 +688,10 @@ function create_notifications_grid(entList,entType){
         header: _("Entity Type"),
         dataIndex: 'enttype',
         width:120,
-        sortable:true
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return _(value)
+        }
     },
     {
         header: _("Time"),
@@ -695,7 +707,7 @@ function create_notifications_grid(entList,entType){
         dataIndex: 'status',
         renderer:function(value,params,record,row){
             if(value =='Failed'){
-                params.attr='ext:qtip="Error Message"' +
+                params.attr='ext:qtip="'+_('Error Message')+'"' +
                     'style="background-image:url(icons/information.png) '+
                     '!important; background-position: right;'+
                     'background-repeat: no-repeat;cursor: pointer;"';

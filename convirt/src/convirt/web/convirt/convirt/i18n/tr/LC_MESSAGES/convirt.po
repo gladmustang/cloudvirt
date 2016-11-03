@@ -678,6 +678,12 @@ msgstr "错误消息"
 msgid "Displays submitted task information and their status."
 msgstr "已提交的任务信息和状态"
 
+msgid "Show Message"
+msgstr "显示消息"
+
+msgid "Error Message"
+msgstr "错误消息"
+
 #for custom search window
 msgid "Search (By Name): "
 msgstr "名称搜索"
