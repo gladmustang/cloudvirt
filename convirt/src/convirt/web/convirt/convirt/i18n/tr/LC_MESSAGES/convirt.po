@@ -1687,40 +1687,46 @@ msgstr "总模板数"
 
 #regular expression section
 
-msgid "/Starting (.*)/"
+msgid "/Starting (\\w*)$/"
 msgstr "启动{0}"
 
-msgid "/Shutting down (.*)/"
+msgid "/Starting (.*) Completed Successfully.$/"
+msgstr "启动{0}成功完成"
+
+msgid "/Shutting down (\\w*)$/"
 msgstr "关闭{0}"
 
-msgid "/Importing Virtual Machine on (.*)/"
+msgid "/Shutting down (\\w*) Completed Successfully.$/"
+msgstr "关闭{0}成功完成"
+
+msgid "/Importing Virtual Machine on ([\\w\\.]*)$/"
 msgstr "在{0}上导入虚拟机"
 
-msgid "/Server Pool (.*) Added./"
+msgid "/Server Pool (\\w*) Added.$/"
 msgstr "服务器资源池{0}已添加"
 
-msgid "/Remove (.*)/"
+msgid "/Remove ([\\w\\.]*)$/"
 msgstr "删除{0}"
 
-msgid "/Provisioning (.*)/"
+msgid "/Provisioning (\\w*)$/"
 msgstr "创建或克隆{0}"
 
-msgid "/Killing (.*)/"
+msgid "/Killing (\\w*)$/"
 msgstr "强行终止{0}"
 
-msgid "/Deleting (.*)/"
+msgid "/Deleting (\\w*)$/"
 msgstr "删除{0}"
 
-msgid "/Pausing (.*)/"
+msgid "/Pausing (\\w*)$/"
 msgstr "暂停{0}"
 
-msgid "/Resuming (.*)/"
+msgid "/Resuming (\\w*)$/"
 msgstr "继续{0}"
 
-msgid "/Rebooting (.*)/"
+msgid "/Rebooting (\\w*)$/"
 msgstr "重启{0}"
 
-msgid "/Snapshot vm (.*)/"
+msgid "/Snapshot vm ([\\w\\.]*)$/"
 msgstr "在{0}上休眠虚拟机"
 
 msgid "/Add Annotation Task/"

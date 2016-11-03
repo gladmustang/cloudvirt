@@ -349,7 +349,7 @@ function TasksGrid(){
 
 function showTaskMessage(title,message){
     var editor=new Ext.form.TextArea({
-        value:message,        
+        value:r_(message),        
         readOnly:true,
         disabled:false
     });
