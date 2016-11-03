@@ -1019,6 +1019,9 @@ msgstr "测试存储..."
 msgid "Please Wait..."
 msgstr "请等待..."
 
+msgid "Please wait..."
+msgstr "请等待..."
+
 msgid "Adding Storage..."
 msgstr "添加存储..."
 
@@ -1259,6 +1262,21 @@ msgstr "请从列表中选择一项"
 msgid "Please enter VM name under General tab"
 msgstr "请在常规标签下面输入虚拟机名字"
 
+msgid "Please enter Guest OS Flavor under General tab"
+msgstr "请在常规标签下面输入操作系统类型"
+
+msgid "Please enter Guest OS Version under General tab"
+msgstr "请在常规标签下面输入操作系统版本"
+
+msgid "Please enter Guest OS Name under General tab"
+msgstr "请在常规标签下面输入操作系统名称"
+
+msgid "Select OS Flavor"
+msgstr "选择操作系统分类"
+
+msgid "Select OS Name"
+msgstr "选择操作系统名称"
+
 ###storage detail config
 msgid "Options"
 msgstr "选项"
@@ -1437,6 +1455,15 @@ msgstr "强行终止虚拟机任务已提交"
 
 msgid "Snapshot Virtual Machine Task Submitted"
 msgstr "休眠虚拟机任务已提交"
+
+msgid "Provision Virtual Machine Task Submitted"
+msgstr "创建或克隆虚拟机任务已提交"
+
+msgid "Remove Virtual Machine Task Submitted."
+msgstr "删除虚拟机任务已提交"
+
+msgid "Virtual Machine settings changed successfully"
+msgstr "虚拟机设置修改成功"
 
 ##action.js ## server_action
 msgid "{0} in {1} on {2}? "
@@ -1657,12 +1684,41 @@ msgstr "总模板数"
 msgid "/Starting (.*)/"
 msgstr "启动{0}"
 
+msgid "/Shutting down (.*)/"
+msgstr "关闭{0}"
+
 msgid "/Importing Virtual Machine on (.*)/"
 msgstr "在{0}上导入虚拟机"
 
 msgid "/Server Pool (.*) Added./"
 msgstr "服务器资源池{0}已添加"
 
+msgid "/Remove (.*)/"
+msgstr "删除{0}"
+
+msgid "/Provisioning (.*)/"
+msgstr "创建或克隆{0}"
+
+msgid "/Killing (.*)/"
+msgstr "强行终止{0}"
+
+msgid "/Deleting (.*)/"
+msgstr "删除{0}"
+
+msgid "/Pausing (.*)/"
+msgstr "暂停{0}"
+
+msgid "/Resuming (.*)/"
+msgstr "继续{0}"
+
+msgid "/Rebooting (.*)/"
+msgstr "重启{0}"
+
+msgid "/Snapshot vm (.*)/"
+msgstr "在{0}上休眠虚拟机"
+
+msgid "/Add Annotation Task/"
+msgstr "添加注解任务"
 
 
 

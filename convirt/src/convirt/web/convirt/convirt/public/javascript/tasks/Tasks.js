@@ -198,7 +198,10 @@ function TasksGrid(){
         header: _("Entity Type"),
         width: 120,
         dataIndex: 'enttype',
-        sortable:true
+        sortable:true,
+        renderer:function(value,params,record,row) {
+            return _(value)
+        }
     },
     {
         header: _("Username"),

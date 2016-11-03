@@ -39,7 +39,10 @@ function r_(s) {
                     else
                         params+="'"+match[i]+"'"
                 }
-                result = eval("format(value,"+params+")");
+                if (params)
+                    result = eval("format(value,"+params+")");
+                else
+                    result = value;
                 return result;
             }
 
