@@ -93,7 +93,7 @@ class EmailService:
         self.subject = "Test Email"
         self.content="\Test message Sent on " + to_str(ct_time())
         self.msg = MIMEText(self.content, self.text_subtype)
-        self.msg['Subject']= "ConVirt Test Email"
+        self.msg['Subject']= "WishCloud Test Email"
         
 #        SendSuccess = False
         try:
