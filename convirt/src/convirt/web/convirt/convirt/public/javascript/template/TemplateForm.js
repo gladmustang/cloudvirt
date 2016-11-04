@@ -47,6 +47,7 @@ function templateform(node){
             '</td></table>',
         id:'appliance',
         name:'radio',
+        disabled:true,
         listeners:{
             check:function(field,checked){               
                  if(checked==true){                    
