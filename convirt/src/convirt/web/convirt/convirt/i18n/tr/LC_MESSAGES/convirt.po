@@ -1705,7 +1705,7 @@ msgstr "在{0}上导入虚拟机"
 msgid "/Importing Virtual Machine on ([\\w\\.]*) Completed Successfully.$/"
 msgstr "在{0}上导入虚拟机成功完成"
 
-msgid "/Server Pool (\\w*) Added.$/"
+msgid "/Server Pool (.*) Added.$/"
 msgstr "服务器资源池{0}已添加"
 
 msgid "/Remove ([\\w\\.]*)$/"
@@ -1756,12 +1756,34 @@ msgstr "在{0}上休眠虚拟机"
 msgid "/Snapshot vm ([\\w\\.]*) Completed Successfully.$/"
 msgstr "在{0}上休眠虚拟机成功完成"
 
-msgid "/Add Annotation Task/"
+msgid "/Add Annotation Task$/"
 msgstr "添加注解任务"
+
+msgid "/Add Annotation Task Virtual Machine Completed Successfully$/"
+msgstr "添加虚拟机注解任务成功完成"
+
+msgid "/Clear Annotation Task$/"
+msgstr "清除注解任务"
+
+msgid "/Clear Annotation Task Virtual Machine Completed Successfully$/"
+msgstr "清除虚拟机注解任务成功完成"
+
+msgid "/Edit Annotation Task$/"
+msgstr "编辑注解任务"
+
+msgid "/Edit Annotation Task Virtual Machine Completed Successfully$/"
+msgstr "编辑虚拟机注解任务成功完成"
 
 msgid "/Virtual Machine (\\w*) is not running$/"
 msgstr "虚拟机{0}未运行"
 
+msgid "/Annotated by :  \'(\\w*)\'\\nAnnotation :\\n\\n(.*)\\n$/"
+msgstr "注解人: {0}\n注解:\n\n{1}\n"
 
+msgid "/Annotated by :  \'(\\w*)\'\\nAnnotation :\\n\\n(.*)\\n\\nPreviously Annotated by : \'(.*)\'\\nPrevious Annotation :\\n\\n(.*)/"
+msgstr "注解人: {0}\n注解:\n\n{1}\n\n之前的注解人: {2}\n之前的注解:\n\n{3}"
+
+msgid "/Annotation cleared. \\n\\nPreviously Annotated by : \'(.*)\'\\nPrevious Annotation :\\n\\n(.*)/"
+msgstr "注解已清除。 \n\n之前的注解人: {0}\n之前的注解:\n\n{1}"
 
 

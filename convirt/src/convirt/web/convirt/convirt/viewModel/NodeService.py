@@ -1373,7 +1373,7 @@ class NodeService:
         from convirt.model.auth import User
         users = DBSession.query(User).all()
 
-        subject=u"ConVirt :Annotation Status- "+node_ent.type.display_name+" : "+node_ent.name
+        subject=u"WishCloud :Annotation Status- "+node_ent.type.display_name+" : "+node_ent.name
         now=datetime.utcnow()
         entity_details=node_ent.type.display_name+" : "+node_ent.name+"\n\n"
         message=entity_details+message
