@@ -19,7 +19,7 @@
 
 from datetime import datetime,date
 
-_version = "2.5"
+_version = "1.0"
 fox_header = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.4) Gecko/20070603 Fedora/2.0.0.4-2.fc7 Firefox/2.0.0.4 ConVirt/" + _version
 _edition = "OSS"
 

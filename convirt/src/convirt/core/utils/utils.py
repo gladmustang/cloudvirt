@@ -2938,7 +2938,7 @@ def get_base_web_url():
 
 def get_edition_string():
     try:
-        edition_string="ConVirt"
+        edition_string="WishCloud"
         return edition_string
     except Exception, e:
         print_traceback()
