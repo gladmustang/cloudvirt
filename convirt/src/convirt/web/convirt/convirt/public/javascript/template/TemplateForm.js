@@ -86,7 +86,7 @@ function templateform(node){
     var ok_button=new Ext.Button({
             name: 'ok',
             id: 'ok',
-            text:_('Ok'),
+            text:_('OK'),
             icon:'icons/accept.png',
             cls:'x-btn-text-icon',
             listeners: {
