@@ -1786,4 +1786,7 @@ msgstr "注解人: {0}\n注解:\n\n{1}\n\n之前的注解人: {2}\n之前的注�
 msgid "/Annotation cleared. \\n\\nPreviously Annotated by : \'(.*)\'\\nPrevious Annotation :\\n\\n(.*)/"
 msgstr "注解已清除。 \n\n之前的注解人: {0}\n之前的注解:\n\n{1}"
 
+msgid "/mail send to ([\\w\\.@]*)$/"
+msgstr "邮件已发送到{0}"
+
 

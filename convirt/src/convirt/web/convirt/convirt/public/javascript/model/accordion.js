@@ -382,7 +382,7 @@ function EmailDetailsPanel(grid,mode,emaildetails,w){
                         success: function(xhr) {
                             var response=Ext.util.JSON.decode(xhr.responseText);
                             if(response.success){
-                                Ext.MessageBox.alert("Sucess",response.msg);
+                                Ext.MessageBox.alert(_("Success"),r_(response.msg));
                             }else{
                                 Ext.MessageBox.alert(_("Failure"),response.msg);
                             }
