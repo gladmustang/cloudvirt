@@ -24,8 +24,8 @@ function MigrationChecksDialog(vm,node,dest_node,live,rows){
                     return '<img src="icons/warning.png" />';
                 }
         }},
-        {header: _("Category"), width: 75, sortable: true, dataIndex: 'category'},
-        {header: _("Message"), width: 150, sortable: true, dataIndex: 'message'}
+        {header: _("Category"), width: 75, sortable: true, dataIndex: 'category', renderer: function(value){ return _(value)}},
+        {header: _("Message"), width: 150, sortable: true, dataIndex: 'message',  renderer: function(value){ return r_(value)}}
     ]);
 
     var store = new Ext.data.SimpleStore({

@@ -1468,8 +1468,15 @@ msgstr "创建或克隆虚拟机任务已提交"
 msgid "Remove Virtual Machine Task Submitted."
 msgstr "删除虚拟机任务已提交"
 
+msgid "Migrate Virtual Machine Task Submitted."
+msgstr "迁移虚拟机任务已提交"
+
 msgid "Virtual Machine settings changed successfully"
 msgstr "虚拟机设置修改成功"
+
+msgid "shutdown failed due to timeout"
+msgstr "因为超时，关闭失败"
+
 
 ##action.js ## server_action
 msgid "{0} in {1} on {2}? "
@@ -1532,6 +1539,8 @@ msgstr "请从列表中选择一个值"
 msgid "Virtual Machine is not Running."
 msgstr "虚拟机没有运行"
 
+
+
 ##vm common action
 msgid "{0} {1} on {2}? "
 msgstr "在{2}上{0} {1}? "
@@ -1556,6 +1565,25 @@ msgstr "警告: 相关的VBD/卷也将被删除!"
 
 msgid "WARNING: Related VBDs/Volumes will not be deleted because the server is down."
 msgstr "警告: 由于服务器不在线，相关的VBD/卷不会被删除!"
+
+##vm migration
+msgid "Results of prerequsite checks done for Migration."
+msgstr "迁移的先决条件检查结果已经完成。"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Category"
+msgstr "种类"
+
+msgid "Migration Check Results"
+msgstr "迁移检查结果"
+
+msgid "Migrate {0} from {1} to {2}?"
+msgstr "从{1}到{2}迁移虚拟机{0}"
+
+msgid "Disk "
+msgstr "磁盘"
 
 #action window end
 
@@ -1710,6 +1738,9 @@ msgstr "启动{0}"
 msgid "/Starting (.*) Completed Successfully.$/"
 msgstr "启动{0}成功完成"
 
+msgid "/Starting (.*) Virtual Machine Completed Successfully$/"
+msgstr "启动{0}成功完成"
+
 msgid "/Shutting down (\\w*)$/"
 msgstr "关闭{0}"
 
@@ -1794,6 +1825,15 @@ msgstr "编辑注解任务"
 msgid "/Edit Annotation Task Virtual Machine Completed Successfully$/"
 msgstr "编辑虚拟机注解任务成功完成"
 
+msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*)$/"
+msgstr "从{1}到{2}迁移虚拟机{0}"
+
+msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*) Completed Successfully.$/"
+msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
+
+msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*) Virtual Machine Completed Successfully$/"
+msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
+
 msgid "/Virtual Machine (\\w*) is not running$/"
 msgstr "虚拟机{0}未运行"
 
@@ -1808,5 +1848,12 @@ msgstr "注解已清除。 \n\n之前的注解人: {0}\n之前的注解:\n\n{1}"
 
 msgid "/mail send to ([\\w\\.@]*)$/"
 msgstr "邮件已发送到{0}"
+
+#migration check
+msgid "/VM Disk ([\\w\\.\\/]*) not found on the destination node ([\\w\\.]*)/"
+msgstr "虚拟机磁盘{0}在目标节点{1}上面没有找到"
+
+msgid "/The destination node does not support required platform \\(([\\w\\.]*)\\)/"
+msgstr "目标节点不支持平台({0})"
 
 
