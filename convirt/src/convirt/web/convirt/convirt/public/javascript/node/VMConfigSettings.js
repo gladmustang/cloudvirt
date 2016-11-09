@@ -431,11 +431,11 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
                                 vm_name_exist_flag = false;
                             }else{
                                 vm_name_exist_flag = true;
-                                Ext.MessageBox.alert(_("Failure"),response.msg);
+                                Ext.MessageBox.alert(_("Failure"),r_(response.msg));
                             }
                         },
                         failure: function(xhr){
-                            Ext.MessageBox.alert( _("Failure") , xhr.statusText);
+                            Ext.MessageBox.alert( _("Failure") , _(xhr.statusText));
                         }
                 });
             }

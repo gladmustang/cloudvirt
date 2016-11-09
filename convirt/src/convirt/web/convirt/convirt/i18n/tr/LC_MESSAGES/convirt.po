@@ -1283,6 +1283,9 @@ msgstr "选择操作系统分类"
 msgid "Select OS Name"
 msgstr "选择操作系统名称"
 
+msgid "VM Name should not contain special characters.<br>"
+msgstr "虚拟机名字不应该包含特殊字符。"
+
 ###storage detail config
 msgid "Options"
 msgstr "选项"
@@ -1759,20 +1762,38 @@ msgstr "关联存储定义"
 msgid "/Associate Definitions Server Pool Completed Successfully$/"
 msgstr "服务器资源池关联存储定义成功完成"
 
-msgid "/Starting (\\w*)$/"
+msgid "/Starting ([\\w\\.]*)$/"
 msgstr "启动{0}"
 
-msgid "/Starting (.*) Completed Successfully.$/"
+msgid "/Starting ([\\w\\.]*) Completed Successfully.$/"
 msgstr "启动{0}成功完成"
 
-msgid "/Starting (.*) Virtual Machine Completed Successfully$/"
+msgid "/Starting ([\\w\\.]*) Virtual Machine Completed Successfully$/"
 msgstr "启动{0}成功完成"
 
-msgid "/Shutting down (\\w*)$/"
+msgid "/Starting all Virtual Machines on ([\\w\\.]*)$/"
+msgstr "在{0}上启动全部虚拟机"
+
+msgid "/Starting all Virtual Machines on ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器{0}上启动全部虚拟机成功完成"
+
+msgid "/Starting all Virtual Machines on ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上启动全部虚拟机成功完成"
+
+msgid "/Shutting down ([\\w\\.]*)$/"
 msgstr "关闭{0}"
 
-msgid "/Shutting down (\\w*) Completed Successfully.$/"
+msgid "/Shutting down ([\\w\\.]*) Completed Successfully.$/"
 msgstr "关闭{0}成功完成"
+
+msgid "/Shutting down all Virtual Machines on ([\\w\\.]*)$/"
+msgstr "在{0}上关闭全部虚拟机"
+
+msgid "/Shutting down all Virtual Machines on ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器{0}上关闭全部虚拟机成功完成"
+
+msgid "/Shutting down all Virtual Machines on ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上关闭全部虚拟机成功完成"
 
 msgid "/Importing Virtual Machine on ([\\w\\.]*)$/"
 msgstr "在{0}上导入虚拟机"
@@ -1792,40 +1813,56 @@ msgstr "删除{0}"
 msgid "/Remove ([\\w\\.]*) Completed Successfully.$/"
 msgstr "删除{0}成功完成"
 
-msgid "/Provisioning (\\w*)$/"
+msgid "/Provisioning ([\\w\\.]*)$/"
 msgstr "创建或克隆{0}"
 
-msgid "/Provisioning (\\w*) Completed Successfully.$/"
+msgid "/Provisioning ([\\w\\.]*) Completed Successfully.$/"
 msgstr "创建或克隆{0}成功完成"
 
-msgid "/Killing (\\w*)$/"
+msgid "/Provisioning ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器上创建或克隆{0}成功完成"
+
+
+msgid "/Killing ([\\w\\.]*)$/"
 msgstr "强行终止{0}"
 
-msgid "/Killing (\\w*) Completed Successfully.$/"
+msgid "/Killing ([\\w\\.]*) Completed Successfully.$/"
 msgstr "强行终止{0}成功完成"
 
-msgid "/Deleting (\\w*)$/"
+msgid "/Killing all VMs on ([\\w\\.]*)$/"
+msgstr "在{0}上强行终止全部虚拟机"
+
+msgid "/Killing all VMs on ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器{0}上强行终止全部虚拟机成功完成"
+
+msgid "/Killing all VMs on ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上强行终止全部虚拟机成功完成"
+
+msgid "/Deleting ([\\w\\.]*)$/"
 msgstr "删除{0}"
 
-msgid "/Deleting (\\w*) Completed Successfully.$/"
+msgid "/Deleting ([\\w\\.]*) Completed Successfully.$/"
 msgstr "删除{0}成功完成"
 
-msgid "/Pausing (\\w*)$/"
+msgid "/Deleting ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器上删除{0}成功完成"
+
+msgid "/Pausing ([\\w\\.]*)$/"
 msgstr "暂停{0}"
 
-msgid "/Pausing (\\w*) Completed Successfully.$/"
+msgid "/Pausing ([\\w\\.]*) Completed Successfully.$/"
 msgstr "暂停{0}成功完成"
 
-msgid "/Resuming (\\w*)$/"
+msgid "/Resuming ([\\w\\.]*)$/"
 msgstr "继续{0}"
 
-msgid "/Resuming (\\w*) Completed Successfully.$/"
+msgid "/Resuming ([\\w\\.]*) Completed Successfully.$/"
 msgstr "继续{0}成功完成"
 
-msgid "/Rebooting (\\w*)$/"
+msgid "/Rebooting ([\\w\\.]*)$/"
 msgstr "重启{0}"
 
-msgid "/Rebooting (\\w*) Completed Successfully.$/"
+msgid "/Rebooting ([\\w\\.]*) Completed Successfully.$/"
 msgstr "重启{0}成功完成"
 
 msgid "/Snapshot vm ([\\w\\.]*)$/"
@@ -1891,5 +1928,13 @@ msgstr "虚拟机磁盘{0}在目标节点{1}上面没有找到"
 
 msgid "/The destination node does not support required platform \\(([\\w\\.]*)\\)/"
 msgstr "目标节点不支持平台({0})"
+
+
+#provision vm
+msgid "/VM <b>([\\w\\.\\/]*)<\\/b> already exists.$/"
+msgstr "虚拟机{0}已经存在"
+
+
+
 
 
