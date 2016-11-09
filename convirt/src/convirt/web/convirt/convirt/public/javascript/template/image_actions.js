@@ -114,7 +114,7 @@ function renameImageGroup(node){
                         //Ext.MessageBox.alert("Success",response.msg);
                         node.parentNode.fireEvent('click',node.parentNode);
                     }else{
-                        Ext.MessageBox.alert(_("Failure"),response.msg);
+                        Ext.MessageBox.alert(_("Failure"),r_(response.msg));
                     }
                 },
                 failure: function(xhr){
@@ -188,7 +188,7 @@ function renameImage(node){
                         //Ext.MessageBox.alert("Success",response.msg);
                         node.parentNode.fireEvent('click',node.parentNode);
                     }else{
-                        Ext.MessageBox.alert(_("Failure"),response.msg);
+                        Ext.MessageBox.alert(_("Failure"),r_(response.msg));
                     }
                 },
                 failure: function(xhr){

@@ -1602,6 +1602,9 @@ msgstr "请输入模板组名称"
 msgid "Create Template"
 msgstr "创建模板"
 
+msgid "Import {0} Task Submitted."
+msgstr "导入{0}任务已提交"
+
 msgid "Create a new Template using any of the following methods"
 msgstr "使用下面任意的方法创建一个新的模板"
 
@@ -1931,8 +1934,24 @@ msgstr "目标节点不支持平台({0})"
 
 
 #provision vm
-msgid "/VM <b>([\\w\\.\\/]*)<\\/b> already exists.$/"
+msgid "/VM <b>([\\w\\.]*)<\\/b> already exists.$/"
 msgstr "虚拟机{0}已经存在"
+
+#template
+msgid "/Import Appliance$/"
+msgstr "导入器件"
+
+msgid "/Import Appliance Template Group Completed Successfully$/"
+msgstr "模板组中导入器件成功完成"
+
+msgid "/Image ([\\w\\.]*) already exists.$/"
+msgstr "模板{0}已存在"
+
+msgid "/ImageGroup ([\\w\\.]*) already exists.$/"
+msgstr "模板组{0}已存在"
+
+
+
 
 
 
