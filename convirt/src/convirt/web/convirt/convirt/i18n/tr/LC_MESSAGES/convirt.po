@@ -1731,6 +1731,29 @@ msgstr "总模板数"
 
 
 #regular expression section
+msgid "/VMAvailability ([\\w\\.]*)$/"
+msgstr "服务器{0}可用性检查"
+
+msgid "/VMAvailability ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "服务器{0}可用性检查成功完成"
+
+msgid "/VMAvailability ([\\w\\.]*) Completed Successfully.$/"
+msgstr "服务器{0}可用性检查成功完成"
+
+msgid "/Add Storage Definition$/"
+msgstr "添加存储定义"
+
+msgid "/Add Storage Definition Data Center Completed Successfully$/"
+msgstr "数据中心添加存储定义成功完成"
+
+msgid "/Task Completed Successfully.$/"
+msgstr "任务成功完成"
+
+msgid "/Associate Definitions$/"
+msgstr "关联存储定义"
+
+msgid "/Associate Definitions Server Pool Completed Successfully$/"
+msgstr "服务器资源池关联存储定义成功完成"
 
 msgid "/Starting (\\w*)$/"
 msgstr "启动{0}"
