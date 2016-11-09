@@ -1513,6 +1513,10 @@ msgstr "清除注解, 继续?"
 msgid "No annotations defined."
 msgstr "没有注解被定义"
 
+##migration
+msgid "Migrate all VMs from {0} to {1}?"
+msgstr "从{0}到{1}迁移全部虚拟机?"
+
 msgid "Live Migration"
 msgstr "在线迁移"
 
@@ -1856,6 +1860,15 @@ msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
 
 msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*) Virtual Machine Completed Successfully$/"
 msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
+
+msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*)$/"
+msgstr "从{0}到{1}迁移全部虚拟机"
+
+msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "从服务器{0}到{1}迁移全部虚拟机成功完成"
+
+msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*) Completed Successfully.$/"
+msgstr "从服务器{0}到{1}迁移全部虚拟机成功完成"
 
 msgid "/Virtual Machine (\\w*) is not running$/"
 msgstr "虚拟机{0}未运行"
