@@ -1773,7 +1773,7 @@ msgstr "关闭{0}成功完成"
 msgid "/Importing Virtual Machine on ([\\w\\.]*)$/"
 msgstr "在{0}上导入虚拟机"
 
-msgid "/Importing Virtual Machine on ([\\w\\.]*) Server Completed Successfully.$/"
+msgid "/Importing Virtual Machine on ([\\w\\.]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上导入虚拟机成功完成"
 
 msgid "/Importing Virtual Machine on ([\\w\\.]*) Completed Successfully.$/"
