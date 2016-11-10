@@ -1874,6 +1874,9 @@ msgstr "在{0}上休眠虚拟机"
 msgid "/Snapshot vm ([\\w\\.]*) Completed Successfully.$/"
 msgstr "在{0}上休眠虚拟机成功完成"
 
+msgid "/Snapshot vm ([\\w\\.]*) Virtual Machine Completed Successfully$/"
+msgstr "在{0}上休眠虚拟机成功完成"
+
 msgid "/Add Annotation Task$/"
 msgstr "添加注解任务"
 
@@ -1924,6 +1927,15 @@ msgstr "注解已清除。 \n\n之前的注解人: {0}\n之前的注解:\n\n{1}"
 
 msgid "/mail send to ([\\w\\.@]*)$/"
 msgstr "邮件已发送到{0}"
+
+msgid "/Restoring vm to ([\\w\\.]*)$/"
+msgstr "在{0}上恢复休眠的虚拟机"
+
+msgid "/Restoring vm to ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "在服务器{0}上恢复休眠的虚拟机成功完成"
+
+msgid "/Restoring vm to ([\\w\\.]*) Completed Successfully.$/"
+msgstr "在{0}上恢复休眠的虚拟机成功完成"
 
 #migration check
 msgid "/VM Disk ([\\w\\.\\/]*) not found on the destination node ([\\w\\.]*)/"
