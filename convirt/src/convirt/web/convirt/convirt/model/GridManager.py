@@ -2243,7 +2243,7 @@ class GridManager:
             if n.subject is None:
                 message = n.task_name + " Task failed at "+ to_str(n.error_time) \
                             + "\n\n" +to_str(n.error_msg)
-                subject = "ConVirt - Failed Task: "+n.task_name
+                subject = "WishCloud - Failed Task: "+n.task_name
             else:
                 subject = n.subject
                 message = to_str(n.error_msg)
