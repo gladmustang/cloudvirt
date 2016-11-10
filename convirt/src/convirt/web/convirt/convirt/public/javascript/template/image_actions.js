@@ -137,6 +137,7 @@ function removeImage(node){
                     var response=Ext.util.JSON.decode(xhr.responseText);
                     if(response.success){
                         show_task_popup(response.msg);
+                        node.parentNode.fireEvent('click',node.parentNode);
                     }else{
                         Ext.MessageBox.alert(_("Failure"),response.msg);
                     }
