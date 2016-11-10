@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed version="0.9">
-	<title>Convirture Virtual Appliances</title>
-	<link rel="self" href="http://www.convirture.com/convirt_appliances.xml"/>
-	<link href="http://www.convirture.com"/>
-	<id>http://www.convirture.com/convirt_applainces.xml</id>
+	<title>WishCloud Virtual Appliances</title>
+	<link rel="self" href="http://www.eshui.net/wishcloud_appliances.xml"/>
+	<link href="http://www.eshui.net"/>
+	<id>http://www.eshui.net/wishcloud_applainces.xml</id>
 	<updated>2009-12-05 00:47:00</updated>
 
 	<entry>

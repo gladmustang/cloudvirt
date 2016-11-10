@@ -13,7 +13,7 @@ $PROVIDER_STR
 <span style="font-size: 125%; font-family: serif; color:#0000FF;text-align: left">
 Requirements:
 </span>
-ConVirt v0.7+,  kvm-70, KVM Enabled host$EXTRA_REQUIREMENTS 
+WishCloud v1.0+,  kvm-70, KVM Enabled host$EXTRA_REQUIREMENTS
 
 
 <br/>
@@ -28,5 +28,5 @@ Contact:
 </span>
 <br/>
 $APPLIANCE_CONTACT
-Visit <a href="http://www.convirture.com">ConVirt</a> for ConVirt related issues. We can be reached there via our user forums or email.
+Visit <a href="http://www.eshui.net">WishCloud</a> for WishCloud related issues. We can be reached there via our user forums or email.
 </body>
