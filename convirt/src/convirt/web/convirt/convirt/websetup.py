@@ -291,6 +291,7 @@ def setup_app(command, conf, vars):
     set_entity_details(upd_dep_task, dc_ent)
     model.DBSession.merge(upd_dep_task)
 
+    #below code is for check version update from convirt periodically, comment it as there is no need for us
     # chk_upd_task = CheckForUpdateTask(u'Check For Update',\
     #                     {'quiet':True}, [], {}, None, u'admin')
     # chk_upd_task.id = 5
