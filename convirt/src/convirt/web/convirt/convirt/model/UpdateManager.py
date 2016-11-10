@@ -29,7 +29,8 @@ LOGGER = logging.getLogger("convirt.model")
 class AppUpdateManager:
 
     def __init__(self):
-        self.update_url = "http://www.convirture.com/updates/updates.xml"
+        #self.update_url = "http://www.convirture.com/updates/updates.xml"
+        self.update_url = "http://127.0.0.1:8081/updates/updates.xml"
         self.updates_file = "/var/cache/convirt/updates.xml"
 
     def check_for_updates(self,send_mail=False):

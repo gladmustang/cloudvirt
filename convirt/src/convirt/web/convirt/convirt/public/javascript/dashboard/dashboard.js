@@ -687,7 +687,7 @@ header_html_link += '</nav>';
                 appendChildNodes(response.nodes,rootNode);
                 rootNode.expand();
                 rootNode.firstChild.fireEvent('click',rootNode.firstChild);
-                get_app_updates();
+                //get_app_updates(); //comment this line as there is no need to get update, if you wish, you can uncomment it
                 }else{
                 Ext.MessageBox.alert(_("Failure"),response.msg);
             }
