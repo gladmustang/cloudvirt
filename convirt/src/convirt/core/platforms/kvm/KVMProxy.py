@@ -63,7 +63,8 @@ class KVMProxy(VMM):
                           "acpitable", "smbios", "bt", "bios", "icount", 
                           "watchdog", "watchdog-action", "echr", 
                           "virtioconsole", "tb-size", "chroot", "runas", 
-                          "pcidevice", "enable-nesting", "nvram",'uuid'
+                          "pcidevice", "enable-nesting", "nvram",'uuid',
+                          "spice", "device", "chardev"
                           )
     
     kvm_options_no_v = ("S", "s", "no-kvm", "no-kvm-irqchip",
@@ -677,6 +678,51 @@ class KVMProxy(VMM):
                         cmdline = self.process_option(cmdline, opt, value,
                                                       known_options)
                 continue
+            elif opt in ["spice"]:
+                if not isinstance(value, int):
+                    raise Exception("spice port is not correct :" + value)
+                spicevmc_id = "vdagent"+to_str(value)
+                value = "port="+ to_str(value)+",disable-ticketing"
+                cmdline = self.process_option(cmdline, "vga", "qxl",
+                                            known_options)
+                cmdline = self.process_option(cmdline, opt, value,
+                                            known_options)
+
+                #for drag and drop
+                cmdline = self.process_option(cmdline, "device", "virtio-serial",
+                                            known_options)
+
+                cmdline = self.process_option(cmdline, "chardev", "spicevmc,id="+spicevmc_id+",debug=0,name=vdagent",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "virtserialport,chardev="+spicevmc_id+",name=com.redhat.spice.0",
+                                            known_options)
+
+                #for audio support
+                cmdline = self.process_option(cmdline, "soundhw", "ac97",
+                                            known_options)
+                #for usb redir
+                cmdline = self.process_option(cmdline, "device", "ich9-usb-ehci1,id=usb",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "ich9-usb-uhci1,masterbus=usb.0,firstport=0,multifunction=on",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "ich9-usb-uhci2,masterbus=usb.0,firstport=2",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "ich9-usb-uhci3,masterbus=usb.0,firstport=4",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "chardev", "spicevmc,name=usbredir,id=usbredirchardev1",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "usb-redir,chardev=usbredirchardev1,id=usbredirdev1",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "chardev", "spicevmc,name=usbredir,id=usbredirchardev2",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "usb-redir,chardev=usbredirchardev2,id=usbredirdev2",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "chardev", "spicevmc,name=usbredir,id=usbredirchardev3",
+                                            known_options)
+                cmdline = self.process_option(cmdline, "device", "usb-redir,chardev=usbredirchardev3,id=usbredirdev3",
+                                            known_options)
+
+                continue
             elif opt in ["kernel", "initrd", "append"] :
                 if not skip_kernel_rd :
                     # hack
@@ -1127,20 +1173,4 @@ if __name__ == '__main__':
         
     
     #vmm.read_till_prompt(chan)
-    #output =  vmm.send_command(chan, "help")
-    #print output
-    
-    ## while True:
-##         try:
-##             command = sys.stdin.readline()
-##             if command.strip() == "quit":
-##                 break
-##             output = vmm.send_command(chan,command.strip())
-##             print output
-##         except Exception, ex:
-##             print ex
-            
-        
-    
-                                   
-
+    #output =  vmm.send_command(ch

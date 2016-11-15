@@ -1816,6 +1816,9 @@ msgstr "删除{0}"
 msgid "/Remove ([\\w\\.]*) Completed Successfully.$/"
 msgstr "删除{0}成功完成"
 
+msgid "/Remove ([\\w\\.]*) Server Completed Successfully$/"
+msgstr "删除服务器{0}成功完成"
+
 msgid "/Provisioning ([\\w\\.]*)$/"
 msgstr "创建或克隆{0}"
 
