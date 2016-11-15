@@ -550,10 +550,10 @@ msgid "Virtual CPUs"
 msgstr "虚拟CPU数"
 
 msgid "Host CPU Usage(%)"
-msgstr "主机CPU使用(%)"
+msgstr "宿主机CPU使用率(%)"
 
 msgid "Memory Utilization(%)"
-msgstr "内存使用率(%)"
+msgstr "宿主机内存使用率(%)"
 
 msgid "Network"
 msgstr "网络"
