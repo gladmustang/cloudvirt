@@ -681,6 +681,11 @@ class KVMProxy(VMM):
             elif opt in ["spice"]:
                 if not isinstance(value, int):
                     raise Exception("spice port is not correct :" + value)
+
+                #default value is 0, means no spice support for vm
+                if value==0:
+                    continue
+
                 spicevmc_id = "vdagent"+to_str(value)
                 value = "port="+ to_str(value)+",disable-ticketing"
                 cmdline = self.process_option(cmdline, "vga", "qxl",
