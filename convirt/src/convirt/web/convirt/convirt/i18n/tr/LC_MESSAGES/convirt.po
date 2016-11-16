@@ -1477,8 +1477,6 @@ msgstr "迁移虚拟机任务已提交"
 msgid "Virtual Machine settings changed successfully"
 msgstr "虚拟机设置修改成功"
 
-msgid "shutdown failed due to timeout"
-msgstr "因为超时，关闭失败"
 
 
 ##action.js ## server_action
@@ -1939,6 +1937,9 @@ msgstr "在服务器{0}上恢复休眠的虚拟机成功完成"
 
 msgid "/Restoring vm to ([\\w\\.]*) Completed Successfully.$/"
 msgstr "在{0}上恢复休眠的虚拟机成功完成"
+
+msgid "/shutdown failed due to timeout$/"
+msgstr "因为超时，关闭失败"
 
 #migration check
 msgid "/VM Disk ([\\w\\.\\/]*) not found on the destination node ([\\w\\.]*)/"
