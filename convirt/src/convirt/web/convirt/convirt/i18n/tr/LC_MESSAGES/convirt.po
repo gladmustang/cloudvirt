@@ -916,6 +916,10 @@ msgstr "新记录添加成功"
 msgid "Record updated successfully"
 msgstr "记录更新成功"
 
+#chart
+msgid "Select Period for Metric Utilization"
+msgstr "选择度量起止区间"
+
 #popup chart
 msgid "Metric"
 msgstr "度量"
