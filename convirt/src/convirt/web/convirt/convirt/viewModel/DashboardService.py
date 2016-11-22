@@ -133,7 +133,7 @@ class DashboardService:
             dict['VM_SHARED_STORAGE'] = 0
             dict['VM_TOTAL_STORAGE'] = 0
             dict['NAME'] = vmids.name
-            dict['NODE_NAME'] = vmids.name
+            #dict['NODE_NAME'] = vmids.name
             dict['SSID'] = 0
             dict['CPU(sec)'] = 0
             dict['MAXMEM(%)'] = 0
@@ -143,6 +143,12 @@ class DashboardService:
             dict['VCPUS'] = 0
             dict['DISPLAY'] = 0
             dict['OWN_USER']=''
+
+            vm = DBSession.query(VM).filter(VM.id==vmids.entity_id).options(eagerload("current_state")).first()
+            if not vm or (not vm.own_user):
+                vm.own_user="unknown"
+            dict.update({'OWN_USER':vm.own_user})
+            dict.update({'NODE_NAME':vm.own_user +'.'+ vmids.name})
 
             VMCurrInstance = ms.getVMCurrMetricsData(constants.VM_CURR, vmids, auth)
             # if data is returned from the current metrics table.
@@ -157,7 +163,7 @@ class DashboardService:
                 dict.update({'NETTX(k)':VMCurrInstance.nets_tx})
                 dict.update({'NETRX(k)':VMCurrInstance.nets_rx})
                 ###commented on 25/11/09
-                vm = DBSession.query(VM).filter(VM.id==vmids.entity_id).options(eagerload("current_state")).first()
+                #vm = DBSession.query(VM).filter(VM.id==vmids.entity_id).options(eagerload("current_state")).first()
                 dict.update({'STATE':to_str(vm.get_state())})
                 dict.update({'ICONSTATE':to_str(vm.get_state())})
 
@@ -170,10 +176,7 @@ class DashboardService:
                 dict.update({'VM_TOTAL_STORAGE':VMCurrInstance.gb_pooltotal})
                 dict.update({'NAME':vmids.name})
                 # added newly to test
-                if not vm.own_user:
-                    vm.own_user="unknown"
-                dict.update({'OWN_USER':vm.own_user})
-                dict.update({'NODE_NAME':vm.own_user +'.'+ vmids.name})
+                #dict.update({'NODE_NAME':vm.own_user +'.'+ vmids.name})
                 dict.update({'SSID': '0'})
                 dict.update({'CPU(sec)': '1'})
                 dict.update({'MAXMEM(%)': '6.3'})
