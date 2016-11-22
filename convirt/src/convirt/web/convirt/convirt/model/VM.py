@@ -94,6 +94,7 @@ class VM(DeclarativeBase):
     os_version=Column(Unicode(50))
     status=Column(Unicode(50))
     created_user = Column (Unicode(255))
+    own_user = Column (Unicode(255))
     created_date = Column (DateTime)
     current_state = relation(AvailState, \
                              primaryjoin = id == AvailState.entity_id, \

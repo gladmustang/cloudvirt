@@ -800,6 +800,7 @@ class GridManager:
                 file = os.path.join(directory, filename)
                 dom = managed_node.add_dom_config(file)
                 d_config= dom.get_config()
+                dom.own_user=auth.user.user_name
 
                 # for PV images boot is optional, but ConVirt UI seems to need it. patch it.
                 if d_config and d_config.get("boot") is None:
@@ -1229,6 +1230,7 @@ class GridManager:
             vm.os_flavor=v_config["os_flavor"]
             vm.os_name=v_config["os_name"]
             vm.os_version=v_config["os_version"]
+            vm.own_user=auth.user.user_name
             vm.created_user=auth.user.user_name
             vm.created_date=datetime.utcnow()
 
