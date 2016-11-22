@@ -171,7 +171,7 @@ class DashboardService:
                 dict.update({'NAME':vmids.name})
                 # added newly to test
                 if not vm.own_user:
-                    vm.own_user="admin"
+                    vm.own_user="unknown"
                 dict.update({'OWN_USER':vm.own_user})
                 dict.update({'NODE_NAME':vm.own_user +'.'+ vmids.name})
                 dict.update({'SSID': '0'})

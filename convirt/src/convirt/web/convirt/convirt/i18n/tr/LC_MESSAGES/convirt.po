@@ -1976,8 +1976,8 @@ msgstr "KVM : 不能修改正在运行的虚拟机的内存"
 msgid "/Change Settings of ([\\w\\.]*)$/"
 msgstr "修改{0}的设置"
 
-
-
+msgid "/Error adding file, ([\\w\\.\\/\\$]*). VM ([\\w\\.]*) already exists.$/"
+msgstr "添加配置文件{0}错误，虚拟机{1}已经存在"
 
 
 
