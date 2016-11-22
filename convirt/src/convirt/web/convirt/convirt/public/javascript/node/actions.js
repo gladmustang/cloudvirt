@@ -714,10 +714,10 @@ function changeVmSettings(node,action){
    
         var node_id=node.parentNode.attributes.id; 
         var group_id=node.parentNode.parentNode.attributes.id; 
-        var dom_id=node.attributes.text;
+        var dom_id=node.attributes.vm_name;
         var vm_id = node.attributes.id;
 
-        var url="/node/get_vm_config?domId="+node.attributes.text+"&nodeId="+node_id;
+        var url="/node/get_vm_config?domId="+node.attributes.vm_name+"&nodeId="+node_id;
         var ajaxReq=ajaxRequest(url,0,"GET",true);
         ajaxReq.request({
             success: function(xhr) {//alert(xhr.responseText);

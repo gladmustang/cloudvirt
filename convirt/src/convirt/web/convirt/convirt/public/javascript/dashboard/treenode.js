@@ -217,6 +217,7 @@ function appendChildNodes(childnodes,prntNode){
             nodetype: childnode.NODE_TYPE
             ,state:state
             ,clickable:childnode.DOMAIN_TYPE
+            ,vm_name: childnode.NAME
         });
 //        alert(childnode.NODE_NAME+"==="+childnode.NODE_CHILDREN);
         if(childnode.NODE_CHILDREN){
@@ -249,7 +250,9 @@ function get_new_nodes(children,parentNode){
             n++;
         }else{
             if(node.attributes.nodetype==convirt.constants.DOMAIN){
-                node.setText(children[k].NAME);
+                //node.setText(children[k].NAME);
+                node.setText(children[k].NODE_NAME);
+                node.attributes.vm_name=children[k].NAME;
                 node.attributes.state=children[k].STATE;
                 var icon_state=""+children[k].ICONSTATE;
                 var iconCls=getIconCls(icon_state,children[k].DOMAIN_TYPE);

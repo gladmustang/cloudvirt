@@ -142,6 +142,8 @@ class DashboardService:
             dict['MAXMEM(k)'] = 0
             dict['VCPUS'] = 0
             dict['DISPLAY'] = 0
+            dict['OWN_USER']=''
+
             VMCurrInstance = ms.getVMCurrMetricsData(constants.VM_CURR, vmids, auth)
             # if data is returned from the current metrics table.
             if VMCurrInstance:
@@ -158,6 +160,7 @@ class DashboardService:
                 vm = DBSession.query(VM).filter(VM.id==vmids.entity_id).options(eagerload("current_state")).first()
                 dict.update({'STATE':to_str(vm.get_state())})
                 dict.update({'ICONSTATE':to_str(vm.get_state())})
+
                 if not managed_node.is_up():
                     dict.update({'ICONSTATE':"D_"+to_str(vm.get_state())})
                 ###end
@@ -167,7 +170,10 @@ class DashboardService:
                 dict.update({'VM_TOTAL_STORAGE':VMCurrInstance.gb_pooltotal})
                 dict.update({'NAME':vmids.name})
                 # added newly to test
-                dict.update({'NODE_NAME': vmids.name})
+                if not vm.own_user:
+                    vm.own_user="admin"
+                dict.update({'OWN_USER':vm.own_user})
+                dict.update({'NODE_NAME':vm.own_user +'.'+ vmids.name})
                 dict.update({'SSID': '0'})
                 dict.update({'CPU(sec)': '1'})
                 dict.update({'MAXMEM(%)': '6.3'})
@@ -176,6 +182,7 @@ class DashboardService:
                 dict.update({'MAXMEM(k)': '262144'})
                 dict.update({'VCPUS': '1'})
                 dict.update({'DISPLAY': '1'})
+
             vmmetrics_list.append(dict)
         return vmmetrics_list
     """

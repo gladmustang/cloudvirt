@@ -45,6 +45,8 @@ class DashboardController(ControllerBase):
             result = None
             self.authenticate()
             dashboardInfo = self.dashboard_service.execute(session['auth'], type, node_id, username, password)
+            if (type==constants.MANAGED_NODE) and  (not session['is_admin']):
+                dashboardInfo.data = [vminfo for vminfo in dashboardInfo.data if vminfo['OWN_USER']==session['auth'].user.user_name]
             result = json.dumps(dict(success=True,nodes=dashboardInfo.toJson()))
             return result
         except Exception, ex:
