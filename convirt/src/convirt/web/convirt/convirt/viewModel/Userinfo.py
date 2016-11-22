@@ -41,7 +41,7 @@ import logging
 LOGGER = logging.getLogger("convirt.viewModel")
 
 class Userinfo:
-    def save_user_det(self, login,userid, username, fname, lname, displayname, password, email, phone, status):
+    def save_user_det(self, login,userid, username, fname, lname, displayname, password, email, vm_licenses, status):
        
         user1=DBSession.query(User).filter(User.user_name==username).first()
         
@@ -55,7 +55,7 @@ class Userinfo:
            user.lastname=(lname)
            user.display_name=(displayname)
            user.user_name=(username)
-           user.phone_number=(phone)
+           user.vm_license_number=(vm_licenses)
            user.email_address=(email)
            user.created_by=(login)
            user.modified_by=(login)
@@ -95,7 +95,7 @@ class Userinfo:
         else:
             return False
 
-    def updatesave_user_det(self, login, userid, username, fname, lname, displayname,  email, phone, status,changepass,newpasswd):
+    def updatesave_user_det(self, login, userid, username, fname, lname, displayname,  email, vm_licenses, status,changepass,newpasswd):
 
         result = []
 
@@ -109,7 +109,7 @@ class Userinfo:
         user.display_name=(displayname)
         #user.password=(password)
         user.email_address=(email)
-        user.phone_number=(phone)
+        user.vm_license_number=(vm_licenses)
         user.modified_date=datetime.now()
         user.modified_by=(login)
         newpasswd = (newpasswd)
@@ -150,7 +150,7 @@ class Userinfo:
 
         result.append(dict(userid=user.user_id,username=user.user_name,fname=user.firstname,\
                         lname=user.lastname,displayname=user.display_name,password=user._password,\
-                        repass=user._password,phone=user.phone_number,email=user.email_address,\
+                        repass=user._password,vm_licenses=user.vm_license_number,email=user.email_address,\
                         status=status,createdby=user.created_by,modifiedby=user.modified_by,\
                         createddate=user.created_date,modifieddate=user.modified_date,groupname=gnames))
         return result

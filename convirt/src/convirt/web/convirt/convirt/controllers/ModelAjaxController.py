@@ -37,8 +37,8 @@ class ModelAjaxController(BaseController):
         return result
 
     @expose(template='json')
-    def save_user_det(self, userid, username, fname, lname, displayname, password, email, phone, status):
-        result = self.model_controller.save_user_det(userid, username, fname, lname, displayname, password, email, phone, status)
+    def save_user_det(self, userid, username, fname, lname, displayname, password, email, vm_licenses, status):
+        result = self.model_controller.save_user_det(userid, username, fname, lname, displayname, password, email, vm_licenses, status)
         return result
 
     @expose(template='json')
@@ -47,8 +47,8 @@ class ModelAjaxController(BaseController):
         return result
 
     @expose(template='json')
-    def updatesave_user_det(self, userid, username, fname, lname, displayname,  email, phone, status,changepass,newpasswd):
-        result = self.model_controller.updatesave_user_det(userid, username, fname, lname, displayname,  email, phone, status, changepass, newpasswd)
+    def updatesave_user_det(self, userid, username, fname, lname, displayname,  email, vm_licenses, status,changepass,newpasswd):
+        result = self.model_controller.updatesave_user_det(userid, username, fname, lname, displayname,  email, vm_licenses, status, changepass, newpasswd)
         return result
 
     @expose(template='json')

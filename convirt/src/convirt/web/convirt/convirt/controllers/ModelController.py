@@ -58,13 +58,13 @@ class ModelController(ControllerBase):
         return result
 
 #    @expose(template='json')
-    def save_user_det(self, userid, username, fname, lname, displayname, password, email, phone, status):
+    def save_user_det(self, userid, username, fname, lname, displayname, password, email, vm_licenses, status):
           try:
               result = None
               self.authenticate()
               if session['auth'].is_admin() == False:
                   return dict(success=False,msg=constants.NO_PRIVILEGE)
-              result = self.user_info.save_user_det( session['userid'],userid, username, fname, lname, displayname, password, email, phone, status)
+              result = self.user_info.save_user_det( session['userid'],userid, username, fname, lname, displayname, password, email, vm_licenses, status)
           except Exception, ex:
               print_traceback()
               return {'success':False, 'msg':to_str(ex).replace("'", "")}
@@ -83,13 +83,13 @@ class ModelController(ControllerBase):
             return {'success':False, 'msg':to_str(ex).replace("'", "")}
 
 #    @expose(template='json')
-    def updatesave_user_det(self, userid, username, fname, lname, displayname,  email, phone, status,changepass,newpasswd):
+    def updatesave_user_det(self, userid, username, fname, lname, displayname,  email, vm_licenses, status,changepass,newpasswd):
           try:
               result = None
               self.authenticate()
               if session['auth'].is_admin() == False:
                   return dict(success=False,msg=constants.NO_PRIVILEGE)
-              result = self.user_info.updatesave_user_det(session['userid'],userid, username, fname, lname, displayname,  email, phone, status,changepass,newpasswd)
+              result = self.user_info.updatesave_user_det(session['userid'],userid, username, fname, lname, displayname,  email, vm_licenses, status,changepass,newpasswd)
           except Exception, ex:
               print_traceback()
               return {'success':False, 'msg':to_str(ex).replace("'", "")}

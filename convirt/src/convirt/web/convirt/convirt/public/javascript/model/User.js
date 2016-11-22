@@ -283,11 +283,11 @@ function userDetailsPanel(grid,mode,user,w){
         id: 'email',
         allowBlank:false
     });
-    var user_phone=new Ext.form.NumberField({
-        fieldLabel: _('Phone'),
-        name: 'phone',
+    var user_vm_licenses=new Ext.form.NumberField({
+        fieldLabel: _('vm_licenses'),
+        name: 'vm_licenses',
         width: 150,
-        id: 'phone',
+        id: 'vm_licenses',
         allowBlank:true
     });
     var createdby=new Ext.form.TextField({
@@ -463,7 +463,7 @@ function userDetailsPanel(grid,mode,user,w){
                     uid=user_name.getValue()
                     if(mode=='NEW'){
 
-                        url="/model/save_user_det?userid="+user_id.getValue()+"&username="+user_name.getValue()+"&fname="+user_fname.getValue()+"&lname="+user_lname.getValue()+"&displayname="+display_name.getValue()+"&password="+user_password.getValue()+"&email="+user_email.getValue()+"&phone="+user_phone.getValue()+"&status="+user_status.getValue();
+                        url="/model/save_user_det?userid="+user_id.getValue()+"&username="+user_name.getValue()+"&fname="+user_fname.getValue()+"&lname="+user_lname.getValue()+"&displayname="+display_name.getValue()+"&password="+user_password.getValue()+"&email="+user_email.getValue()+"&vm_licenses="+user_vm_licenses.getValue()+"&status="+user_status.getValue();
                     }else if(mode=='EDIT'){
                         //var record=null;
                         //var  groupids="";
@@ -499,7 +499,7 @@ function userDetailsPanel(grid,mode,user,w){
                         url="/model/updatesave_user_det?userid="+user_id.getValue()+
                              "&username="+user_name.getValue()+"&fname="+user_fname.getValue()+
                              "&lname="+user_lname.getValue()+"&displayname="+display_name.getValue()+
-                             "&email="+user_email.getValue()+"&phone="+user_phone.getValue()+
+                             "&email="+user_email.getValue()+"&vm_licenses="+user_vm_licenses.getValue()+
                              "&status="+user_status.getValue()+"&changepass="+change_passwd+
                              "&newpasswd="+newpasswrd.getValue();
                     }
@@ -564,7 +564,7 @@ function userDetailsPanel(grid,mode,user,w){
         labelWidth:100,
         border:0,
         bodyStyle:'padding:10px 10px 10px 10px'
-    //items:[user_name,user_fname,user_lname,user_password,user_repass,user_email,user_phone,user_status]
+    //items:[user_name,user_fname,user_lname,user_password,user_repass,user_email,user_vm_licenses,user_status]
     });
 
     var passwrd_fldset=new Ext.form.FieldSet({
@@ -592,7 +592,7 @@ function userDetailsPanel(grid,mode,user,w){
         user_rightpanel.add(user_repass);
     }
     user_rightpanel.add(user_email);
-    user_rightpanel.add(user_phone);
+    user_rightpanel.add(user_vm_licenses);
     user_rightpanel.add(user_status);    
 
     var user_auditpanel=new Ext.Panel({
@@ -667,7 +667,7 @@ function userDetailsPanel(grid,mode,user,w){
         user_lname.setValue(user.lname);
         display_name.setValue(user.displayname);
         user_email.setValue(user.email);
-        user_phone.setValue(user.phone);
+        user_vm_licenses.setValue(user.vm_licenses);
         user_status.setValue(_(user.status));
         user_group.setValue(user.groupname);
         user_rightpanel.add(user_group);

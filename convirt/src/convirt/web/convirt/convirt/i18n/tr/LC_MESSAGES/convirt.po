@@ -823,8 +823,8 @@ msgstr "重输密码"
 msgid "Email"
 msgstr "邮件"
 
-msgid "Phone"
-msgstr "电话"
+msgid "vm_licenses"
+msgstr "VM生成数量"
 
 msgid "Active"
 msgstr "激活"

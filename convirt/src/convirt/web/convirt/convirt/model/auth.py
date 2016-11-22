@@ -139,7 +139,7 @@ class User(DeclarativeBase):
 
     lastname=Column(Unicode(50),nullable=False)
 
-    phone_number=Column(Unicode(20))
+    vm_license_number=Column(Unicode(20))
 
     status=Column(Boolean,default=True)
     
