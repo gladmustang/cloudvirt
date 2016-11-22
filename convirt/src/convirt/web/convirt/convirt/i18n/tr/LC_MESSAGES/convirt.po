@@ -1970,6 +1970,13 @@ msgstr "模板{0}已存在"
 msgid "/ImageGroup ([\\w\\.]*) already exists.$/"
 msgstr "模板组{0}已存在"
 
+msgid "/KVM : Can not change memory for running vm.$/"
+msgstr "KVM : 不能修改正在运行的虚拟机的内存"
+
+msgid "/Change Settings of ([\\w\\.]*)$/"
+msgstr "修改{0}的设置"
+
+
 
 
 
