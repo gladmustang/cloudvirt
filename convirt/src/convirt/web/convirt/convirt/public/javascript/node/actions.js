@@ -312,7 +312,7 @@ function importVMConfig(node,directory,filenames){
             if(import_response.success)
                 show_task_popup(import_response.msg);
             else
-                Ext.MessageBox.alert(_("Error"),import_response.msg);
+                Ext.MessageBox.alert(_("Error"),_(import_response.msg));
 //            node.fireEvent('click',node);
         },
         failure: function(xhr){

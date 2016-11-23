@@ -1954,16 +1954,14 @@ def instantiate_configs(managed_node,
         traceback.print_exc()
         raise e
 
-def check_vm_licenses(username):
+def get_remain_vm_licenses(username):
     from convirt.model import DBSession,VM
     from convirt.model.auth import User
     #get existing vm count for current user
     vms=DBSession.query(func.count('*')).filter(VM.own_user == username).scalar()
     #get vm license count for current user
     vm_licenses=long(DBSession.query(User.vm_license_number).filter(User.user_name==username).scalar())
-    if (vms+1)>vm_licenses:
-        return False;
-    return True;
+    return vm_licenses-vms
 
 
 

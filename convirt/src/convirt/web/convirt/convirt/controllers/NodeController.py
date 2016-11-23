@@ -180,8 +180,8 @@ class NodeController(ControllerBase):
     def import_vm_config(self, node_id,directory,filenames,date=None,time=None):
         self.authenticate()
         try:
-            from convirt.core.utils.utils import check_vm_licenses
-            if check_vm_licenses(session['auth'].user.user_name):
+            from convirt.core.utils.utils import get_remain_vm_licenses
+            if get_remain_vm_licenses(session['auth'].user.user_name)>0:
                 result=self.tc.import_vm_action(session['auth'], node_id, directory,filenames, date,time)
     #            doms=self.node_service.import_vm_config(session['auth'],node_id, directory, filenames)
             else:
@@ -311,8 +311,8 @@ class NodeController(ControllerBase):
         try:
             if mode in ['PROVISION_VM', 'EDIT_VM_INFO']:
                 if mode=='PROVISION_VM':
-                    from convirt.core.utils.utils import check_vm_licenses
-                    if not check_vm_licenses(session['auth'].user.user_name):
+                    from convirt.core.utils.utils import get_remain_vm_licenses
+                    if get_remain_vm_licenses(session['auth'].user.user_name)<=0:
                         return dict(success=False,msg='VM licenses are not enough')
                 self.tc.config_settings(session['auth'], image_id, config, \
                                       mode, node_id, group_id, dom_id, vm_name,date,time)

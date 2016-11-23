@@ -1290,6 +1290,9 @@ msgstr "选择操作系统名称"
 msgid "VM Name should not contain special characters.<br>"
 msgstr "虚拟机名字不应该包含特殊字符。"
 
+msgid "VM licenses are not enough"
+msgstr "可分配的VM生成数量不足"
+
 ###storage detail config
 msgid "Options"
 msgstr "选项"
