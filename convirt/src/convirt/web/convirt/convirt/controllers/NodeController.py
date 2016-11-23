@@ -309,11 +309,30 @@ class NodeController(ControllerBase):
     def vm_config_settings(self,image_id,config,mode,node_id=None,group_id=None,dom_id=None,vm_name=None,date=None,time=None,_dc=None):
         self.authenticate()
         try:
-            if mode in ['PROVISION_VM', 'EDIT_VM_INFO']:
-                if mode=='PROVISION_VM':
-                    from convirt.core.utils.utils import get_remain_vm_licenses
-                    if get_remain_vm_licenses(session['auth'].user.user_name)<=0:
-                        return dict(success=False,msg='VM licenses are not enough')
+            if (not mode=='PROVISION_VM') and '-' in vm_name:
+                return dict(success=False,msg='VM name can not contain special character "-"')
+            if mode=='PROVISION_VM':
+                import re
+                vm_name_list=[]
+                m = re.match(r'^(.*)(\d)-(\d+)$', vm_name)
+                if m!=None:
+                    start = int( m.group(2))
+                    stop=int(m.group(3))+1
+                    for x in range(start, stop):
+                        tmp_vm_name= m.group(1)+str(x)
+                        vm_name_list.append(tmp_vm_name)
+                else:
+                    if '-' in vm_name:
+                        return dict(success=False,msg='VM name contains "-", which can only be used in batch mode')
+                    vm_name_list.append(vm_name)
+                from convirt.core.utils.utils import get_remain_vm_licenses
+                if get_remain_vm_licenses(session['auth'].user.user_name) < len(vm_name_list):
+                    return dict(success=False,msg='VM licenses are not enough')
+                for vm_name in vm_name_list:
+                    self.tc.config_settings(session['auth'], image_id, config, \
+                                            mode, node_id, group_id, dom_id, vm_name,date,time)
+                result = None
+            elif mode == 'EDIT_VM_INFO':
                 self.tc.config_settings(session['auth'], image_id, config, \
                                       mode, node_id, group_id, dom_id, vm_name,date,time)
                 result = None

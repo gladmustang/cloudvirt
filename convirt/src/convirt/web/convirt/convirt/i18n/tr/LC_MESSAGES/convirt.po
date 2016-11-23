@@ -1298,6 +1298,12 @@ msgstr "虚拟机名字不应该包含特殊字符。"
 msgid "VM licenses are not enough"
 msgstr "虚拟机剩余的生成数量不足"
 
+msgid "VM name contains \"-\", which can only be used in batch mode"
+msgstr "虚拟机名字中包含特殊字符\"-\", 该字符仅能够被用于虚拟机批量创建模式"
+
+msgid "VM name can not contain special character \"-\""
+msgstr "虚拟机名字中不能包含特殊字符\"-\""
+
 ###storage detail config
 msgid "Options"
 msgstr "选项"
