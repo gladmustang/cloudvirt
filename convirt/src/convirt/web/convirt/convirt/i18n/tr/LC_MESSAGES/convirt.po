@@ -254,8 +254,8 @@ msgstr "虚拟机密度"
 msgid "Virtualization Platform"
 msgstr "虚拟化平台"
 
-msgid "VM Remain Licenses"
-msgstr "虚拟机剩余生成数量"
+msgid "VM Remain Licenses of Current User"
+msgstr "当前用户虚拟机剩余生成数量"
 
 msgid "Notifications"
 msgstr "日志消息"

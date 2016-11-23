@@ -577,7 +577,7 @@ class DashboardService:
              info_list.append(dict(name='Server Pools',value=sps))
              info_list.append(dict(name='Servers',value=srvrs))
              info_list.append(dict(name='Virtual Machines',value=vminfo ,type='vmsummary'))
-             info_list.append(dict(name='VM Remain Licenses',value=vm_remain_licenses))
+             info_list.append(dict(name='VM Remain Licenses of Current User',value=vm_remain_licenses))
              info_list.append(dict(name='Virtual Machine Density',value=density))
             #    Call ge platform count to get the Virtualizaton Platform details
              pfvalue=""
