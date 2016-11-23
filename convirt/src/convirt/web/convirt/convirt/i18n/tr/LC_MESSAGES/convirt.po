@@ -1751,13 +1751,13 @@ msgstr "总模板数"
 
 
 #regular expression section
-msgid "/VMAvailability ([\\w\\.]*)$/"
+msgid "/VMAvailability ([\\w\\.\\-]*)$/"
 msgstr "服务器{0}可用性检查"
 
-msgid "/VMAvailability ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/VMAvailability ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "服务器{0}可用性检查成功完成"
 
-msgid "/VMAvailability ([\\w\\.]*) Completed Successfully.$/"
+msgid "/VMAvailability ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "服务器{0}可用性检查成功完成"
 
 msgid "/Add Storage Definition$/"
@@ -1775,119 +1775,119 @@ msgstr "关联存储定义"
 msgid "/Associate Definitions Server Pool Completed Successfully$/"
 msgstr "服务器资源池关联存储定义成功完成"
 
-msgid "/Starting ([\\w\\.]*)$/"
+msgid "/Starting ([\\w\\.\\-]*)$/"
 msgstr "启动{0}"
 
-msgid "/Starting ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Starting ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "启动{0}成功完成"
 
-msgid "/Starting ([\\w\\.]*) Virtual Machine Completed Successfully$/"
+msgid "/Starting ([\\w\\.\\-]*) Virtual Machine Completed Successfully$/"
 msgstr "启动{0}成功完成"
 
-msgid "/Starting all Virtual Machines on ([\\w\\.]*)$/"
+msgid "/Starting all Virtual Machines on ([\\w\\.\\-]*)$/"
 msgstr "在{0}上启动全部虚拟机"
 
-msgid "/Starting all Virtual Machines on ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Starting all Virtual Machines on ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上启动全部虚拟机成功完成"
 
-msgid "/Starting all Virtual Machines on ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Starting all Virtual Machines on ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在{0}上启动全部虚拟机成功完成"
 
-msgid "/Shutting down ([\\w\\.]*)$/"
+msgid "/Shutting down ([\\w\\.\\-]*)$/"
 msgstr "关闭{0}"
 
-msgid "/Shutting down ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Shutting down ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "关闭{0}成功完成"
 
-msgid "/Shutting down all Virtual Machines on ([\\w\\.]*)$/"
+msgid "/Shutting down all Virtual Machines on ([\\w\\.\\-]*)$/"
 msgstr "在{0}上关闭全部虚拟机"
 
-msgid "/Shutting down all Virtual Machines on ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Shutting down all Virtual Machines on ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上关闭全部虚拟机成功完成"
 
-msgid "/Shutting down all Virtual Machines on ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Shutting down all Virtual Machines on ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在{0}上关闭全部虚拟机成功完成"
 
-msgid "/Importing Virtual Machine on ([\\w\\.]*)$/"
+msgid "/Importing Virtual Machine on ([\\w\\.\\-]*)$/"
 msgstr "在{0}上导入虚拟机"
 
-msgid "/Importing Virtual Machine on ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Importing Virtual Machine on ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上导入虚拟机成功完成"
 
-msgid "/Importing Virtual Machine on ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Importing Virtual Machine on ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在服务器{0}上导入虚拟机成功完成"
 
 msgid "/Server Pool (.*) Added.$/"
 msgstr "服务器资源池{0}已添加"
 
-msgid "/Remove ([\\w\\.]*)$/"
+msgid "/Remove ([\\w\\.\\-]*)$/"
 msgstr "删除{0}"
 
-msgid "/Remove ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Remove ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "删除{0}成功完成"
 
-msgid "/Remove ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Remove ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "删除服务器{0}成功完成"
 
-msgid "/Provisioning ([\\w\\.]*)$/"
+msgid "/Provisioning ([\\w\\.\\-]*)$/"
 msgstr "创建或克隆{0}"
 
-msgid "/Provisioning ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Provisioning ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "创建或克隆{0}成功完成"
 
-msgid "/Provisioning ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Provisioning ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器上创建或克隆{0}成功完成"
 
 
-msgid "/Killing ([\\w\\.]*)$/"
+msgid "/Killing ([\\w\\.\\-]*)$/"
 msgstr "强行终止{0}"
 
-msgid "/Killing ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Killing ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "强行终止{0}成功完成"
 
-msgid "/Killing all VMs on ([\\w\\.]*)$/"
+msgid "/Killing all VMs on ([\\w\\.\\-]*)$/"
 msgstr "在{0}上强行终止全部虚拟机"
 
-msgid "/Killing all VMs on ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Killing all VMs on ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上强行终止全部虚拟机成功完成"
 
-msgid "/Killing all VMs on ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Killing all VMs on ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在{0}上强行终止全部虚拟机成功完成"
 
-msgid "/Deleting ([\\w\\.]*)$/"
+msgid "/Deleting ([\\w\\.\\-]*)$/"
 msgstr "删除{0}"
 
-msgid "/Deleting ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Deleting ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "删除{0}成功完成"
 
-msgid "/Deleting ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Deleting ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器上删除{0}成功完成"
 
-msgid "/Pausing ([\\w\\.]*)$/"
+msgid "/Pausing ([\\w\\.\\-]*)$/"
 msgstr "暂停{0}"
 
-msgid "/Pausing ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Pausing ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "暂停{0}成功完成"
 
-msgid "/Resuming ([\\w\\.]*)$/"
+msgid "/Resuming ([\\w\\.\\-]*)$/"
 msgstr "继续{0}"
 
-msgid "/Resuming ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Resuming ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "继续{0}成功完成"
 
-msgid "/Rebooting ([\\w\\.]*)$/"
+msgid "/Rebooting ([\\w\\.\\-]*)$/"
 msgstr "重启{0}"
 
-msgid "/Rebooting ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Rebooting ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "重启{0}成功完成"
 
-msgid "/Snapshot vm ([\\w\\.]*)$/"
+msgid "/Snapshot vm ([\\w\\.\\-]*)$/"
 msgstr "在{0}上休眠虚拟机"
 
-msgid "/Snapshot vm ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Snapshot vm ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在{0}上休眠虚拟机成功完成"
 
-msgid "/Snapshot vm ([\\w\\.]*) Virtual Machine Completed Successfully$/"
+msgid "/Snapshot vm ([\\w\\.\\-]*) Virtual Machine Completed Successfully$/"
 msgstr "在{0}上休眠虚拟机成功完成"
 
 msgid "/Add Annotation Task$/"
@@ -1908,22 +1908,22 @@ msgstr "编辑注解任务"
 msgid "/Edit Annotation Task Virtual Machine Completed Successfully$/"
 msgstr "编辑虚拟机注解任务成功完成"
 
-msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*)$/"
+msgid "/Migrate ([\\w\\.\\-]*) from ([\\w\\.\\-]*) to ([\\w\\.\\-]*)$/"
 msgstr "从{1}到{2}迁移虚拟机{0}"
 
-msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Migrate ([\\w\\.\\-]*) from ([\\w\\.\\-]*) to ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
 
-msgid "/Migrate ([\\w\\.]*) from ([\\w\\.]*) to ([\\w\\.]*) Virtual Machine Completed Successfully$/"
+msgid "/Migrate ([\\w\\.\\-]*) from ([\\w\\.\\-]*) to ([\\w\\.\\-]*) Virtual Machine Completed Successfully$/"
 msgstr "从{1}到{2}迁移虚拟机{0}成功完成"
 
-msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*)$/"
+msgid "/Migrate All Virtual Machines from ([\\w\\.\\-]*) to ([\\w\\.\\-]*)$/"
 msgstr "从{0}到{1}迁移全部虚拟机"
 
-msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Migrate All Virtual Machines from ([\\w\\.\\-]*) to ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "从服务器{0}到{1}迁移全部虚拟机成功完成"
 
-msgid "/Migrate All Virtual Machines from ([\\w\\.]*) to ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Migrate All Virtual Machines from ([\\w\\.\\-]*) to ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "从服务器{0}到{1}迁移全部虚拟机成功完成"
 
 msgid "/Virtual Machine (\\w*) is not running$/"
@@ -1941,28 +1941,28 @@ msgstr "注解已清除。 \n\n之前的注解人: {0}\n之前的注解:\n\n{1}"
 msgid "/mail send to ([\\w\\.@]*)$/"
 msgstr "邮件已发送到{0}"
 
-msgid "/Restoring vm to ([\\w\\.]*)$/"
+msgid "/Restoring vm to ([\\w\\.\\-]*)$/"
 msgstr "在{0}上恢复休眠的虚拟机"
 
-msgid "/Restoring vm to ([\\w\\.]*) Server Completed Successfully$/"
+msgid "/Restoring vm to ([\\w\\.\\-]*) Server Completed Successfully$/"
 msgstr "在服务器{0}上恢复休眠的虚拟机成功完成"
 
-msgid "/Restoring vm to ([\\w\\.]*) Completed Successfully.$/"
+msgid "/Restoring vm to ([\\w\\.\\-]*) Completed Successfully.$/"
 msgstr "在{0}上恢复休眠的虚拟机成功完成"
 
 msgid "/shutdown failed due to timeout$/"
 msgstr "因为超时，关闭失败"
 
 #migration check
-msgid "/VM Disk ([\\w\\.\\/]*) not found on the destination node ([\\w\\.]*)/"
+msgid "/VM Disk ([\\w\\.\\/]*) not found on the destination node ([\\w\\.\\-]*)/"
 msgstr "虚拟机磁盘{0}在目标节点{1}上面没有找到"
 
-msgid "/The destination node does not support required platform \\(([\\w\\.]*)\\)/"
+msgid "/The destination node does not support required platform \\(([\\w\\.\\-]*)\\)/"
 msgstr "目标节点不支持平台({0})"
 
 
 #provision vm
-msgid "/VM <b>([\\w\\.]*)<\\/b> already exists.$/"
+msgid "/VM <b>([\\w\\.\\-]*)<\\/b> already exists.$/"
 msgstr "虚拟机{0}已经存在"
 
 #template
@@ -1972,19 +1972,19 @@ msgstr "导入器件"
 msgid "/Import Appliance Template Group Completed Successfully$/"
 msgstr "模板组中导入器件成功完成"
 
-msgid "/Image ([\\w\\.]*) already exists.$/"
+msgid "/Image ([\\w\\.\\-]*) already exists.$/"
 msgstr "模板{0}已存在"
 
-msgid "/ImageGroup ([\\w\\.]*) already exists.$/"
+msgid "/ImageGroup ([\\w\\.\\-]*) already exists.$/"
 msgstr "模板组{0}已存在"
 
 msgid "/KVM : Can not change memory for running vm.$/"
 msgstr "KVM : 不能修改正在运行的虚拟机的内存"
 
-msgid "/Change Settings of ([\\w\\.]*)$/"
+msgid "/Change Settings of ([\\w\\.\\-]*)$/"
 msgstr "修改{0}的设置"
 
-msgid "/Error adding file, ([\\w\\.\\/\\$]*). VM ([\\w\\.]*) already exists.$/"
+msgid "/Error adding file, ([\\w\\.\\/\\$]*). VM ([\\w\\.\\-]*) already exists.$/"
 msgstr "添加配置文件{0}错误，虚拟机{1}已经存在"
 
 
