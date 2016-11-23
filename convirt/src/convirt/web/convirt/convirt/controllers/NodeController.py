@@ -181,7 +181,8 @@ class NodeController(ControllerBase):
         self.authenticate()
         try:
             from convirt.core.utils.utils import get_remain_vm_licenses
-            if get_remain_vm_licenses(session['auth'].user.user_name)>0:
+            filename_list = filenames.split(",")
+            if get_remain_vm_licenses(session['auth'].user.user_name) > len(filename_list):
                 result=self.tc.import_vm_action(session['auth'], node_id, directory,filenames, date,time)
     #            doms=self.node_service.import_vm_config(session['auth'],node_id, directory, filenames)
             else:
