@@ -252,6 +252,9 @@ msgstr "虚拟机密度"
 msgid "Virtualization Platform"
 msgstr "虚拟化平台"
 
+msgid "VM Remain Licenses"
+msgstr "虚拟机剩余生成数量"
+
 msgid "Notifications"
 msgstr "日志消息"
 
@@ -1291,7 +1294,7 @@ msgid "VM Name should not contain special characters.<br>"
 msgstr "虚拟机名字不应该包含特殊字符。"
 
 msgid "VM licenses are not enough"
-msgstr "可分配的VM生成数量不足"
+msgstr "虚拟机剩余的生成数量不足"
 
 ###storage detail config
 msgid "Options"

@@ -558,6 +558,8 @@ class DashboardService:
              total_vms=0
              running_vms=0
              paused_vms=0
+             from convirt.core.utils.utils import get_remain_vm_licenses
+             vm_remain_licenses = get_remain_vm_licenses(auth.user.user_name)
 
              for data_dict in data_list:
                 srvrs+=data_dict.get('SERVERS',0)
@@ -575,6 +577,7 @@ class DashboardService:
              info_list.append(dict(name='Server Pools',value=sps))
              info_list.append(dict(name='Servers',value=srvrs))
              info_list.append(dict(name='Virtual Machines',value=vminfo ,type='vmsummary'))
+             info_list.append(dict(name='VM Remain Licenses',value=vm_remain_licenses))
              info_list.append(dict(name='Virtual Machine Density',value=density))
             #    Call ge platform count to get the Virtualizaton Platform details
              pfvalue=""
