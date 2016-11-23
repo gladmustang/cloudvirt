@@ -115,6 +115,8 @@ msgstr "正在发送数据..."
 msgid "Please enter Username and Password."
 msgstr "请输入用户名和密码"
 
+msgid "User should belongs to a group"
+msgstr "用户需要隶属于一个组"
 
 #用户动作
 msgid "Actions"
