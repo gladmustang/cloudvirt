@@ -1988,7 +1988,7 @@ def vm_batch_provision_check(vm_name, config):
                 elif disk_stat['disk_type'] in ['VBD', 'qcow2', 'qcow']:
                     disk_filename = disk_stat['filename']
                     dir, filename = os.path.split(disk_filename)
-                    disk_filename=dir+os.sep+tmp_vm_name
+                    disk_filename=dir+os.sep+tmp_vm_name+".disk.xm"
                     disk_stat['filename']=disk_filename
                 else:
                     pass
