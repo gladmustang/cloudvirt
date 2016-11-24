@@ -1960,7 +1960,10 @@ def get_remain_vm_licenses(username):
     #get existing vm count for current user
     vms=DBSession.query(func.count('*')).filter(VM.own_user == username).scalar()
     #get vm license count for current user
-    vm_licenses=long(DBSession.query(User.vm_license_number).filter(User.user_name==username).scalar())
+    vm_licenses=DBSession.query(User.vm_license_number).filter(User.user_name==username).scalar()
+    if vm_licenses==None:
+        vm_licenses=0
+    vm_licenses=long(vm_licenses)
     return vm_licenses-vms
 
 
