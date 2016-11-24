@@ -1966,6 +1966,40 @@ def get_remain_vm_licenses(username):
     vm_licenses=long(vm_licenses)
     return vm_licenses-vms
 
+def vm_batch_provision_check(vm_name, config):
+    import re,simplejson as json
+    vm_list=[]
+    m = re.match(r'^(.*)(\d)-(\d+)$', vm_name)
+    if m!=None:
+        start = int( m.group(2))
+        stop=int(m.group(3))+1
+        for x in range(start, stop):
+            tmp_vm_name= m.group(1)+str(x)
+            config_obj=json.loads(config)
+            #fix config file name in batch mode
+            config_filename = config_obj['general_object']['filename']
+            dir, filename = os.path.split(config_filename)
+            config_filename=dir+os.sep+tmp_vm_name
+            config_obj['general_object']['filename']=config_filename
+            #fix disk file name
+            for disk_stat in config_obj['storage_status_object']['disk_stat']:
+                if (disk_stat['type'] in ['phy','lvm']) and (not "cdrom" in disk_stat['device']):
+                    raise Exception('VM with "phy" or "lvm" disk type can not be batch provisioned')
+                elif disk_stat['disk_type'] in ['VBD', 'qcow2', 'qcow']:
+                    disk_filename = disk_stat['filename']
+                    dir, filename = os.path.split(disk_filename)
+                    disk_filename=dir+os.sep+tmp_vm_name
+                    disk_stat['filename']=disk_filename
+                else:
+                    pass
+            config_str=json.dumps(config_obj)
+            vm_list.append({"vm_name": tmp_vm_name,"vm_config": config_str})
+    else:
+        if '-' in vm_name:
+            return dict(success=False,msg='VM name contains "-", which can only be used in batch mode')
+        vm_list.append({"vm_name": vm_name,"vm_config": config})
+    return vm_list
+
 
 
 def merge_pool_settings(vm_config,
