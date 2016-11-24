@@ -317,6 +317,8 @@ class NodeController(ControllerBase):
                 vm_name_list=[]
                 m = re.match(r'^(.*)(\d)-(\d+)$', vm_name)
                 if m!=None:
+                    temp_config=json.loads(config)
+                    config=json.dumps(temp_config)
                     start = int( m.group(2))
                     stop=int(m.group(3))+1
                     for x in range(start, stop):

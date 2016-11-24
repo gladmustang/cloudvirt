@@ -328,12 +328,13 @@ def setup_app(command, conf, vars):
     set_entity_details(vm_avail_task, dc_ent)
     model.DBSession.merge(vm_avail_task)
 
-    snd_dep_task = SendDeploymentStatsRptTask(u'Send Deployment Stats',\
-                        {'quiet':True}, [], {}, None, u'admin')
-    snd_dep_task.id = 10
-    snd_dep_task.interval = [model.TaskInterval(7*24*60)] #weekly
-    set_entity_details(snd_dep_task, dc_ent)
-    model.DBSession.merge(snd_dep_task)
+    #below code is for deployment update to convirt periodically, comment it as there is no need for us
+    # snd_dep_task = SendDeploymentStatsRptTask(u'Send Deployment Stats',\
+    #                     {'quiet':True}, [], {}, None, u'admin')
+    # snd_dep_task.id = 10
+    # snd_dep_task.interval = [model.TaskInterval(7*24*60)] #weekly
+    # set_entity_details(snd_dep_task, dc_ent)
+    # model.DBSession.merge(snd_dep_task)
 
     model.DBSession.flush()
 

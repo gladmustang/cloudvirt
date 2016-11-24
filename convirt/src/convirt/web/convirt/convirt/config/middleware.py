@@ -72,7 +72,8 @@ def make_app(global_conf, full_stack=True, **app_conf):
     Node.local_bash_dir=tg.config.get("common_script")
     # Wrap your base TurboGears 2 application with custom middleware here
     try:
-        add_deployment_stats_task()
+        pass
+    #  add_deployment_stats_task()
     except Exception, e:
         print "Error while adding deployment stats task", e
     return app

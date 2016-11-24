@@ -2112,7 +2112,7 @@ def node_up_action(auth, node_id):
 def notify_node_down(node_name,reason):
     try:
         now = datetime.utcnow()
-        subject =u"ConVirt : Server "+node_name+" not reachable"
+        subject =u"WishCloud : Server "+node_name+" not reachable"
         message ="\n<br/>CMS detected a server down. "
         message+="\n<br/>Server Name    : "+node_name
         message+="\n<br/>Detected At    : "+to_str(now)
@@ -2129,7 +2129,7 @@ def notify_task_hung(task,node):
     try:
         LOGGER.info("Sending Task hung notification...")
         now = datetime.utcnow()
-        subject =u"ConVirt : Task" +str(task.name)+" is hung"
+        subject =u"WishCloud : Task" +str(task.name)+" is hung"
         message ="\n<br/>Task "+str(task.name)+"("+str(task.task_id)+") is hung"
         message+="\n<br/>Host Name    : "+node.hostname
         message+="\n<br/>Time         : "+str(now)
@@ -2351,7 +2351,8 @@ def send_deployment_stats(cms_strt):
     from datetime import datetime
 
     try:
-        url = "http://www.convirture.com/deployments/deployment_stats.php"
+        #url = "http://www.convirture.com/deployments/deployment_stats.php"
+        url = "http://127.0.0.1:8081/deployments/deployment_stats.php"
         dep=DBSession.query(Deployment).first()
         
         if dep :
