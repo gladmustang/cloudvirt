@@ -1297,7 +1297,13 @@ function VMConfigSettings(action,node_id,group_id,image_node,state,vm_config,dom
             url="node_id="+mgd_node.attributes.id;
         }
         if(!disk_location.disabled){
-            file_browser.add(FileBrowser("/","",url,true,false,disk_location,file_browser));
+            browser_initial_loc = disk_location.getValue()
+            if(browser_initial_loc && browser_initial_loc.indexOf("/")!=-1){
+                browser_initial_loc=browser_initial_loc.substr(0,browser_initial_loc.lastIndexOf('/'));
+            } else {
+                browser_initial_loc ="/"
+            }
+            file_browser.add(FileBrowser(browser_initial_loc,"",url,true,false,disk_location,file_browser));
             file_browser.show();
         }
     //            get_disklocation();
