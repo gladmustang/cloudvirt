@@ -853,6 +853,11 @@ class NodeService:
               ctx = dynamic_map()
               image_store=Basic.getImageStore()
               image=image_store.get_image(auth,image_id)
+              if image==None:
+                  image=image_store.get_image_by_name(config["misc_object"]["image_name"])
+                  if image==None:
+                      raise Exception("Image is not found and can not do provision.")
+                  image_id=image.id
 
               if image is not None:
                   ctx.image_name=image.name
