@@ -225,9 +225,6 @@ msgstr "休眠虚拟机"
 msgid "Quick Clone"
 msgstr "快速克隆虚拟机"
 
-msgid "New Virtual Machine Name"
-msgstr "请输入新的虚拟机名称:"
-
 msgid "Set Boot Device"
 msgstr "设置虚拟机引导设备"
 
@@ -1613,6 +1610,13 @@ msgstr "从{1}到{2}迁移虚拟机{0}"
 
 msgid "Disk "
 msgstr "磁盘"
+
+##vm clone
+msgid "New Virtual Machine Name"
+msgstr "请输入新的虚拟机名称:"
+
+msgid "Quick clone only support virtual machine with disk type: file|qcow."
+msgstr "快速克隆仅支持磁盘类型为file（VBD）或者qcow的虚拟机"
 
 #action window end
 

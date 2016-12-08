@@ -832,7 +832,7 @@ function SubmitVMClone(node,action,node_id,group_id,dom_id,old_vm_config, new_vm
         } else if(disk_stat.type=="tap:qcow") {
             disk_stat.disk_type="qcow2";
         } else {
-            Ext.MessageBox.alert(_("Error"), _("Invalid disk type,correct type: file|qcow."));
+            Ext.MessageBox.alert(_("Error"), _("Quick clone only support virtual machine with disk type: file|qcow."));
             return;
         }
         disk_stat.disk_create="yes";
