@@ -195,6 +195,9 @@ def initialise_auth():
 
     ,{'id':74,'op':'START_VIEW_CONSOLE','text':'Start and View Console','display_id':'start_view_console','entType':'DOMAIN','opr':True,
     'separator':False,'display':True,'seq':113,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'start_siew_console.png'}
+        
+     ,{'id':101,'op':'QUICK_CLONE_VM','text':'Quick Clone','display_id':'quick_clone_vm','entType':'DOMAIN',
+    'opr':True,'separator':False,'display':True,'seq':200,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'provision_vm.png'}
 
     ,{'id':38,'op':'PAUSE','text':'Pause','display_id':'pause','entType':'DOMAIN','opr':True,'separator':False,'display':True,'seq':115,
     'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'small_pause.png'}

@@ -222,6 +222,12 @@ msgstr "强行终止虚拟机"
 msgid "Hibernate"
 msgstr "休眠虚拟机"
 
+msgid "Quick Clone"
+msgstr "快速克隆虚拟机"
+
+msgid "New Virtual Machine Name"
+msgstr "请输入新的虚拟机名称:"
+
 msgid "Set Boot Device"
 msgstr "设置虚拟机引导设备"
 

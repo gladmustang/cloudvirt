@@ -43,6 +43,12 @@ function handleEvents(node,action,item){
             select_view(node.parentNode,node);
 //            getVNCInfo(node.parentNode,node);
             return;
+        } else if(action=='quick_clone_vm'){
+            Ext.MessageBox.prompt(_("Quick Clone"),_("New Virtual Machine Name"), function(btn, text){
+                if(btn=="ok")
+                    quickVmClone(node, action,text);
+            }, this, false, "");
+            return;
         } else if(action=='annotate'){
             annotateEntity(node,action);
             return;
@@ -733,6 +739,212 @@ function changeVmSettings(node,action){
             }
         });
 
+}
+
+
+function quickVmClone(node, action, new_vm_name){
+        var node_id=node.parentNode.attributes.id;
+        var group_id=node.parentNode.parentNode.attributes.id;
+        var dom_id=node.attributes.vm_name;
+        var vm_id = node.attributes.id;
+
+        var url="/node/get_vm_config?domId="+node.attributes.vm_name+"&nodeId="+node_id;
+        var ajaxReq=ajaxRequest(url,0,"GET",true);
+        ajaxReq.request({
+            success: function(xhr) {//alert(xhr.responseText);
+                var response=Ext.util.JSON.decode(xhr.responseText);
+                if(response.success){
+                      SubmitVMClone(node, action, node_id, group_id, dom_id, response.vm_config, new_vm_name);
+                  }else{
+                    Ext.MessageBox.alert(_("Failure"),response.msg);
+                }
+            },
+            failure: function(xhr){
+                Ext.MessageBox.alert( _("Failure") , xhr.statusText);
+            }
+        });
+
+}
+
+function SubmitVMClone(node,action,node_id,group_id,dom_id,old_vm_config, new_vm_name){
+    var filename="";
+    filename=old_vm_config.filename;
+    var last_slash_index=filename.lastIndexOf("/");
+    filename=filename.substring(0,last_slash_index)+"/"+new_vm_name
+    var memory=old_vm_config.memory;
+    var vcpus=old_vm_config.vcpus;
+
+
+    var general_object=new Object();
+    var boot_params_object=new Object();
+    var misc_object=new Object();
+    var provision_object=new Object();
+    var storage_status_object=new Object();
+    var network_object=new Object();
+
+
+    var os_flavor=old_vm_config.os_flavor;
+    var os_name=old_vm_config.os_name;
+    var os_version=old_vm_config.os_version;
+
+    var disk_name=dom_id;//??
+    var vm_name="";
+    var version="";
+
+
+    action="PROVISION_VM"; //调用后台的PROVISION_VM接口
+    vm_name=new_vm_name;
+    disk_name=vm_name;
+    var start_checked=false;
+    if(start_checked == true)
+        start_checked='yes';
+    else
+        start_checked='no';
+
+
+    var auto_start_vm=0;
+    var disk_jdata=[]
+    provision_object.VM_CONF_DIR="/var/cache/convirt/vm_configs";
+    provision_object.VM_DISKS_DIR="/var/cache/convirt/vm_disks";
+
+    for(var i=0;i<old_vm_config.disk.length; i++){
+        var disk_stat={}
+        var disk=old_vm_config.disk[i];
+        var disk_options=disk.split(",");
+        disk_stat.device = disk_options[1];
+        disk_stat.mode=disk_options[2]
+        var index=disk_options[0].indexOf("/");
+        disk_stat.type=disk_options[0].substring(0,index-1);
+        disk_filename=disk_options[0].substring(index);
+
+        if ((disk_stat.type=="pyh" || disk_stat.type=="lvm") && (disk_stat.device.indexOf("cdrom")==-1)){
+            Ext.MessageBox.alert(_('Errors'), _('The storage disks contain phy or lvm type, can not quick clone!'));
+            return;
+        } else if(disk_stat.device.indexOf("cdrom")!=-1){
+            continue;//cdrom, 跳过，不克隆
+        } else { //file形式的或者tap:qcow形式的
+            var last_slash_index=disk_filename.lastIndexOf("/")
+            disk_stat.filename=disk_filename.substring(0,last_slash_index)+"/"+new_vm_name+".disk.xm";
+        }
+        disk_stat.option="USE_REF_DISK";
+        if(disk_stat.type=="file") {
+            disk_stat.disk_type="VBD";
+        } else if(disk_stat.type=="tap:qcow") {
+            disk_stat.disk_type="qcow2";
+        } else {
+            Ext.MessageBox.alert(_("Error"), _("Invalid disk type,correct type: file|qcow."));
+            return;
+        }
+        disk_stat.disk_create="yes";
+        disk_stat.size=10000;
+        disk_stat.image_src=disk_filename;
+        disk_stat.image_src_type="disk_image";
+        disk_stat.image_src_format=null;
+        disk_stat.fs_type="";
+        disk_stat.storage_name="";
+        disk_stat.storage_disk_id=null;
+        disk_stat.storage_id="";
+        disk_stat.shared=false;
+        disk_jdata.push(disk_stat);
+
+        //update provision_object
+        var device=disk_stat.device;
+        provision_object[device+"_disk_create"]="yes";
+        provision_object[device+"_image_src"]=disk_filename;
+        provision_object[device+"_image_src_type"]="disk_image";
+        provision_object[device+"_disk_size"]="10000";
+        provision_object[device+"_disk_type"]=disk_stat.disk_type;
+
+    }
+
+    storage_status_object.disk_stat=disk_jdata;
+
+    var vif=[{ mac:'Autogenerated',bridge:'$DEFAULT_BRIDGE'}]
+    network_object.network=vif;
+
+
+
+    var boot_loader=old_vm_config.bootloader;
+    var boot_check=false;
+    var kernel=old_vm_config.kernel;
+    var ramdisk=old_vm_config.ramdisk;
+    var extra="";
+    var root=""
+    var on_reboot="restart";
+    var on_crash="destroy";
+    var on_shutdown="destroy";
+
+    var params;
+    var url;
+    var ajaxReq;
+
+
+    misc_object.acpi=old_vm_config.acpi;
+    misc_object.apic=old_vm_config.apic;
+    misc_object.arch=old_vm_config.arch;
+    misc_object.arch_libdir=old_vm_config.arch_libdir;
+    misc_object.boot=old_vm_config.boot;
+    misc_object.builder=old_vm_config.builder;
+    misc_object.device_model=old_vm_config.device_model;
+    misc_object.image_name=old_vm_config.image_name;
+    misc_object.network_mode="tap";
+    misc_object.pae="1";
+    misc_object.platform=old_vm_config.platform;
+    misc_object.provider_id="Wish Cloud";
+    misc_object.provision_timeout="900";
+    misc_object.sdl="0";
+    misc_object.usb="1";
+    misc_object.usbdevice="tablet";
+    misc_object.vif=["mac=$AUTOGEN_MAC, bridge=$DEFAULT_BRIDGE"]
+    misc_object.vnc="1";
+    misc_object.vncunused="1";
+
+
+
+    general_object.filename=filename;
+    general_object.memory=memory;
+    general_object.vcpus=vcpus;
+    general_object.start_checked=start_checked;
+    general_object.auto_start_vm=auto_start_vm;
+    general_object.template_version=old_vm_config.template_version;
+
+    general_object.os_flavor=old_vm_config.os_flavor;
+    general_object.os_name=old_vm_config.os_name;
+    general_object.os_version=old_vm_config.os_version;
+
+    boot_params_object.boot_check=boot_check;
+    if(boot_check==true){
+        boot_params_object.boot_loader=boot_loader;
+    }else{
+        boot_params_object.kernel=kernel;
+        boot_params_object.ramdisk=ramdisk;
+    }
+
+    boot_params_object.extra=extra;
+    boot_params_object.root=root;
+
+    boot_params_object.on_reboot=on_reboot;
+    boot_params_object.on_crash=on_crash;
+    boot_params_object.on_shutdown=on_shutdown;
+
+
+    var jsondata= json(general_object,boot_params_object,
+    misc_object,provision_object,storage_status_object,network_object);
+
+    var image_id=old_vm_config.image_id;
+    params="image_id="+image_id+"&config="+jsondata+"&mode="+action;
+
+    if (node_id!=null)
+        params+="&node_id="+node_id;
+    if (group_id!=null)
+        params+="&group_id="+group_id;
+
+    params+="&vm_name="+new_vm_name;
+
+    url="/node/vm_config_settings?"+params;
+    //console.log(url);
+
+    vm_config_settings(node,url,action);
 }
 function editImageSettings(node,action){
 
