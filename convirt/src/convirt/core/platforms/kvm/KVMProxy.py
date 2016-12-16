@@ -572,6 +572,10 @@ class KVMProxy(VMM):
                 opt = "m"
             elif opt == "vcpus":
                 opt = "smp"
+                if(config.get("os_name")=="Windows 7"):
+                    socks=2;
+                    cores=int((value+socks-1)/socks);
+                    value= str(value) + ",sockets=2,cores="+str(cores)
             elif opt == "stdvga":
                 opt = "std-vga"
                 if to_str(value) != '1':
