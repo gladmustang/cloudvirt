@@ -1067,7 +1067,12 @@ class KVMProxy(VMM):
             print "error cleaning up remote vm", e
 
     def live_snapshot(self,id,snapshotName):
-        pass;
+        cmd="savevm "+snapshotName
+        (output,prompt) = self.send_command(id,cmd)
+        if prompt and output == cmd:
+            return True
+        else:
+            raise Exception("live_snapshot:" + output)
 
     def offline_snapshot(self,id,snapshotName):
         pass;
