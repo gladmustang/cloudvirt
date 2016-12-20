@@ -144,7 +144,7 @@ class NodeAjaxController(BaseController):
 
     @expose()
     def snapshot_qcow2(self,dom_id,node_id,snapshot_name):
-        result = "{success: true,msg: 'Snapshot VM Task Submitted.'}"
+        result = self.node_controller.snapshot_qcow2(dom_id, node_id,snapshot_name)
         return result
 
 

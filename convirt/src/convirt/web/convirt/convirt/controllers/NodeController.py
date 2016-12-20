@@ -286,6 +286,16 @@ class NodeController(ControllerBase):
             return "{success: false,msg: '",to_str(ex).replace("'",""),"'}"
         return "{success: true,msg: 'Remove Virtual Machine Task Submitted.'}"
 
+    def snapshot_qcow2(self,dom_id, node_id, snapshot_name):
+        self.authenticate()
+        try:
+            self.tc.snapshot_qcow2_action(session['auth'],dom_id,node_id, snapshot_name)
+        except Exception, ex:
+            print_traceback()
+            return "{success: false,msg: '",to_str(ex).replace("'",""),"'}"
+        return  "{success: true,msg: 'Snapshot VM Task Submitted.'}"
+
+
 #    @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):
         try:

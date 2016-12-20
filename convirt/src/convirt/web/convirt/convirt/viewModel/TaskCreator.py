@@ -248,6 +248,15 @@ class TaskCreator:
             task_service.submit_schedule(t, execution_time)
         logger.debug("Remove VM Task Submitted")
 
+    def snapshot_qcow2_action(self, auth, dom_id, node_id,snapshot_name):
+        task_service = self.svc_central.get_service(self.task_service_id)
+        user_name = self._get_username(auth)
+        t = SnapshotQcow2Task(u'Snapshot VM', {}, [], \
+                         dict(dom_id=dom_id,node_id=node_id,snapshot_name=snapshot_name), None, user_name)
+        t.set_entity_details(node_id)
+        task_service.submit_sync(t)
+        logger.debug("Snapshot VM Task Submitted")
+
     def populate_node_info(self, auth, node_id, dateval=None,timeval=None):
         task_service = self.svc_central.get_service(self.task_service_id)
         user_name = self._get_username(auth)

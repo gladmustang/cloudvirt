@@ -980,6 +980,24 @@ class VMRemoveTask(NodeTask):
             msg=constants.RECOVER_TASK+to_str(e)
             raise Exception(msg)
 
+class SnapshotQcow2Task(NodeTask):
+    def get_descriptions(self):
+        dom_name = self.get_dom_name()
+        node_name = self.get_node_name()
+        short_desc = ""
+        desc = ""
+
+        short_desc = m_("Snapshot %s")
+        desc = m_("Snapshot action on %s. Managed Node is %s")
+
+        return (short_desc, (dom_name,), desc, (dom_name, node_name))
+
+    def exec_task(self, auth, ctx, dom_id, node_id, snapshot_name):
+        manager = Basic.getGridManager()
+        #return manager.remove_vm(auth, dom_id, node_id, snapshot_name)
+        return None;
+
+
 class EmailTask(Task):
     def get_descriptions(self):
         short_desc = m_("Sending E-mail for failed task")
