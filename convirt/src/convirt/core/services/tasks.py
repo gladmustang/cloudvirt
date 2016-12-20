@@ -994,7 +994,7 @@ class SnapshotQcow2Task(NodeTask):
 
     def exec_task(self, auth, ctx, dom_id, node_id, snapshot_name):
         manager = Basic.getGridManager()
-        #return manager.remove_vm(auth, dom_id, node_id, snapshot_name)
+        return manager.snapshot_qcow2_vm(auth, dom_id, node_id, snapshot_name)
         return None;
 
 

@@ -224,7 +224,6 @@ class VM(DeclarativeBase):
 #       self.stop_monitoring()
 #       self.node.refresh_vm_avail()
 
-
     def _destroy(self):
        self.node.get_vmm().destroy(self.pid)
        self._vm_info =  None
@@ -254,6 +253,12 @@ class VM(DeclarativeBase):
     def _migrate(self, dest,live, port):
        self.node.get_vmm().migrate(self.pid, dest, live, port)
 
+
+    def _live_snapshot(self, snapshotName):
+       self.node.get_vmm().live_snapshot(self.pid, snapshotName);
+
+    def _offline_snapshot(self, snapshotName):
+       self.node.get_vmm().offline_snapshot(self.pid, snapshotName);
 
     def is_resident(self):
        return self._is_resident

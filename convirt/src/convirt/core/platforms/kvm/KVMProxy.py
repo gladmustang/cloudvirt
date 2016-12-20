@@ -1066,7 +1066,11 @@ class KVMProxy(VMM):
             print "--------------"
             print "error cleaning up remote vm", e
 
+    def live_snapshot(self,id,snapshotName):
+        pass;
 
+    def offline_snapshot(self,id,snapshotName):
+        pass;
                 
     # available snapshots
     def list_snapshots(self,id):

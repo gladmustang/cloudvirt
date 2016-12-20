@@ -930,6 +930,20 @@ class GridManager:
             traceback.print_exc()
             raise e
 
+    def snapshot_qcow2_vm(self,auth,domId,nodeId, snapshotName):
+        ent=auth.get_entity(domId)
+        if not auth.has_privilege('SNAPSHOT_QCOW2',ent):
+            raise Exception(constants.NO_PRIVILEGE)
+        managed_node = self.getNode(auth,nodeId)
+        dom = managed_node.get_dom(domId)
+        if not dom:
+            raise Exception("Can not find the specified VM.")
+
+        #add logic to get disk type
+        if dom.is_resident():
+            dom._live_snapshot(snapshotName)
+        else:
+            dom._offline_snapshot(snapshotName)
 
     def remove_dom_config_file(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
