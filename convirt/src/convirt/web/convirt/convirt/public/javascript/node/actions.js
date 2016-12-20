@@ -52,6 +52,9 @@ function handleEvents(node,action,item){
         } else if(action=='annotate'){
             annotateEntity(node,action);
             return;
+        } else if(action=='snapshot') {
+            snapshot_qcow2(node, action);
+            return;
         }
 
         vm_action(node,item);
@@ -764,6 +767,34 @@ function quickVmClone(node, action, new_vm_name){
             }
         });
 
+}
+
+function snapshot_qcow2(node, action){
+    Ext.MessageBox.prompt(_("Snapshot"),_("Snapshot Name:"), function(btn, text){
+        if(btn=="ok")
+            takeSnapshot(node, action, text);
+    }, this, false, "");
+
+
+}
+
+function takeSnapshot(vm, action, snapshot_name) {
+    var url="/node/snapshot_qcow2?dom_id="+vm.attributes.id+
+        "&node_id="+vm.parentNode.attributes.id+"&snapshot_name="+snapshot_name;
+        var ajaxReq=ajaxRequest(url,0,"GET",true);
+        ajaxReq.request({
+            success: function(xhr) {
+                var response=Ext.util.JSON.decode(xhr.responseText);
+                if(response.success){
+                    show_task_popup(response.msg);
+                } else {
+                    Ext.MessageBox.alert(_("Failure"),response.msg);
+                }
+            },
+            failure: function(xhr){
+                Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+            }
+        });
 }
 
 function SubmitVMClone(node,action,node_id,group_id,dom_id,old_vm_config, new_vm_name){

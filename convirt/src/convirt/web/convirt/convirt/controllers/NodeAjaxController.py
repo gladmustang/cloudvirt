@@ -142,6 +142,12 @@ class NodeAjaxController(BaseController):
         result = self.node_controller.remove_vm(dom_id, node_id, date, time, force)
         return result
 
+    @expose()
+    def snapshot_qcow2(self,dom_id,node_id,snapshot_name):
+        result = "{success: true,msg: 'Snapshot VM Task Submitted.'}"
+        return result
+
+
     @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):
         result = self.node_controller.get_node_status(node_id, dom_id)
