@@ -939,11 +939,34 @@ class GridManager:
         if not dom:
             raise Exception("Can not find the specified VM.")
 
-        #add logic to get disk type
+        #logic to check disk type, all disk should be qcow2 type
+        disk_list=[]
+        for item in dom.VMDisks :
+            # if u"cdrom" in item.dev_type:
+            #     continue
+            cmdline = "qemu-img info "+item.disk_name + " | grep 'file format'"
+            (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
+            if ret != 0:
+                print "qcow2 disk type check failed :", cmdline,output
+                raise Exception((output, ret))
+            if not ("qcow2" in output):
+                err_msg="qcow2 disk type check failed: disk type is not qcow2"
+                print err_msg
+                raise Exception(err_msg)
+            disk_list.append(item.disk_name)
+        print "qcow2 disk type check : success "
+
         if dom.is_resident():
             dom._live_snapshot(snapshotName)
         else:
-            dom._offline_snapshot(snapshotName)
+            #dom._offline_snapshot(snapshotName)
+            for item in disk_list :
+                cmdline = "qemu-img snapshot -c "+snapshotName+" "+ item
+                (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
+                if ret != 0:
+                    print "snapshot qcow2 failed :", cmdline,output
+                    raise Exception((output, ret))
+                print "snapshot qcow2 : success ", output
 
     def remove_dom_config_file(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
