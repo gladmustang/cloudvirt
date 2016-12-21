@@ -819,6 +819,7 @@ function qcow2_snapshot_list(vm, action) {
                         tag_list+=response.snapshot_list[i].tag+",";
                     }
                     Ext.MessageBox.alert("Success", tag_list);
+                    console.log(tag_list);
 
                 } else {
                     Ext.MessageBox.alert(_("Failure"),response.msg);

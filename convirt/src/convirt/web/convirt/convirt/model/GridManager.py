@@ -976,7 +976,49 @@ class GridManager:
         dom = managed_node.get_dom(domId)
         if not dom:
             raise Exception("Can not find the specified VM.")
-        return [{"id":1, "tag":"snap1", "vm_size": "1G", "date":"2016-12-19 15:49:45"}]
+
+         #logic to snapshot list
+        snapshot_list=[]
+        for item in dom.VMDisks :
+            cmdline = "qemu-img snapshot -l "+item.disk_name
+            (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
+            if ret != 0:
+                print "Get qcow2 snapshot list failed :", cmdline,output
+                raise Exception((output, ret))
+            #parse output
+            snaps = self.parseOutput(output)
+            snapshot_list.append(dict(disk=item.disk_name,snaps=snaps))
+        print "Get qcow2 snapshot list : success "
+        #get common snap list
+        # return [{"id":1, "tag":"snap1", "vm_size": "1G", "date":"2016-12-19 15:49:45"}]
+
+        snaps= snapshot_list[0]["snaps"]
+        common_snaps=[]
+        for snap in snaps:
+            compareStr=snap["id"]+"++"+snap["tag"]
+            valid=True
+            for i in range(0,len(snapshot_list)):
+                valid=self.isCommonSnap(compareStr, snapshot_list[i]["snaps"])
+            if valid:
+                common_snaps.append(snap)
+        return common_snaps
+
+
+    def parseOutput(self, output):
+        snaps = []
+        lines = re.split("\s*\n\s*",output)
+        for line in lines:
+            m=re.match(r"^(\d+)\s+(.+)\s+(\d+\w?)\s+([0-9\-]+\s+[0-9:]+)\s+[0-9:.]+\s*$", line)
+            if m:
+                snap=dict(id=m.group(1),tag=m.group(2),vm_size=m.group(3),date=m.group(4))
+                snaps.append(snap)
+        return snaps
+
+    def isCommonSnap(self, compareStr, snaps):
+        for snap in snaps:
+            if compareStr == (snap["id"] + "++" + snap["tag"]):
+                return True
+        return False
 
     def remove_dom_config_file(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
