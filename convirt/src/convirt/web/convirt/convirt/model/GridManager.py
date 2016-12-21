@@ -957,11 +957,11 @@ class GridManager:
         print "qcow2 disk type check : success "
 
         if dom.is_resident():
-            dom._live_snapshot(snapshotName)
+            dom._live_snapshot(snapshotName+"__live__")
         else:
             #dom._offline_snapshot(snapshotName)
             for item in disk_list :
-                cmdline = "qemu-img snapshot -c "+snapshotName+" "+ item
+                cmdline = "qemu-img snapshot -c "+snapshotName+"__offline__ "+ item
                 (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
                 if ret != 0:
                     print "snapshot qcow2 failed :", cmdline,output
