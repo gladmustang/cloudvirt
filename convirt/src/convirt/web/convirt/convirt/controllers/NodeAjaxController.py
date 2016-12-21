@@ -147,6 +147,11 @@ class NodeAjaxController(BaseController):
         result = self.node_controller.snapshot_qcow2(dom_id, node_id,snapshot_name)
         return result
 
+    @expose(template='json')
+    def qcow2_snapshot_list(self,dom_id,node_id):
+        result = self.node_controller.qcow2_snapshot_list(dom_id, node_id)
+        return result
+
 
     @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):

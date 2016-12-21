@@ -295,6 +295,15 @@ class NodeController(ControllerBase):
             return "{success: false,msg: '",to_str(ex).replace("'",""),"'}"
         return  "{success: true,msg: 'Snapshot VM Task Submitted.'}"
 
+    def qcow2_snapshot_list(self,dom_id, node_id):
+        self.authenticate()
+        try:
+            # snapshot_list=[{"id":1, "tag":"snap1", "vm_size": "1G", "date":"2016-12-19 15:49:45"}]
+            snapshot_list = self.node_service.qcow2_snapshot_list(session['auth'],dom_id,node_id)
+        except Exception, ex:
+            print_traceback()
+            return dict(success=False,msg= to_str(ex))
+        return  dict(success=True, snapshot_list=snapshot_list)
 
 #    @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):

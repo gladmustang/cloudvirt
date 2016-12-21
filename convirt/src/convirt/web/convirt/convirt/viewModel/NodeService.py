@@ -589,6 +589,10 @@ class NodeService:
             raise Exception("Can not find the Server.")
         return node.is_up()
 
+    def qcow2_snapshot_list(self, auth,dom_id=None,node_id=None):
+        return self.manager.qcow2_snapshot_list(auth, dom_id, node_id)
+
+
     def transfer_node(self, auth, node_id,source_group_id,dest_group_id, forcefully):
         """ transfer node  """
         try:

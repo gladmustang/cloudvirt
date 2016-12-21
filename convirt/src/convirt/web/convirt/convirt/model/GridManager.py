@@ -968,6 +968,16 @@ class GridManager:
                     raise Exception((output, ret))
                 print "snapshot qcow2 : success ", output
 
+    def qcow2_snapshot_list(self,auth,domId,nodeId):
+        ent=auth.get_entity(domId)
+        if not auth.has_privilege('MANAGE_QCOW2_SNAPSHOT',ent):
+            raise Exception(constants.NO_PRIVILEGE)
+        managed_node = self.getNode(auth,nodeId)
+        dom = managed_node.get_dom(domId)
+        if not dom:
+            raise Exception("Can not find the specified VM.")
+        return [{"id":1, "tag":"snap1", "vm_size": "1G", "date":"2016-12-19 15:49:45"}]
+
     def remove_dom_config_file(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
         if not auth.has_privilege('REMOVE_VM_CONFIG',ent):

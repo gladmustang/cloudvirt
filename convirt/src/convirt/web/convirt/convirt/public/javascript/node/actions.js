@@ -55,6 +55,9 @@ function handleEvents(node,action,item){
         } else if(action=='snapshot') {
             snapshot_qcow2(node, action);
             return;
+        } else if(action=='manage_snapshot'){
+            manage_qcow2_snapshot(node, action);
+            return;
         }
 
         vm_action(node,item);
@@ -787,6 +790,36 @@ function takeSnapshot(vm, action, snapshot_name) {
                 var response=Ext.util.JSON.decode(xhr.responseText);
                 if(response.success){
                     show_task_popup(response.msg);
+                } else {
+                    Ext.MessageBox.alert(_("Failure"),response.msg);
+                }
+            },
+            failure: function(xhr){
+                Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+            }
+        });
+}
+
+function manage_qcow2_snapshot(node, action) {
+    //get snapshot list
+    qcow2_snapshot_list(node, action);
+
+}
+
+function qcow2_snapshot_list(vm, action) {
+    var url="/node/qcow2_snapshot_list?dom_id="+vm.attributes.id+
+        "&node_id="+vm.parentNode.attributes.id;
+        var ajaxReq=ajaxRequest(url,0,"GET",true);
+        ajaxReq.request({
+            success: function(xhr) {
+                var response=Ext.util.JSON.decode(xhr.responseText);
+                if(response.success){
+                    var tag_list=""
+                    for(var i=0; i<response.snapshot_list.length;i++) {
+                        tag_list+=response.snapshot_list[i].tag+",";
+                    }
+                    Ext.MessageBox.alert("Success", tag_list);
+
                 } else {
                     Ext.MessageBox.alert(_("Failure"),response.msg);
                 }
