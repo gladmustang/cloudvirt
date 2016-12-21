@@ -200,7 +200,10 @@ def initialise_auth():
     'opr':True,'separator':False,'display':True,'seq':200,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'provision_vm.png'}
 
      ,{'id':102,'op':'QCOW_SNAPSHOT','text':'Snapshot','display_id':'snapshot','entType':'DOMAIN',
-    'opr':True,'separator':False,'display':True,'seq':200,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'small_snapshot.png'}
+    'opr':True,'separator':False,'display':True,'seq':201,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'small_snapshot.png'}
+
+    ,{'id':103,'op':'MANAGE_QCOW_SNAPSHOT','text':'Manage Snapshot','display_id':'manage_snapshot','entType':'DOMAIN',
+    'opr':True,'separator':False,'display':True,'seq':202,'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'small_restore.png'}
 
     ,{'id':38,'op':'PAUSE','text':'Pause','display_id':'pause','entType':'DOMAIN','opr':True,'separator':False,'display':True,'seq':115,
     'groups':['FULL_DOMAIN','OP_DOMAIN'],'icon':'small_pause.png'}
