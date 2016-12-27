@@ -800,36 +800,38 @@ function takeSnapshot(vm, action, snapshot_name) {
         });
 }
 
-function manage_qcow2_snapshot(node, action) {
+function manage_qcow2_snapshot(vm, action) {
     //get snapshot list
-    qcow2_snapshot_list(node, action);
+    //qcow2_snapshot_list(vm, action);
+    show_dialog(vm.parentNode,null,action,vm);
 
 }
 
-function qcow2_snapshot_list(vm, action) {
-    var url="/node/qcow2_snapshot_list?dom_id="+vm.attributes.id+
-        "&node_id="+vm.parentNode.attributes.id;
-        var ajaxReq=ajaxRequest(url,0,"GET",true);
-        ajaxReq.request({
-            success: function(xhr) {
-                var response=Ext.util.JSON.decode(xhr.responseText);
-                if(response.success){
-                    var tag_list=""
-                    for(var i=0; i<response.snapshot_list.length;i++) {
-                        tag_list+=response.snapshot_list[i].tag+",";
-                    }
-                    Ext.MessageBox.alert("Success", tag_list);
-                    console.log(tag_list);
-
-                } else {
-                    Ext.MessageBox.alert(_("Failure"),response.msg);
-                }
-            },
-            failure: function(xhr){
-                Ext.MessageBox.alert( _("Failure"), xhr.statusText);
-            }
-        });
-}
+//function qcow2_snapshot_list(vm, action) {
+//    var url="/node/qcow2_snapshot_list?dom_id="+vm.attributes.id+
+//        "&node_id="+vm.parentNode.attributes.id;
+//        var ajaxReq=ajaxRequest(url,0,"GET",true);
+//        ajaxReq.request({
+//            success: function(xhr) {
+//                var response=Ext.util.JSON.decode(xhr.responseText);
+//                if(response.success){
+//                    //var tag_list=""
+//                    //for(var i=0; i<response.snapshot_list.length;i++) {
+//                    //    tag_list+=response.snapshot_list[i].tag+",";
+//                    //}
+//                    //Ext.MessageBox.alert("Success", tag_list);
+//                    //console.log(tag_list);
+//                    show_dialog(vm.parentNode,null,action,vm);
+//
+//                } else {
+//                    Ext.MessageBox.alert(_("Failure"),response.msg);
+//                }
+//            },
+//            failure: function(xhr){
+//                Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+//            }
+//        });
+//}
 
 function SubmitVMClone(node,action,node_id,group_id,dom_id,old_vm_config, new_vm_name){
     var filename="";
