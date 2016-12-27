@@ -39,6 +39,14 @@ function ManageSnapshotsDialog(node,action,vm){
             field: 'id',
             direction: 'ASC'
         },
+        sortData: function(field, direction){
+            direction = direction || 'ASC';
+             var dir = direction == 'ASC' ? 1 : -1;
+             var fn =  function(row1, row2){
+                return  Number(row1.get(field))-Number(row2.get(field))
+            };
+            this.data.sort(direction, fn);
+        },
         fields:['id', 'tag','vm_size', 'date'],
         successProperty:'success',
         listeners:{
@@ -112,6 +120,7 @@ function ManageSnapshotsDialog(node,action,vm){
                 listeners: {
                     click: function(btn) {
                         //code to delete snapshot
+                        deleteSnapshot.call(this);
                     }
                 }
             })
@@ -163,6 +172,35 @@ function ManageSnapshotsDialog(node,action,vm){
         ]
     });
 
+
+    function deleteSnapshot() {
+        if (grid.getSelectionModel().getSelected()) {
+            //console.dir(grid.getSelectionModel().getSelected().get("tag"))
+            var msg = "Delete snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of" + vm.attributes.text + " ?";
+            Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
+                if (id==="yes") {
+                    var url="/node/qcow2_snapshot_delete?dom_id="+vm.attributes.id+
+                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_id="+grid.getSelectionModel().getSelected().get("id");
+                    var ajaxReq=ajaxRequest(url,0,"GET",true);
+                    ajaxReq.request({
+                        success: function(xhr) {
+                            var response=Ext.util.JSON.decode(xhr.responseText);
+                            if(response.success){
+                                Ext.MessageBox.alert(_("Success"),response.msg);
+                                grid.getStore().load();//refresh snapshot list
+
+                            } else {
+                                Ext.MessageBox.alert(_("Failure"),response.msg);
+                            }
+                        },
+                        failure: function(xhr){
+                            Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+                        }
+                    });
+                }
+            });
+        }
+    }
     return panel;
 }
 
