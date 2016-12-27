@@ -995,10 +995,9 @@ class GridManager:
         snaps= snapshot_list[0]["snaps"]
         common_snaps=[]
         for snap in snaps:
-            compareStr=snap["id"]+"++"+snap["tag"]
             valid=True
             for i in range(0,len(snapshot_list)):
-                valid=self.isCommonSnap(compareStr, snapshot_list[i]["snaps"])
+                valid=self.isCommonSnap(snap, snapshot_list[i]["snaps"])
             if valid:
                 common_snaps.append(snap)
         return common_snaps
@@ -1014,7 +1013,8 @@ class GridManager:
                 snaps.append(snap)
         return snaps
 
-    def isCommonSnap(self, compareStr, snaps):
+    def isCommonSnap(self, snap, snaps):
+        compareStr=snap["id"]+"++"+snap["tag"]
         for snap in snaps:
             if compareStr == (snap["id"] + "++" + snap["tag"]):
                 return True
