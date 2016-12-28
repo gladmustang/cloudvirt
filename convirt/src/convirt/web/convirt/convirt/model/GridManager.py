@@ -956,12 +956,13 @@ class GridManager:
             disk_list.append(item.disk_name)
         print "qcow2 disk type check : success "
 
+        import random
         if dom.is_resident():
             dom._live_qcow2_snapshot(snapshotName+"__live__")
         else:
             #dom._offline_snapshot(snapshotName)
             for item in disk_list :
-                cmdline = "qemu-img snapshot -c "+snapshotName+"__offline__ "+ item
+                cmdline = "qemu-img snapshot -c "+snapshotName+"__"+str(int(random.random()*100000))+"__ "+ item
                 (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
                 if ret != 0:
                     print "snapshot qcow2 failed :", cmdline,output
@@ -1002,6 +1003,23 @@ class GridManager:
                 common_snaps.append(snap)
         return common_snaps
 
+    def parseOutput(self, output):
+        snaps = []
+        lines = re.split("\s*\n\s*",output)
+        for line in lines:
+            m=re.match(r"^(\d+)\s+(.+)\s+(\d+\w?)\s+([0-9\-]+\s+[0-9:]+)\s+[0-9:.]+\s*$", line)
+            if m:
+                snap=dict(id=m.group(1),tag=m.group(2),vm_size=m.group(3),date=m.group(4))
+                snaps.append(snap)
+        return snaps
+
+    def isCommonSnap(self, snap, snaps):
+        compareStr=snap["tag"]
+        for snap in snaps:
+            if compareStr == snap["tag"]:
+                return True
+        return False
+
     def qcow2_snapshot_delete(self,auth,domId,nodeId, snapshot_id):
         ent=auth.get_entity(domId)
         if not auth.has_privilege('DELETE_QCOW2_SNAPSHOT',ent):
@@ -1020,24 +1038,6 @@ class GridManager:
                     print "delete qcow2 snapshot failed :", cmdline,output
                     raise Exception((output, ret))
                 print "delete qcow2 snapshot : success ", output
-
-
-    def parseOutput(self, output):
-        snaps = []
-        lines = re.split("\s*\n\s*",output)
-        for line in lines:
-            m=re.match(r"^(\d+)\s+(.+)\s+(\d+\w?)\s+([0-9\-]+\s+[0-9:]+)\s+[0-9:.]+\s*$", line)
-            if m:
-                snap=dict(id=m.group(1),tag=m.group(2),vm_size=m.group(3),date=m.group(4))
-                snaps.append(snap)
-        return snaps
-
-    def isCommonSnap(self, snap, snaps):
-        compareStr=snap["id"]+"++"+snap["tag"]
-        for snap in snaps:
-            if compareStr == (snap["id"] + "++" + snap["tag"]):
-                return True
-        return False
 
     def remove_dom_config_file(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)

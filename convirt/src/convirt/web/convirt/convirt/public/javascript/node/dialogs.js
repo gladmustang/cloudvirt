@@ -25,7 +25,7 @@ function show_dialog(node,responseData,action,vm){
     else if(action=='migrate' || action=='migrate_all' || action=='provision_image' || action=='create_network')
         showWindow(_("Select a Target Node"),315,325,NodeSelectionDialog(vm,node,responseData,action));
     else if(action=='manage_snapshot')
-        showWindow(_("Manage Snapshot"), 515,425, ManageSnapshotsDialog(node,action, vm));
+        showWindow(_("Manage Snapshot"), 515,428, ManageSnapshotsDialog(node,action, vm));
 }
 
 

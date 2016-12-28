@@ -60,9 +60,10 @@ function ManageSnapshotsDialog(node,action,vm){
     store.load();
     var columnModel = new Ext.grid.ColumnModel([
         {header: _("Id"), hidden: true, sortable: true, dataIndex: 'id'},
-        {header: _("Snapshot Name"), width: 150, sortable: true, dataIndex: 'tag'},
-        {header: _("Size"), width: 120, sortable: true, dataIndex: 'vm_size'},
-        {header: _("Date"), width: 200, sortable: true, dataIndex: 'date'}
+        {header: _("Snapshot Name"), width: 200, sortable: true, dataIndex: 'tag'},
+        {header: _("Date"), width: 180, sortable: true, dataIndex: 'date'},
+        {header: _("Size"), width: 100, sortable: true, dataIndex: 'vm_size'}
+
     ]);
 
     var selmodel=new Ext.grid.RowSelectionModel({
@@ -85,8 +86,9 @@ function ManageSnapshotsDialog(node,action,vm){
                 id: 'refresh',
                 //tooltip:'Refresh',
                 //tooltipType : "title",
+                text:_('Refresh'),
                 icon:'icons/refresh.png',
-                cls:'x-btn-icon',
+                cls:'x-btn-text-icon',
                 listeners: {
                     click: function(btn) {
                         grid.getStore().load();
@@ -97,11 +99,12 @@ function ManageSnapshotsDialog(node,action,vm){
             new Ext.Button({
                 name: 'clear',
                 id: 'clear',
-                tooltip:'Clear Selection',
-                tooltipType : "title",
+                //tooltip:'Clear Selection',
+                //tooltipType : "title",
+                text:_('Clear'),
                 hidden:false,
                 icon:'icons/cancel.png',
-                cls:'x-btn-icon',
+                cls:'x-btn-text-icon',
                 listeners: {
                     click: function(btn) {
                         grid.getSelectionModel().clearSelections();
@@ -109,21 +112,7 @@ function ManageSnapshotsDialog(node,action,vm){
                 }
             }),
             '-',
-            new Ext.Button({
-                name: 'delete',
-                id: 'delete',
-                tooltip:_('Delete Snapshot'),
-                tooltipType : "title",
-                hidden:false,
-                icon:'icons/delete.png',
-                cls:'x-btn-icon',
-                listeners: {
-                    click: function(btn) {
-                        //code to delete snapshot
-                        deleteSnapshot.call(this);
-                    }
-                }
-            })
+
         ],
         listeners: {
             rowclick: function(g,index,evt){
@@ -145,7 +134,43 @@ function ManageSnapshotsDialog(node,action,vm){
         width:500,
         height:400,
         items:[vmname,grid],
-        bbar:[{xtype: 'tbfill'},
+        bbar:[
+            {xtype: 'tbfill'},
+            new Ext.Button({
+                name: 'new',
+                id: 'new',
+                //tooltip:_('Delete Snapshot'),
+                //tooltipType : "title",
+                hidden:false,
+                text: _('New'),
+                icon:'icons/add.png',
+                cls:'x-btn-text-icon',
+                listeners: {
+                    click: function(btn) {
+                        //code to add snapshot
+                        snapshot_qcow2(vm);
+
+                    }
+                }
+            }),
+            '-',
+            new Ext.Button({
+                name: 'delete',
+                id: 'delete',
+                //tooltip:_('Delete Snapshot'),
+                //tooltipType : "title",
+                hidden:false,
+                text: _('Remove'),
+                icon:'icons/delete.png',
+                cls:'x-btn-text-icon',
+                listeners: {
+                    click: function(btn) {
+                        //code to delete snapshot
+                        deleteSnapshot.call(this);
+                    }
+                }
+            }),
+            '-',
             new Ext.Button({
                 name: 'restore',
                 id: 'restore',
@@ -172,6 +197,34 @@ function ManageSnapshotsDialog(node,action,vm){
         ]
     });
 
+    function snapshot_qcow2(vm){
+        Ext.MessageBox.prompt(_("Snapshot"),_("Snapshot Name:"), function(btn, text){
+            if(btn=="ok")
+                takeSnapshot(vm,text);
+        }, this, false, "");
+
+
+    }
+
+    function takeSnapshot(vm,snapshot_name) {
+        var url="/node/snapshot_qcow2?dom_id="+vm.attributes.id+
+            "&node_id="+vm.parentNode.attributes.id+"&snapshot_name="+snapshot_name;
+            var ajaxReq=ajaxRequest(url,0,"GET",true);
+            ajaxReq.request({
+                success: function(xhr) {
+                    var response=Ext.util.JSON.decode(xhr.responseText);
+                    if(response.success){
+                        closeWindow();
+                        show_task_popup(response.msg);
+                    } else {
+                        Ext.MessageBox.alert(_("Failure"),response.msg);
+                    }
+                },
+                failure: function(xhr){
+                    Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+                }
+            });
+    }
 
     function deleteSnapshot() {
         if (grid.getSelectionModel().getSelected()) {
@@ -201,6 +254,37 @@ function ManageSnapshotsDialog(node,action,vm){
             });
         }
     }
+
+
+    function restoreSnapshot(){
+        if (grid.getSelectionModel().getSelected()) {
+            //console.dir(grid.getSelectionModel().getSelected().get("tag"))
+            var msg = "Restore snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of" + vm.attributes.text + " ?";
+            Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
+                if (id==="yes") {
+                    var url="/node/qcow2_snapshot_restore?dom_id="+vm.attributes.id+
+                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_id="+grid.getSelectionModel().getSelected().get("id");
+                    var ajaxReq=ajaxRequest(url,0,"GET",true);
+                    ajaxReq.request({
+                        success: function(xhr) {
+                            var response=Ext.util.JSON.decode(xhr.responseText);
+                            if(response.success){
+                                Ext.MessageBox.alert(_("Success"),response.msg);
+                                grid.getStore().load();//refresh snapshot list
+
+                            } else {
+                                Ext.MessageBox.alert(_("Failure"),response.msg);
+                            }
+                        },
+                        failure: function(xhr){
+                            Ext.MessageBox.alert( _("Failure"), xhr.statusText);
+                        }
+                    });
+                }
+            });
+        }
+    }
+
     return panel;
 }
 
