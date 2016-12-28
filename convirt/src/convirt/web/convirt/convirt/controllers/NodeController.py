@@ -305,6 +305,16 @@ class NodeController(ControllerBase):
             return dict(success=False,msg= to_str(ex))
         return  dict(success=True, snapshot_list=snapshot_list)
 
+
+    def qcow2_snapshot_delete(self,dom_id, node_id,snapshot_id):
+        self.authenticate()
+        try:
+            self.node_service.qcow2_snapshot_delete(session['auth'],dom_id,node_id,snapshot_id)
+        except Exception, ex:
+            print_traceback()
+            return dict(success=False,msg= to_str(ex))
+        return  dict(success=True,msg="Snapshot is deleted successfully!")
+
 #    @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):
         try:

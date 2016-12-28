@@ -1066,17 +1066,22 @@ class KVMProxy(VMM):
             print "--------------"
             print "error cleaning up remote vm", e
 
-    def live_snapshot(self,id,snapshotName):
+    def live_qcow2_snapshot(self,id,snapshotName):
         cmd="savevm "+snapshotName
         (output,prompt) = self.send_command(id,cmd)
         if prompt and output == cmd:
             return True
         else:
-            raise Exception("live_snapshot:" + output)
+            raise Exception("live_qcow2_snapshot:" + output)
 
-    def offline_snapshot(self,id,snapshotName):
-        pass;
-                
+    def live_qcow2_snapshot_delete(self,id,snapshot_id):
+        cmd="delvm "+snapshot_id
+        (output,prompt) = self.send_command(id,cmd)
+        if prompt and output == cmd:
+            return True
+        else:
+            raise Exception("live_qcow2_snapshot_delete:" + output)
+
     # available snapshots
     def list_snapshots(self,id):
         cmd = "info snapshots"

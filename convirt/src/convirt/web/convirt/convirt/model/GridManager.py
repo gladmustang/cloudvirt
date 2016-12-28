@@ -957,7 +957,7 @@ class GridManager:
         print "qcow2 disk type check : success "
 
         if dom.is_resident():
-            dom._live_snapshot(snapshotName+"__live__")
+            dom._live_qcow2_snapshot(snapshotName+"__live__")
         else:
             #dom._offline_snapshot(snapshotName)
             for item in disk_list :
@@ -970,7 +970,7 @@ class GridManager:
 
     def qcow2_snapshot_list(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
-        if not auth.has_privilege('MANAGE_QCOW2_SNAPSHOT',ent):
+        if not auth.has_privilege('VIEW_QCOW2_SNAPSHOT',ent):
             raise Exception(constants.NO_PRIVILEGE)
         managed_node = self.getNode(auth,nodeId)
         dom = managed_node.get_dom(domId)
@@ -1001,6 +1001,25 @@ class GridManager:
             if valid:
                 common_snaps.append(snap)
         return common_snaps
+
+    def qcow2_snapshot_delete(self,auth,domId,nodeId, snapshot_id):
+        ent=auth.get_entity(domId)
+        if not auth.has_privilege('DELETE_QCOW2_SNAPSHOT',ent):
+            raise Exception(constants.NO_PRIVILEGE)
+        managed_node = self.getNode(auth,nodeId)
+        dom = managed_node.get_dom(domId)
+        if not dom:
+            raise Exception("Can not find the specified VM.")
+        if dom.is_resident():
+            dom._live_qcow2_snapshot_delete(snapshot_id)
+        else:
+            for item in dom.VMDisks :
+                cmdline = "qemu-img snapshot -d "+snapshot_id+" "+ item.disk_name
+                (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
+                if ret != 0:
+                    print "delete qcow2 snapshot failed :", cmdline,output
+                    raise Exception((output, ret))
+                print "delete qcow2 snapshot : success ", output
 
 
     def parseOutput(self, output):
