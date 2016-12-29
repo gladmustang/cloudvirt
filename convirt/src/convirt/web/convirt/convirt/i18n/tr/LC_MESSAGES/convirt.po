@@ -1640,6 +1640,9 @@ msgstr "删除快照"
 msgid "Snapshot"
 msgstr "快照"
 
+msgid "Snapshot is deleted successfully!"
+msgstr "快照已经成功删除!"
+
 msgid "Delete snapshot {0} of {1} ?"
 msgstr "删除虚拟机{1}的快照{0} ？"
 

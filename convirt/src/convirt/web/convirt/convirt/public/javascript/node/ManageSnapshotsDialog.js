@@ -240,7 +240,7 @@ function ManageSnapshotsDialog(node,action,vm){
                         success: function(xhr) {
                             var response=Ext.util.JSON.decode(xhr.responseText);
                             if(response.success){
-                                Ext.MessageBox.alert(_("Success"),response.msg);
+                                Ext.MessageBox.alert(_("Success"),_(response.msg));
                                 grid.getStore().load();//refresh snapshot list
 
                             } else {
