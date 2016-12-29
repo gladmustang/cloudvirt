@@ -153,8 +153,8 @@ class NodeAjaxController(BaseController):
         return result
 
     @expose(template='json')
-    def qcow2_snapshot_delete(self,dom_id,node_id,snapshot_id,_dc=None):
-        result = self.node_controller.qcow2_snapshot_delete(dom_id, node_id, snapshot_id)
+    def qcow2_snapshot_delete(self,dom_id,node_id,snapshot_tag,_dc=None):
+        result = self.node_controller.qcow2_snapshot_delete(dom_id, node_id, snapshot_tag)
         return result
 
     @expose(template='json')

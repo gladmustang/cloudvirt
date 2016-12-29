@@ -101,9 +101,9 @@ function ManageSnapshotsDialog(node,action,vm){
                 id: 'clear',
                 //tooltip:'Clear Selection',
                 //tooltipType : "title",
-                text:_('Clear'),
+                text:_('Clear Selection'),
                 hidden:false,
-                icon:'icons/cancel.png',
+                icon:'icons/clear.png',
                 cls:'x-btn-text-icon',
                 listeners: {
                     click: function(btn) {
@@ -111,7 +111,23 @@ function ManageSnapshotsDialog(node,action,vm){
                     }
                 }
             }),
-            '-',
+            {xtype: 'tbfill'},
+            new Ext.Button({
+                name: 'delete',
+                id: 'delete',
+                //tooltip:_('Delete Snapshot'),
+                //tooltipType : "title",
+                hidden:false,
+                text: _('Remove Snapshot'),
+                icon:'icons/delete.png',
+                cls:'x-btn-text-icon',
+                listeners: {
+                    click: function(btn) {
+                        //code to delete snapshot
+                        deleteSnapshot.call(this);
+                    }
+                }
+            })
 
         ],
         listeners: {
@@ -142,7 +158,7 @@ function ManageSnapshotsDialog(node,action,vm){
                 //tooltip:_('Delete Snapshot'),
                 //tooltipType : "title",
                 hidden:false,
-                text: _('New'),
+                text: _('New Snapshot'),
                 icon:'icons/add.png',
                 cls:'x-btn-text-icon',
                 listeners: {
@@ -155,31 +171,15 @@ function ManageSnapshotsDialog(node,action,vm){
             }),
             '-',
             new Ext.Button({
-                name: 'delete',
-                id: 'delete',
-                //tooltip:_('Delete Snapshot'),
-                //tooltipType : "title",
-                hidden:false,
-                text: _('Remove'),
-                icon:'icons/delete.png',
-                cls:'x-btn-text-icon',
-                listeners: {
-                    click: function(btn) {
-                        //code to delete snapshot
-                        deleteSnapshot.call(this);
-                    }
-                }
-            }),
-            '-',
-            new Ext.Button({
                 name: 'restore',
                 id: 'restore',
-                text:_('Restore'),
+                text:_('Restore Snapshot'),
                 icon:'icons/accept.png',
                 cls:'x-btn-text-icon',
                 listeners: {
                     click: function(btn) {
                         //code to restore snapshot
+                        restoreSnapshot();
                     }
                 }
             }),
@@ -233,7 +233,7 @@ function ManageSnapshotsDialog(node,action,vm){
             Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
                 if (id==="yes") {
                     var url="/node/qcow2_snapshot_delete?dom_id="+vm.attributes.id+
-                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_id="+grid.getSelectionModel().getSelected().get("id");
+                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_tag="+grid.getSelectionModel().getSelected().get("tag");
                     var ajaxReq=ajaxRequest(url,0,"GET",true);
                     ajaxReq.request({
                         success: function(xhr) {
@@ -269,8 +269,8 @@ function ManageSnapshotsDialog(node,action,vm){
                         success: function(xhr) {
                             var response=Ext.util.JSON.decode(xhr.responseText);
                             if(response.success){
-                                Ext.MessageBox.alert(_("Success"),response.msg);
-                                grid.getStore().load();//refresh snapshot list
+                                closeWindow();
+                                show_task_popup(response.msg);
 
                             } else {
                                 Ext.MessageBox.alert(_("Failure"),response.msg);

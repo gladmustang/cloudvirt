@@ -1618,6 +1618,26 @@ msgstr "请输入新的虚拟机名称:"
 msgid "Quick clone only support virtual machine with disk type: file|qcow."
 msgstr "快速克隆仅支持磁盘类型为file（VBD）或者qcow的虚拟机"
 
+#vm qcow2 snapshot
+msgid "Manage Snapshot"
+msgstr "管理快照"
+
+msgid "Snapshot Name"
+msgstr "快照名称"
+
+msgid "Clear Selection"
+msgstr "清除选择"
+
+msgid "Restore Snapshot"
+msgstr "恢复快照"
+
+msgid "New Snapshot"
+msgstr "新建快照"
+
+msgid "Remove Snapshot"
+msgstr "删除快照"
+
+
 #action window end
 
 #template

@@ -1020,7 +1020,7 @@ class GridManager:
                 return True
         return False
 
-    def qcow2_snapshot_delete(self,auth,domId,nodeId, snapshot_id):
+    def qcow2_snapshot_delete(self,auth,domId,nodeId, snapshot_tag):
         ent=auth.get_entity(domId)
         if not auth.has_privilege('DELETE_QCOW2_SNAPSHOT',ent):
             raise Exception(constants.NO_PRIVILEGE)
@@ -1029,10 +1029,10 @@ class GridManager:
         if not dom:
             raise Exception("Can not find the specified VM.")
         if dom.is_resident():
-            dom._live_qcow2_snapshot_delete(snapshot_id)
+            dom._live_qcow2_snapshot_delete(snapshot_tag)
         else:
             for item in dom.VMDisks :
-                cmdline = "qemu-img snapshot -d "+snapshot_id+" "+ item.disk_name
+                cmdline = "qemu-img snapshot -d "+snapshot_tag+" "+ item.disk_name
                 (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
                 if ret != 0:
                     print "delete qcow2 snapshot failed :", cmdline,output

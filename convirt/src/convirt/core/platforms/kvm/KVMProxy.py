@@ -1074,8 +1074,8 @@ class KVMProxy(VMM):
         else:
             raise Exception("live_qcow2_snapshot:" + output)
 
-    def live_qcow2_snapshot_delete(self,id,snapshot_id):
-        cmd="delvm "+snapshot_id
+    def live_qcow2_snapshot_delete(self,id,snapshot_tag):
+        cmd="delvm "+snapshot_tag
         (output,prompt) = self.send_command(id,cmd)
         if prompt and output == cmd:
             return True

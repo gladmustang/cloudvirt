@@ -257,8 +257,8 @@ class VM(DeclarativeBase):
     def _live_qcow2_snapshot(self, snapshotName):
        self.node.get_vmm().live_qcow2_snapshot(self.pid, snapshotName);
 
-    def _live_qcow2_snapshot_delete(self, snapshot_id):
-       self.node.get_vmm().live_qcow2_snapshot_delete(self.pid, snapshot_id);
+    def _live_qcow2_snapshot_delete(self, snapshot_tag):
+       self.node.get_vmm().live_qcow2_snapshot_delete(self.pid, snapshot_tag);
 
     def is_resident(self):
        return self._is_resident
