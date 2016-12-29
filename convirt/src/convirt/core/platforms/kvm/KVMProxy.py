@@ -64,7 +64,7 @@ class KVMProxy(VMM):
                           "watchdog", "watchdog-action", "echr", 
                           "virtioconsole", "tb-size", "chroot", "runas", 
                           "pcidevice", "enable-nesting", "nvram",'uuid',
-                          "spice", "device", "chardev"
+                          "spice", "device", "chardev","loadvm"
                           )
     
     kvm_options_no_v = ("S", "s", "no-kvm", "no-kvm-irqchip",
@@ -490,7 +490,7 @@ class KVMProxy(VMM):
                 
 
     # Use the config and start a new vm.
-    def start(self,config,timeout=5):
+    def start(self,config,timeout=5,extra_para=None):
         if config is None:
             raise Exception("No context provided to start the vm")
 
@@ -515,6 +515,12 @@ class KVMProxy(VMM):
         cmdline = cmd
         vnc_processed = False
         skip_kernel_rd = False
+
+        if extra_para:
+            for key in extra_para:
+                if key=="loadvm":
+                     cmdline = self.process_option(cmdline, "loadvm",extra_para[key] ,
+                                                   known_options)
 
         # add disks first
         opt = "disk"
@@ -1073,6 +1079,15 @@ class KVMProxy(VMM):
             return True
         else:
             raise Exception("live_qcow2_snapshot:" + output)
+
+    def live_qcow2_snapshot_restore(self,id,snapshotTag):
+        cmd="loadvm "+snapshotTag
+        (output,prompt) = self.send_command(id,cmd)
+        if prompt and output == cmd:
+            return True
+        else:
+            raise Exception("live_qcow2_snapshot_restore:" + output)
+
 
     def live_qcow2_snapshot_delete(self,id,snapshot_tag):
         cmd="delvm "+snapshot_tag

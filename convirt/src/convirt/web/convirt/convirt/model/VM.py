@@ -257,6 +257,15 @@ class VM(DeclarativeBase):
     def _live_qcow2_snapshot(self, snapshotName):
        self.node.get_vmm().live_qcow2_snapshot(self.pid, snapshotName);
 
+    def _live_qcow2_snapshot_restore(self, snapshotTag):
+        self.node.get_vmm().live_qcow2_snapshot_restore(self.pid, snapshotTag);
+
+    def _offline_qcow2_checkpoint_snapshot_restore(self,snapshotTag,config=None):
+        if not config:
+          self.node.get_vmm().start(self._config,50, {"loadvm": snapshotTag})
+        else:
+          self.node.get_vmm().start(config, 50, {"loadvm": snapshotTag})
+
     def _live_qcow2_snapshot_delete(self, snapshot_tag):
        self.node.get_vmm().live_qcow2_snapshot_delete(self.pid, snapshot_tag);
 

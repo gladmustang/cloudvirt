@@ -263,7 +263,7 @@ function ManageSnapshotsDialog(node,action,vm){
             Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
                 if (id==="yes") {
                     var url="/node/qcow2_snapshot_restore?dom_id="+vm.attributes.id+
-                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_id="+grid.getSelectionModel().getSelected().get("id");
+                    "&node_id="+vm.parentNode.attributes.id+"&snapshot_tag="+grid.getSelectionModel().getSelected().get("tag");
                     var ajaxReq=ajaxRequest(url,0,"GET",true);
                     ajaxReq.request({
                         success: function(xhr) {

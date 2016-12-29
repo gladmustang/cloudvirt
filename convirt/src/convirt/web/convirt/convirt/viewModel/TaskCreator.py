@@ -257,6 +257,15 @@ class TaskCreator:
         task_service.submit_sync(t)
         logger.debug("Snapshot VM Task Submitted")
 
+    def qcow2_snapshot_restore_action(self, auth, dom_id, node_id,snapshot_tag):
+        task_service = self.svc_central.get_service(self.task_service_id)
+        user_name = self._get_username(auth)
+        t = Qcow2SnapshotRestoreTask(u'Restore VM snapshot', {}, [], \
+                         dict(dom_id=dom_id,node_id=node_id,snapshot_tag=snapshot_tag), None, user_name)
+        t.set_entity_details(node_id)
+        task_service.submit_sync(t)
+        logger.debug("Restore VM Snapshot Task Submitted")
+
     def populate_node_info(self, auth, node_id, dateval=None,timeval=None):
         task_service = self.svc_central.get_service(self.task_service_id)
         user_name = self._get_username(auth)

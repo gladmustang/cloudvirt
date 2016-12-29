@@ -315,6 +315,15 @@ class NodeController(ControllerBase):
             return dict(success=False,msg= to_str(ex))
         return  dict(success=True,msg="Snapshot is deleted successfully!")
 
+    def qcow2_snapshot_restore(self,dom_id, node_id, snapshot_tag):
+        self.authenticate()
+        try:
+            self.tc.qcow2_snapshot_restore_action(session['auth'],dom_id,node_id, snapshot_tag)
+        except Exception, ex:
+            print_traceback()
+            return "{success: false,msg: '",to_str(ex).replace("'",""),"'}"
+        return  "{success: true,msg: 'Restore VM Snapshot Task Submitted.'}"
+
 #    @expose(template='json')
     def get_node_status(self, node_id=None, dom_id=None):
         try:

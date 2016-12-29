@@ -998,6 +998,23 @@ class SnapshotQcow2Task(NodeTask):
         return None;
 
 
+class Qcow2SnapshotRestoreTask(NodeTask):
+    def get_descriptions(self):
+        dom_name = self.get_dom_name()
+        node_name = self.get_node_name()
+        short_desc = ""
+        desc = ""
+
+        short_desc = m_("Restore Snapshot on %s")
+        desc = m_("Restore Snapshot action on %s. Managed Node is %s")
+
+        return (short_desc, (dom_name,), desc, (dom_name, node_name))
+
+    def exec_task(self, auth, ctx, dom_id, node_id, snapshot_tag):
+        manager = Basic.getGridManager()
+        return manager.qcow2_snapshot_restore(auth, dom_id, node_id, snapshot_tag)
+        return None;
+
 class EmailTask(Task):
     def get_descriptions(self):
         short_desc = m_("Sending E-mail for failed task")

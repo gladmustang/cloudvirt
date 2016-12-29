@@ -969,6 +969,34 @@ class GridManager:
                     raise Exception((output, ret))
                 print "snapshot qcow2 : success ", output
 
+
+    def qcow2_snapshot_restore(self,auth,domId,nodeId, snapshotTag):
+        ent=auth.get_entity(domId)
+        if not auth.has_privilege('RESTORE_QCOW2_SNAPSHOT',ent):
+            raise Exception(constants.NO_PRIVILEGE)
+        managed_node = self.getNode(auth,nodeId)
+        dom = managed_node.get_dom(domId)
+        if not dom:
+            raise Exception("Can not find the specified VM.")
+
+        if dom.is_resident(): #live state, use loadvm command
+            if "__live__" in snapshotTag:
+                dom._live_qcow2_snapshot_restore(snapshotTag)
+            else:
+                print "Restore qcow2 snapshot failed : can not restore offline snapshot in online state"
+                raise Exception("Can not restore offline snapshot in online state")
+        else:
+            if "__live__" in snapshotTag: #offline, but live snapshot, use-loadvm
+                dom._offline_qcow2_checkpoint_snapshot_restore(snapshotTag);
+            else: #offline and offline snapshot, use qemu-img -a
+                for item in dom.VMDisks :
+                    cmdline = "qemu-img snapshot -a "+snapshotTag+" "+ item.disk_name
+                    (output, ret)=managed_node.node_proxy.exec_cmd(cmdline)
+                    if ret != 0:
+                        print "Restore qcow2 snapshot failed :", cmdline,output
+                        raise Exception((output, ret))
+                    print "Restore qcow2 snapshot : success ", output
+
     def qcow2_snapshot_list(self,auth,domId,nodeId):
         ent=auth.get_entity(domId)
         if not auth.has_privilege('VIEW_QCOW2_SNAPSHOT',ent):
