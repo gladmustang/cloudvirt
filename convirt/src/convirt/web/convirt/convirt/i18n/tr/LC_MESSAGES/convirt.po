@@ -1637,6 +1637,15 @@ msgstr "新建快照"
 msgid "Remove Snapshot"
 msgstr "删除快照"
 
+msgid "Snapshot"
+msgstr "快照"
+
+msgid "Delete snapshot {0} of {1} ?"
+msgstr "删除虚拟机{1}的快照{0} ？"
+
+msgid "Restore snapshot {0} of {1} ?"
+msgstr "恢复虚拟机{1}的快照{0} ？"
+
 
 #action window end
 
@@ -2000,6 +2009,23 @@ msgstr "目标节点不支持平台({0})"
 #provision vm
 msgid "/VM <b>([\\w\\.\\-]*)<\\/b> already exists.$/"
 msgstr "虚拟机{0}已经存在"
+
+#qcow2 snapshot vm
+msgid "/Snapshot ([\\w\\.\\-]*)$/"
+msgstr "给虚拟机{0}做快照"
+
+msgid "/Snapshot ([\\w\\.\\-]*) Completed Successfully.$/"
+msgstr "给虚拟机{0}做快照成功完成"
+
+msgid "/Restore Snapshot on ([\\w\\.\\-]*)$/"
+msgstr "在虚拟机{0}上恢复快照"
+
+msgid "/Restore Snapshot on ([\\w\\.\\-]*) Completed Successfully.$/"
+msgstr "在虚拟机{0}上恢复快照成功完成"
+
+msgid "/^Can not restore offline snapshot in online state$/"
+msgstr "虚拟机在线时无法恢复离线快照"
+
 
 #template
 msgid "/Import Appliance$/"

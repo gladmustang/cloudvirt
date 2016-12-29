@@ -198,7 +198,7 @@ function ManageSnapshotsDialog(node,action,vm){
     });
 
     function snapshot_qcow2(vm){
-        Ext.MessageBox.prompt(_("Snapshot"),_("Snapshot Name:"), function(btn, text){
+        Ext.MessageBox.prompt(_("Snapshot"),_("Snapshot Name"), function(btn, text){
             if(btn=="ok")
                 takeSnapshot(vm,text);
         }, this, false, "");
@@ -229,7 +229,8 @@ function ManageSnapshotsDialog(node,action,vm){
     function deleteSnapshot() {
         if (grid.getSelectionModel().getSelected()) {
             //console.dir(grid.getSelectionModel().getSelected().get("tag"))
-            var msg = "Delete snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of" + vm.attributes.text + " ?";
+            //var msg = "Delete snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of " + vm.attributes.text + " ?";
+            var msg= format(_("Delete snapshot {0} of {1} ?"), grid.getSelectionModel().getSelected().get("tag"), vm.attributes.text);
             Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
                 if (id==="yes") {
                     var url="/node/qcow2_snapshot_delete?dom_id="+vm.attributes.id+
@@ -259,7 +260,8 @@ function ManageSnapshotsDialog(node,action,vm){
     function restoreSnapshot(){
         if (grid.getSelectionModel().getSelected()) {
             //console.dir(grid.getSelectionModel().getSelected().get("tag"))
-            var msg = "Restore snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of" + vm.attributes.text + " ?";
+            //var msg = "Restore snapshot " + grid.getSelectionModel().getSelected().get("tag") + " of " + vm.attributes.text + " ?";
+            var msg= format(_("Restore snapshot {0} of {1} ?"), grid.getSelectionModel().getSelected().get("tag"), vm.attributes.text);
             Ext.MessageBox.confirm(_("Confirm"), _(msg), function (id) {
                 if (id==="yes") {
                     var url="/node/qcow2_snapshot_restore?dom_id="+vm.attributes.id+
